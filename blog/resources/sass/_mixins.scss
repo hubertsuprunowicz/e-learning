@@ -1,0 +1,23 @@
+@mixin center-flex() {
+	display: flex;
+	margin-left: auto;
+	margin-right: auto;
+	justify-content: center;
+}
+
+@mixin center-block() {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	justify-content: center;
+}
+
+@mixin margins-horizontal($left:inherit, $right:inherit) {
+	margin-left: $left;
+	margin-right: $right;
+}
+
+@mixin margins-vertical($top:inherit, $bottom:inherit) {
+	margin-top: $top;
+	margin-bottom: $bottom;
+}

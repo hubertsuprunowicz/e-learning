@@ -11,10 +11,26 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Auth::routes();
 
+// Auth page
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+Route::get('/', [
+	'uses' => 'SitesController@index',
+]);
+
+
+
+
+
+
+//Route::get('/', [
+//	'uses' => 'SitesController@index',
+//]);
+//
+//Route::get('/products', [
+//	'uses' => 'SitesController@index',
+//	'as' => 'sites.index'
+//]);

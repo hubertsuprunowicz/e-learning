@@ -72,8 +72,13 @@
             </div>
         </nav>
 
+
         <main class="py-4">
-            @yield('content')
+
+        @yield('content')
+
+        <!-- JS -->
+            @yield('scripts')
         </main>
     </div>
 </body>
