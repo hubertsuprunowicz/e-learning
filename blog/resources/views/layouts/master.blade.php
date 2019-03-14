@@ -11,13 +11,12 @@
     <meta name="author" content="Hubert Suprunowicz">
 
     <!-- Latest compiled CSS -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel="stylesheet" href="{{ asset('css/main.css') }}" />
-
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
     <!-- Latest compiled JavaScript -->
-    <script src="{{ asset('js/main.js') }}"></script>
-    <script src="{{ asset('js/ajax.js') }}"></script>
+
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
@@ -28,12 +27,13 @@
     <meta name="csrf-token" content="{{ csrf_token() }}" />
 </head>
 
-<body id="bootstrap-overrides">
+<body>
 @include('partials.navigate')
 @yield('content')
+@include('partials.footer')
 
 <!-- JS -->
-@yield('scripts')
+@include('partials.scripts')
 </body>
 
 </html>

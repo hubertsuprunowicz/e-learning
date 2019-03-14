@@ -1,1 +1,18 @@
 
+.letters-spacing {
+	letter-spacing: .2vw;
+}
+
+.separator-auth {
+	display: none;
+	height: 100%;
+	line-height: -10px;
+	color: rgba(0, 0, 0, 0.5);
+	font-size: 20px;
+}
+
+@media (min-width: 768px) {
+	.separator-auth {
+		display: block;
+	}
+}

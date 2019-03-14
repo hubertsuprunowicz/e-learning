@@ -26,6 +26,7 @@ Route::get('/', [
 
 
 
+
 //Route::get('/', [
 //	'uses' => 'SitesController@index',
 //]);

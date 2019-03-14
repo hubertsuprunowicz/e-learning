@@ -1,0 +1,64 @@
+.no-repeat-img-header {
+	position: relative;
+	padding-top: 6rem;
+	padding-bottom: 3rem;
+	text-align: center;
+	height: 400px ;
+	width: 100%;
+	margin: 0 auto;
+
+	background: url('https://static1.squarespace.com/static/56a9250edf40f31524edf75d/t/5836e51359cc684019d53cfb/1479992616478/iStock-600411296.jpg?format=1500w') repeat 0 0 fixed;
+
+	display: flex;
+	justify-content: space-around;
+
+}
+
+
+
+.student-header {
+	width: 100%;
+	height: 100%;
+	font-size: 100px;
+
+	.fa-graduation-cap::after {
+		content: 'STUDENT';
+		display: block;
+		font-size: .5em;
+	}
+}
+
+
+
+.instructor-header {
+	width: 100%;
+	height: 100%;
+	font-size: 100px;
+
+	.fa-chalkboard-teacher::after {
+		content: 'INSTRUCTOR';
+		display: block;
+		font-size: .5em;
+	}
+
+}
+
+.other-header  {
+	width: 100%;
+	height: 100%;
+
+}
+
+.fa-igloo {
+	position: absolute;
+	font-size: 100px;
+	width: 100px;
+	height: 100px;
+	bottom: 0;
+}
+
+
+
+.icon-holder {
+	color: $white;
+}
