@@ -11,8 +11,6 @@
 }
 
 
-
-
 .bg-container {
 	width: 100%;
 	display: flex !important;
@@ -20,10 +18,13 @@
 	flex-flow: row wrap;
 }
 
-
-
-
-.student-header {
+.panel-header {
+	display: flex;
+	flex-flow: column;
+	justify-content: center;
+	align-items: center;
+	align-content: flex-end;
+	margin: 6px;
 	order: 1;
 	font-size: 70px;
 
@@ -36,13 +37,6 @@
 		font-weight: 100;
 		letter-spacing: 6px;
 	}
-}
-
-
-.instructor-header {
-	order: 1;
-	font-size: 70px;
-
 
 	.fa-chalkboard-teacher::after {
 		margin-top: 10vh;
@@ -53,12 +47,9 @@
 		font-weight: 100;
 		letter-spacing: 6px;
 	}
-
 }
 
-
 .join-us-holder {
-
 	width: 100px;
 	height: 30px;
 	color: $mint;
@@ -68,7 +59,6 @@
 	line-height: 30px;
 	font-family: "Nunito", sans-serif;
 	display: block;
-
 }
 
 .join-us-header {
@@ -86,9 +76,6 @@
 	text-decoration: none;
 }
 
-
-
-
 .icon-holder {
 	color: $mint;
 	text-align: center;
@@ -97,9 +84,6 @@
 	max-height: 216px;
 
 }
-
-
-
 
 .vertical-line-header {
 	border-left: 1px solid $mint;
@@ -110,14 +94,7 @@
 }
 
 
-.panel-header {
-	display: flex;
-	flex-flow: column;
-	justify-content: center;
-	align-items: center;
-	align-content: flex-end;
-	margin: 6px;
-}
+
 
 // CHAT BUBBLES
 @media screen and (max-width: 577px) {
@@ -127,8 +104,7 @@
 }
 
 .speech-bubble {
-	//margin: -65px auto 50px auto;
-	margin-bottom: 50px;
+	margin-bottom: 80px;
 	padding: 18px;
 
 	min-width: 26vw;

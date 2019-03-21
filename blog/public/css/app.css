@@ -10699,12 +10699,18 @@ nav {
   flex-flow: row wrap;
 }
 
-.student-header {
+.panel-header {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  align-content: flex-end;
+  margin: 6px;
   order: 1;
   font-size: 70px;
 }
 
-.student-header .fa-graduation-cap::after {
+.panel-header .fa-graduation-cap::after {
   margin-top: 10vh;
   content: "STUDENT";
   display: block;
@@ -10714,12 +10720,7 @@ nav {
   letter-spacing: 6px;
 }
 
-.instructor-header {
-  order: 1;
-  font-size: 70px;
-}
-
-.instructor-header .fa-chalkboard-teacher::after {
+.panel-header .fa-chalkboard-teacher::after {
   margin-top: 10vh;
   content: "TEACHER";
   display: block;
@@ -10771,15 +10772,6 @@ nav {
   left: 50%;
 }
 
-.panel-header {
-  display: flex;
-  flex-flow: column;
-  justify-content: center;
-  align-items: center;
-  align-content: flex-end;
-  margin: 6px;
-}
-
 @media screen and (max-width: 577px) {
   .speech-bubble {
     display: none;
@@ -10787,7 +10779,7 @@ nav {
 }
 
 .speech-bubble {
-  margin-bottom: 50px;
+  margin-bottom: 80px;
   padding: 18px;
   min-width: 26vw;
   max-width: 14vw;
