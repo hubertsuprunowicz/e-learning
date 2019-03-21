@@ -22,6 +22,9 @@
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Sarala" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:900i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Paytone+One" rel="stylesheet">
+
 
     <!-- TOKEN -->
     <meta name="csrf-token" content="{{ csrf_token() }}" />
@@ -30,7 +33,8 @@
 <body>
 @include('partials.navigate')
 @yield('content')
-@include('partials.footer')
+
+
 
 <!-- JS -->
 @include('partials.scripts')

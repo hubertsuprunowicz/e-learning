@@ -72,7 +72,7 @@ body {
   line-height: 1.6;
   color: #212529;
   text-align: left;
-  background-color: #f8fafc;
+  background-color: #ffffff;
 }
 
 [tabindex="-1"]:focus {
@@ -517,7 +517,7 @@ mark,
 
 .img-thumbnail {
   padding: 0.25rem;
-  background-color: #f8fafc;
+  background-color: #ffffff;
   border: 1px solid #dee2e6;
   border-radius: 0.25rem;
   max-width: 100%;
@@ -4095,15 +4095,15 @@ input[type=button].btn-block {
 }
 
 .custom-range:focus::-webkit-slider-thumb {
-  box-shadow: 0 0 0 1px #f8fafc, 0 0 0 0.2rem rgba(52, 144, 220, 0.25);
+  box-shadow: 0 0 0 1px #ffffff, 0 0 0 0.2rem rgba(52, 144, 220, 0.25);
 }
 
 .custom-range:focus::-moz-range-thumb {
-  box-shadow: 0 0 0 1px #f8fafc, 0 0 0 0.2rem rgba(52, 144, 220, 0.25);
+  box-shadow: 0 0 0 1px #ffffff, 0 0 0 0.2rem rgba(52, 144, 220, 0.25);
 }
 
 .custom-range:focus::-ms-thumb {
-  box-shadow: 0 0 0 1px #f8fafc, 0 0 0 0.2rem rgba(52, 144, 220, 0.25);
+  box-shadow: 0 0 0 1px #ffffff, 0 0 0 0.2rem rgba(52, 144, 220, 0.25);
 }
 
 .custom-range::-moz-focus-outer {
@@ -4303,8 +4303,8 @@ input[type=button].btn-block {
 .nav-tabs .nav-link.active,
 .nav-tabs .nav-item.show .nav-link {
   color: #495057;
-  background-color: #f8fafc;
-  border-color: #dee2e6 #dee2e6 #f8fafc;
+  background-color: #ffffff;
+  border-color: #dee2e6 #dee2e6 #ffffff;
 }
 
 .nav-tabs .dropdown-menu {
@@ -10655,16 +10655,25 @@ a.text-dark:focus {
   }
 }
 
+nav {
+  position: fixed !important;
+  display: flex;
+  justify-content: space-between;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
 .letters-spacing {
   letter-spacing: 0.2vw;
 }
 
 .separator-auth {
   display: none;
-  height: 100%;
   line-height: -10px;
-  color: rgba(0, 0, 0, 0.5);
+  color: #ffffff;
   font-size: 20px;
+  font-weight: 100;
 }
 
 @media (min-width: 768px) {
@@ -10674,65 +10683,154 @@ a.text-dark:focus {
 }
 
 .no-repeat-img-header {
-  position: relative;
-  padding-top: 6rem;
-  padding-bottom: 3rem;
-  text-align: center;
-  height: 400px;
+  height: 100%;
   width: 100%;
-  margin: 0 auto;
-  background: url("https://static1.squarespace.com/static/56a9250edf40f31524edf75d/t/5836e51359cc684019d53cfb/1479992616478/iStock-600411296.jpg?format=1500w") repeat 0 0 fixed;
+  top: 0;
+  z-index: -1;
+  background: url("/../school.png") repeat 0 0 fixed;
   display: flex;
+  align-items: center;
+}
+
+.bg-container {
+  width: 100%;
+  display: flex !important;
   justify-content: space-around;
+  flex-flow: row wrap;
 }
 
 .student-header {
-  width: 100%;
-  height: 100%;
-  font-size: 100px;
+  order: 1;
+  font-size: 70px;
 }
 
 .student-header .fa-graduation-cap::after {
+  margin-top: 10vh;
   content: "STUDENT";
   display: block;
-  font-size: 0.5em;
+  font-size: 50%;
+  font-family: "Raleway", sans-serif;
+  font-weight: 100;
+  letter-spacing: 6px;
 }
 
 .instructor-header {
-  width: 100%;
-  height: 100%;
-  font-size: 100px;
+  order: 1;
+  font-size: 70px;
 }
 
 .instructor-header .fa-chalkboard-teacher::after {
-  content: "INSTRUCTOR";
+  margin-top: 10vh;
+  content: "TEACHER";
   display: block;
-  font-size: 0.5em;
+  font-size: 50%;
+  font-family: "Raleway", sans-serif;
+  font-weight: 100;
+  letter-spacing: 6px;
 }
 
-.other-header {
-  width: 100%;
-  height: 100%;
-}
-
-.fa-igloo {
-  position: absolute;
-  font-size: 100px;
+.join-us-holder {
   width: 100px;
-  height: 100px;
-  bottom: 0;
+  height: 30px;
+  color: #26C281;
+  border: 1px #26C281 solid;
+  border-radius: 10px;
+  text-align: center;
+  line-height: 30px;
+  font-family: "Nunito", sans-serif;
+  display: block;
+}
+
+.join-us-header {
+  position: absolute;
+  flex: 100%;
+  left: 50%;
+  bottom: 13%;
+  margin-left: -48px;
+}
+
+.join-us-header > a:hover {
+  color: #ffffff;
+  background-color: #26C281;
+  text-decoration: none;
 }
 
 .icon-holder {
-  color: #ffffff;
+  color: #26C281;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  max-height: 216px;
+}
+
+.vertical-line-header {
+  border-left: 1px solid #26C281;
+  height: 10%;
+  position: absolute;
+  bottom: 1px;
+  left: 50%;
+}
+
+.panel-header {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  align-content: flex-end;
+  margin: 6px;
+}
+
+@media screen and (max-width: 577px) {
+  .speech-bubble {
+    display: none;
+  }
+}
+
+.speech-bubble {
+  margin-bottom: 50px;
+  padding: 18px;
+  min-width: 26vw;
+  max-width: 14vw;
+  height: 100%;
+  font-size: 0.2em;
+  position: relative;
+  background: #21d17d;
+  border-radius: 0.5em;
+}
+
+.speech-bubble:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border: 36px solid transparent;
+  border-top-color: #21d17d;
+  border-bottom: 0;
+  border-left: 0;
+  margin-left: -18px;
+  margin-bottom: -36px;
+}
+
+article {
+  display: flex;
 }
 
 footer {
   width: 100%;
-  margin-top: calc(84vh + 8px);
 }
 
 * {
   box-sizing: border-box;
 }
+
+body,
+html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Background pattern from Toptal Subtle Patterns */
 

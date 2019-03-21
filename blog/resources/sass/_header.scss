@@ -1,64 +1,158 @@
 .no-repeat-img-header {
-	position: relative;
-	padding-top: 6rem;
-	padding-bottom: 3rem;
-	text-align: center;
-	height: 400px ;
-	width: 100%;
-	margin: 0 auto;
 
-	background: url('https://static1.squarespace.com/static/56a9250edf40f31524edf75d/t/5836e51359cc684019d53cfb/1479992616478/iStock-600411296.jpg?format=1500w') repeat 0 0 fixed;
+	height: 100%;
+	width: 100%;
+	top: 0;
+	z-index: -1;
+	background: url('/../school.png') repeat 0 0 fixed;
 
 	display: flex;
-	justify-content: space-around;
-
+	align-items: center;
 }
+
+
+
+
+.bg-container {
+	width: 100%;
+	display: flex !important;
+	justify-content: space-around;
+	flex-flow: row wrap;
+}
+
 
 
 
 .student-header {
-	width: 100%;
-	height: 100%;
-	font-size: 100px;
+	order: 1;
+	font-size: 70px;
 
 	.fa-graduation-cap::after {
+		margin-top: 10vh;
 		content: 'STUDENT';
 		display: block;
-		font-size: .5em;
+		font-size: 50%;
+		font-family: "Raleway", sans-serif;
+		font-weight: 100;
+		letter-spacing: 6px;
 	}
 }
-
 
 
 .instructor-header {
-	width: 100%;
-	height: 100%;
-	font-size: 100px;
+	order: 1;
+	font-size: 70px;
+
 
 	.fa-chalkboard-teacher::after {
-		content: 'INSTRUCTOR';
+		margin-top: 10vh;
+		content: 'TEACHER';
 		display: block;
-		font-size: .5em;
+		font-size: 50%;
+		font-family: "Raleway", sans-serif;
+		font-weight: 100;
+		letter-spacing: 6px;
 	}
 
 }
 
-.other-header  {
-	width: 100%;
-	height: 100%;
 
-}
+.join-us-holder {
 
-.fa-igloo {
-	position: absolute;
-	font-size: 100px;
 	width: 100px;
-	height: 100px;
-	bottom: 0;
+	height: 30px;
+	color: $mint;
+	border: 1px $mint solid;
+	border-radius: 10px;
+	text-align: center;
+	line-height: 30px;
+	font-family: "Nunito", sans-serif;
+	display: block;
+
 }
+
+.join-us-header {
+	position: absolute;
+	flex:100%;
+	left: 50%;
+	bottom: 13%;
+	margin-left: -48px;
+
+}
+
+.join-us-header > a:hover{
+	color: $white;
+	background-color: $mint;
+	text-decoration: none;
+}
+
 
 
 
 .icon-holder {
-	color: $white;
+	color: $mint;
+	text-align: center;
+	width: 100%;
+	height: 100%;
+	max-height: 216px;
+
+}
+
+
+
+
+.vertical-line-header {
+	border-left: 1px solid $mint;
+	height: 10%;
+	position: absolute;
+	bottom: 1px;
+	left: 50%;
+}
+
+
+.panel-header {
+	display: flex;
+	flex-flow: column;
+	justify-content: center;
+	align-items: center;
+	align-content: flex-end;
+	margin: 6px;
+}
+
+// CHAT BUBBLES
+@media screen and (max-width: 577px) {
+	.speech-bubble {
+		display:none;
+	}
+}
+
+.speech-bubble {
+	//margin: -65px auto 50px auto;
+	margin-bottom: 50px;
+	padding: 18px;
+
+	min-width: 26vw;
+	max-width: 14vw;
+	height: 100%;
+
+
+	font-size: .2em;
+	position: relative;
+	background: #21d17d;
+	border-radius: .5em;
+}
+
+.speech-bubble:after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	width: 0;
+	height: 0;
+	border: 36px solid transparent;
+	border-top-color: #21d17d;
+	border-bottom: 0;
+	border-left: 0;
+	margin-left: -18px;
+	margin-bottom: -36px;
 }
