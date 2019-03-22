@@ -35,26 +35,72 @@
 
     <article class="">
 
-        <section id="procenty">
-            <!-- ILE KOREPETYTOROW -->
-            <!-- ILE LUDZI UKONCZYL -->
-        </section>
-
-        <section id="oferty">
-            <!-- CERTYFIKAT -->
-            <!-- CERTYFIKAT -->
-        </section>
-
-
-
-
-        <hi></hi>
-        <div class="jumbotron jumbotron-fluid">
-            <div class="container">
-                <h1 class="display-4">Fluid jumbotron</h1>
-                <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+        <section class="stat-info">
+            <div class="card-group" id="counter">
+                <div class="card">
+                    <div class="counter"><span class="counter-value" data-count="14">0</span></div>
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="counter"><span class="counter-value" data-count="254">0</span></div>
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="counter"><span class="counter-value" data-count="1523">0</span></div>
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                    </div>
+                </div>
             </div>
-        </div>
+        </section>
+
+
+        <section>
+            <h1>Actual offers</h1>
+
+            <div class="card-deck">
+                <div class="card">
+                    <img src="https://facefacts.scot/images/science/Q2_high_health_f.jpg" class="card-img-top w-25" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">Last updated 3 mins ago</small>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="https://facefacts.scot/images/science/Q2_high_health_f.jpg" class="card-img-top w-25" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">Last updated 3 mins ago</small>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="https://facefacts.scot/images/science/Q2_high_health_f.jpg" class="card-img-top w-25" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">Last updated 3 mins ago</small>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+
     </article>
 
 

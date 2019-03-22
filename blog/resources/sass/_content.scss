@@ -1,3 +1,22 @@
-article {
-	display: flex;
+
+
+
+.card-group > .card{
+
+	margin-bottom: 0;
+}
+
+.card-group {
+
+}
+
+.counter {
+	margin-top: 50px;
+	font-size: 4em;
+	text-align: center;
+}
+
+.stat-info {
+	padding: 35px;
+	background-color: $light-gray;
 }

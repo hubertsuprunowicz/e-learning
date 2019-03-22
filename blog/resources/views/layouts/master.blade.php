@@ -16,7 +16,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
     <!-- Latest compiled JavaScript -->
-
+    <link rel="stylesheet" href="odometer-theme-default.css" />
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
@@ -24,6 +24,7 @@
     <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:900i" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Paytone+One" rel="stylesheet">
+
 
 
     <!-- TOKEN -->
@@ -39,5 +40,4 @@
 <!-- JS -->
 @include('partials.scripts')
 </body>
-
 </html>

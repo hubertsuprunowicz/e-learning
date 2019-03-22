@@ -10662,6 +10662,7 @@ nav {
   top: 0;
   left: 0;
   right: 0;
+  z-index: 5;
 }
 
 .letters-spacing {
@@ -10805,8 +10806,19 @@ nav {
   margin-bottom: -36px;
 }
 
-article {
-  display: flex;
+.card-group > .card {
+  margin-bottom: 0;
+}
+
+.counter {
+  margin-top: 50px;
+  font-size: 4em;
+  text-align: center;
+}
+
+.stat-info {
+  padding: 35px;
+  background-color: #ecf0f1;
 }
 
 footer {
