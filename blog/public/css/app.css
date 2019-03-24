@@ -10732,7 +10732,46 @@ a.text-dark:focus {
   letter-spacing: 6px;
 }
 
-.join-us-holder {
+.choose-header {
+  position: absolute;
+  flex: 100%;
+  left: 50%;
+  top: 45%;
+  margin-left: -110px;
+}
+
+@media screen and (max-width: 577px) {
+  .choose-header {
+    margin-left: -110px;
+    top: 10%;
+  }
+}
+
+@media screen and (min-width: 1477px) {
+  .choose-header {
+    margin-left: -150px;
+  }
+
+  .choose-header .choose-holder {
+    font-size: calc(6em + 1vw);
+  }
+}
+
+.choose-holder {
+  color: #26C281;
+  font-family: "Damion", cursive;
+  font-size: calc(5em + 1vw);
+}
+
+.text-abs-header {
+  position: absolute;
+  flex: 100%;
+  left: 50%;
+  bottom: 13%;
+  margin-left: -48px;
+}
+
+.text-abs-holder {
   width: 100px;
   height: 30px;
   color: #26C281;
@@ -10744,15 +10783,7 @@ a.text-dark:focus {
   display: block;
 }
 
-.join-us-header {
-  position: absolute;
-  flex: 100%;
-  left: 50%;
-  bottom: 13%;
-  margin-left: -48px;
-}
-
-.join-us-header > a:hover {
+.text-abs-header > a:hover {
   color: #ffffff;
   background-color: #26C281;
   text-decoration: none;

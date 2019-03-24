@@ -7,6 +7,12 @@
 
 
         <div class="bg-container">
+
+            <section class="choose-header">
+                <span class="choose-holder">Choose</span>
+            </section>
+
+
             <section class="student-header panel-header">
                 <div class="speech-bubble">Lorem ipsum dolor sit amet, consectetur adipiscing. Nulla eu lorem. Mauris sapien ipsum, condimentum atlacerat leo. Vivamus sit amet meros .
                 </div>
@@ -21,8 +27,9 @@
                     <i class="fas fa-chalkboard-teacher"></i>
                 </div>
             </section>
-            <section class="join-us-header">
-                <a href="#" class="join-us-holder">
+
+            <section class="text-abs-header text-uppercase">
+                <a href="#" class="text-abs-holder">
                     JOIN US
                 </a>
             </section>
