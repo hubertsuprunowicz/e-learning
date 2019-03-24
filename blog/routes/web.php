@@ -21,6 +21,10 @@ Route::get('/', [
 	'uses' => 'SitesController@index',
 ]);
 
+Route::get('/messages', [
+	'uses' => 'MessageController@messages',
+	'as' => 'message.messageList'
+]);
 
 
 

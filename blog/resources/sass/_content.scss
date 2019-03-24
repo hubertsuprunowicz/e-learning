@@ -42,7 +42,110 @@
 
 
 
+/*********************************** MESSAGES PAGE ***********************************/
 
-//.offer-card-deck > .card:nth-child(1)  {
-//	flex: 1 auto;
-//}
+
+.main-messages {
+	background: url('/../foggy_birds.png');
+	width: 100%;
+}
+
+.article-messages-panel {
+
+	@include center-flex();
+	flex-wrap: wrap;
+	align-self: center;
+	flex: 1;
+
+	& > * { margin-top: 50px; }
+}
+
+
+.aside-message-panel {
+	//@include margins-horizontal(100px, 100px);
+
+}
+
+.aside-send-message-panel {
+
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	background-color: transparent;
+
+	padding: 10px;
+}
+
+
+
+.message-panel-addition {
+	background-color: $sky-blue;
+	border: none;
+	color:white;
+	letter-spacing: 1px;
+	font-weight: bold;
+
+	z-index: 1;
+
+	-webkit-box-shadow: 0 5px 7px 0 rgba(0,0,0,0.25);
+	-moz-box-shadow: 0 5px 7px 0 rgba(0,0,0,0.25);
+	box-shadow: 0 5px 7px 0 rgba(0,0,0,0.25);
+}
+
+#bootstrap-overrides .message-panel-top {
+	border-radius: 5px 5px 0 0;
+
+}
+
+.message-panel {
+	padding-left: 10px;
+	overflow-y: scroll;
+	width: 150px;
+	height: 200px;
+	text-align: center;
+}
+
+#bootstrap-overrides .message-panel-bottom {
+	border-radius: 0 0 5px 5px;
+
+}
+
+.panel-default {
+	border-color: transparent;
+}
+
+#bootstrap-overrides .panel-heading {
+
+	border: 1px solid $sky-blue;
+	border-radius: 5px;
+	background-color: transparent;
+
+
+}
+
+#bootstrap-overrides .panel-body {
+	margin-top: 0;
+	border-top: none;
+
+	border-radius: 0 0 10px 10px;
+
+
+}
+
+#bootstrap-overrides .panel-collapse {
+	padding: 0 5px 0 5px;
+}
+
+
+.aside-messages-list {
+
+
+	min-width: 340px;
+	max-width: 686px;
+
+	@include margins-horizontal(auto, auto);
+	margin-top: 50px;
+
+}
+
+
+#username-msg-form { margin-right: 20px}
