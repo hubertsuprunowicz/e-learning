@@ -62,41 +62,111 @@
         </section>
 
 
-        <section>
-            <h1>Actual offers</h1>
+        <section class="offer-section">
+            <h1 class="text-center mb-5">Actual offers</h1>
 
-            <div class="card-deck">
+            <div class="card-deck offer-card-deck justify-content-center align-content-around">
+
                 <div class="card">
-                    <img src="https://facefacts.scot/images/science/Q2_high_health_f.jpg" class="card-img-top w-25" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
+                    <div class="card-body offer-card-body">
+                        <div>
+                            <img src="https://facefacts.scot/images/science/Q2_high_health_f.jpg"  alt="...">
+                        </div>
                         <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                     </div>
                     <div class="card-footer">
                         <small class="text-muted">Last updated 3 mins ago</small>
                     </div>
                 </div>
-                <div class="card">
-                    <img src="https://facefacts.scot/images/science/Q2_high_health_f.jpg" class="card-img-top w-25" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+
+                <div class="card ">
+                    <div class="card-body offer-card-body">
+                        <div>
+                            <img src="https://facefacts.scot/images/science/Q2_high_health_f.jpg"  alt="...">
+                        </div>
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                     </div>
                     <div class="card-footer">
                         <small class="text-muted">Last updated 3 mins ago</small>
                     </div>
                 </div>
+
                 <div class="card">
-                    <img src="https://facefacts.scot/images/science/Q2_high_health_f.jpg" class="card-img-top w-25" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                    <div class="card-body offer-card-body">
+                        <div>
+                            <img src="https://facefacts.scot/images/science/Q2_high_health_f.jpg" alt="...">
+                        </div>
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                     </div>
                     <div class="card-footer">
                         <small class="text-muted">Last updated 3 mins ago</small>
                     </div>
                 </div>
+
+                <div class="card">
+                    <div class="card-body offer-card-body">
+                        <div>
+                            <img src="https://facefacts.scot/images/science/Q2_high_health_f.jpg"  alt="...">
+                        </div>
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">Last updated 3 mins ago</small>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-body offer-card-body">
+                        <div>
+                            <img src="https://facefacts.scot/images/science/Q2_high_health_f.jpg"  alt="...">
+                        </div>
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">Last updated 3 mins ago</small>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-body offer-card-body">
+                        <div>
+                            <img src="https://facefacts.scot/images/science/Q2_high_health_f.jpg" alt="...">
+                        </div>
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">Last updated 3 mins ago</small>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-body offer-card-body">
+                        <div>
+                            <img src="https://facefacts.scot/images/science/Q2_high_health_f.jpg"  alt="...">
+                        </div>
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">Last updated 3 mins ago</small>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-body offer-card-body">
+                        <div>
+                            <img src="https://facefacts.scot/images/science/Q2_high_health_f.jpg"  alt="...">
+                        </div>
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">Last updated 3 mins ago</small>
+                    </div>
+                </div>
+
             </div>
+
+            <h4 class="text-center mb-5"><a class="btn btn-outline-primary" href="#">Show more..</a></h4>
+
 
         </section>
 

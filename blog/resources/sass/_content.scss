@@ -1,14 +1,36 @@
 
 
 
-.card-group > .card{
-
-	margin-bottom: 0;
+.stat-info {
+	padding: 35px;
+	background-color: $light-gray;
 }
 
-.card-group {
-
+.offer-section {
+	padding: 50px;
+	background-color: $light-gray;
 }
+
+.offer-card-deck {
+
+	> .card {
+		flex: 1 0 33%;
+		min-width: 240px;
+		max-width: 400px;
+
+		margin-bottom: 25px !important;
+	}
+}
+
+.offer-card-body {
+	display: flex !important;
+	flex-flow: row;
+	> div > img {
+		max-height: 100px !important;
+	}
+}
+
+
 
 .counter {
 	margin-top: 50px;
@@ -16,7 +38,11 @@
 	text-align: center;
 }
 
-.stat-info {
-	padding: 35px;
-	background-color: $light-gray;
-}
+
+
+
+
+
+//.offer-card-deck > .card:nth-child(1)  {
+//	flex: 1 auto;
+//}

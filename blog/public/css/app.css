@@ -10655,7 +10655,7 @@ a.text-dark:focus {
   }
 }
 
-nav {
+.navbar {
   position: fixed !important;
   display: flex;
   justify-content: space-between;
@@ -10663,6 +10663,8 @@ nav {
   left: 0;
   right: 0;
   z-index: 5;
+  padding: 0 0 5px 0;
+  background-color: #201e1c;
 }
 
 .letters-spacing {
@@ -10672,7 +10674,6 @@ nav {
 .separator-auth {
   display: none;
   line-height: -10px;
-  color: #ffffff;
   font-size: 20px;
   font-weight: 100;
 }
@@ -10806,23 +10807,36 @@ nav {
   margin-bottom: -36px;
 }
 
-.card-group > .card {
-  margin-bottom: 0;
+.stat-info {
+  padding: 35px;
+  background-color: #ecf0f1;
+}
+
+.offer-section {
+  padding: 50px;
+  background-color: #ecf0f1;
+}
+
+.offer-card-deck > .card {
+  flex: 1 0 33%;
+  min-width: 240px;
+  max-width: 400px;
+  margin-bottom: 25px !important;
+}
+
+.offer-card-body {
+  display: flex !important;
+  flex-flow: row;
+}
+
+.offer-card-body > div > img {
+  max-height: 100px !important;
 }
 
 .counter {
   margin-top: 50px;
   font-size: 4em;
   text-align: center;
-}
-
-.stat-info {
-  padding: 35px;
-  background-color: #ecf0f1;
-}
-
-footer {
-  width: 100%;
 }
 
 * {
