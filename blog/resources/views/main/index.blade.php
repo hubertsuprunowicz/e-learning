@@ -165,7 +165,7 @@
 
             </div>
 
-            <h4 class="text-center mb-5"><a class="btn btn-outline-primary" href="#">Show more..</a></h4>
+            <h4 class="text-center mb-5"><a class="btn btn-outline-theme" href="#">Show more..</a></h4>
 
 
         </section>

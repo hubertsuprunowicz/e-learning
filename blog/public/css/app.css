@@ -10817,8 +10817,8 @@ a.text-dark:focus {
   background-color: #ecf0f1;
 }
 
-.offer-card-deck > .card {
-  flex: 1 0 33%;
+.offer-card-deck .card {
+  flex: 1 0 35% !important;
   min-width: 240px;
   max-width: 400px;
   margin-bottom: 25px !important;
@@ -10837,6 +10837,98 @@ a.text-dark:focus {
   margin-top: 50px;
   font-size: 4em;
   text-align: center;
+}
+
+.btn-outline-theme {
+  border: 2px solid #26C281 !important;
+  background-color: transparent !important;
+  color: #26C281 !important;
+}
+
+/*********************************** MESSAGES PAGE ***********************************/
+
+.main-messages {
+  background: url("/../foggy_birds.png");
+  width: 100%;
+}
+
+.article-messages-panel {
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-self: center;
+  flex: 1;
+}
+
+.article-messages-panel > * {
+  margin-top: 50px;
+}
+
+.aside-send-message-panel {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: transparent;
+  padding: 10px;
+}
+
+.message-panel-addition {
+  background-color: #6BB9F0;
+  border: none;
+  color: white;
+  letter-spacing: 1px;
+  font-weight: bold;
+  z-index: 1;
+  box-shadow: 0 5px 7px 0 rgba(0, 0, 0, 0.25);
+}
+
+#bootstrap-overrides .message-panel-top {
+  border-radius: 5px 5px 0 0;
+}
+
+.message-panel {
+  padding-left: 10px;
+  overflow-y: scroll;
+  width: 150px;
+  height: 200px;
+  text-align: center;
+}
+
+#bootstrap-overrides .message-panel-bottom {
+  border-radius: 0 0 5px 5px;
+}
+
+.panel-default {
+  border-color: transparent;
+}
+
+#bootstrap-overrides .panel-heading {
+  border: 1px solid #6BB9F0;
+  border-radius: 5px;
+  background-color: transparent;
+}
+
+#bootstrap-overrides .panel-body {
+  margin-top: 0;
+  border-top: none;
+  border-radius: 0 0 10px 10px;
+}
+
+#bootstrap-overrides .panel-collapse {
+  padding: 0 5px 0 5px;
+}
+
+.aside-messages-list {
+  min-width: 340px;
+  max-width: 686px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+}
+
+#username-msg-form {
+  margin-right: 20px;
 }
 
 * {

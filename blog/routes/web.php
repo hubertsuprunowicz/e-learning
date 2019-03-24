@@ -21,21 +21,18 @@ Route::get('/', [
 	'uses' => 'SitesController@index',
 ]);
 
-Route::get('/messages', [
-	'uses' => 'MessageController@messages',
-	'as' => 'message.messageList'
-]);
 
 
+Route::middleware(['auth'])->group(function () {
 
+	Route::get('/messages', [
+		'uses' => 'MessageController@messages',
+		'as' => 'message.messageList'
+	]);
 
+	Route::post('/messages/post', [
+		'uses' => 'MessagesController@postMessage',
+		'as' => 'message.postMessage'
+	]);
+});
 
-
-//Route::get('/', [
-//	'uses' => 'SitesController@index',
-//]);
-//
-//Route::get('/products', [
-//	'uses' => 'SitesController@index',
-//	'as' => 'sites.index'
-//]);

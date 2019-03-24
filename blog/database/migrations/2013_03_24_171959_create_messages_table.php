@@ -19,9 +19,9 @@ class CreateMessagesTable extends Migration
 			$table->text('message');
 			$table->string('received');
 			$table->string('sent');
-			$table->dateTime('seen');
-			$table->string('ip');
-            $table->timestamps();
+			$table->dateTime('seen')->nullable();
+			$table->string('ip')->nullable();
+			$table->timestamps();
         });
     }
 
