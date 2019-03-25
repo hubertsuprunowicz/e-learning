@@ -38,12 +38,12 @@
 
                         <div class="dropdown-menu dropdown-menu-right " aria-labelledby="navbarDropdown">
                             @if(Auth::user()->name === 'admin')
-                                <a class="dropdown-item btn btn-light" href="#">admin panel</a>
+                                <a class="dropdown-item" href="#">admin panel</a>
                             @endif
 
-                            <a class="dropdown-item btn btn-light" href="#">profile</a>
-                            <a class="dropdown-item btn btn-light" href="{{ route("message.messageList") }}">messages<span class="badge badge-danger ml-2">2</span></a>
-                            <a class="dropdown-item btn btn-danger" href="{{ route('logout') }}"
+                            <a class="dropdown-item" href="{{ route("user.profile", Auth::user()->name) }}">profile</a>
+                            <a class="dropdown-item" href="{{ route('message.messageList') }}">messages<span class="badge badge-danger ml-2">2</span></a>
+                            <a class="dropdown-item btn-danger" href="{{ route('logout') }}"
                                onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                 <b>{{ __('Logout') }}</b>

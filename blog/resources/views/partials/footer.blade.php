@@ -53,7 +53,7 @@
                 <ul class="list-unstyled">
                     <li>
                         <p>
-                            <i class="fas fa-home mr-3"></i> New York, NY 10012, US</p>
+                            <i class="fas fa-home mr-3"></i> Bialystok, ul. htmlowska 5, PL</p>
                     </li>
                     <li>
                         <p>
@@ -61,11 +61,11 @@
                     </li>
                     <li>
                         <p>
-                            <i class="fas fa-phone mr-3"></i> + 01 234 567 88</p>
+                            <i class="fas fa-phone mr-3"></i> + 48 234 567 889</p>
                     </li>
                     <li>
                         <p>
-                            <i class="fas fa-print mr-3"></i> + 01 234 567 89</p>
+                            <i class="fas fa-print mr-3"></i> + 48 234 567 890</p>
                     </li>
                 </ul>
 

@@ -40,9 +40,11 @@
     </header>
 
 
-    <article class="">
+    <article>
 
         <section class="stat-info">
+            <h2 class="h1-responsive font-weight-bold text-center my-5">Just bragging</h2>
+
             <div class="card-group" id="counter">
                 <div class="card">
                     <div class="counter"><span class="counter-value" data-count="14">0</span></div>
@@ -70,7 +72,7 @@
 
 
         <section class="offer-section">
-            <h1 class="text-center mb-5">Actual offers</h1>
+            <h2 class="h1-responsive font-weight-bold text-center my-5">Classifieds</h2>
 
             <div class="card-deck offer-card-deck justify-content-center align-content-around">
 
@@ -174,6 +176,80 @@
 
             <h4 class="text-center mb-5"><a class="btn btn-outline-theme" href="#">Show more..</a></h4>
 
+
+        </section>
+
+
+
+        <section class="my-5">
+
+            <!-- Section heading -->
+            <h2 class="h1-responsive font-weight-bold text-center my-5">Why is it so great?</h2>
+            <!-- Section description -->
+            <p class="lead grey-text text-center w-responsive mx-auto mb-5">Lorem ipsum dolor sit amet, consectetur
+                adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                veniam.</p>
+
+            <div class="row w-100">
+
+                <div class="col-md-4 mb-md-0 mb-5">
+
+                    <div class="row">
+
+                        <div class="col-lg-2 col-md-3 col-2">
+                            <i class="fas fa-user-friends blue-text fa-2x"></i>
+                        </div>
+
+                        <div class="col-lg-10 col-md-9 col-10">
+                            <h4 class="font-weight-bold">People</h4>
+                            <p class="grey-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                            <a class="btn btn-primary btn-sm">Learn more</a>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="col-md-4 mb-md-0 mb-5">
+
+                    <div class="row">
+
+                        <div class="col-lg-2 col-md-3 col-2">
+                            <i class="fas fa-dollar-sign green-text fa-2x"></i>
+                        </div>
+
+                        <div class="col-lg-10 col-md-9 col-10">
+                            <h4 class="font-weight-bold">Money</h4>
+                            <p class="grey-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                            <a class="btn btn-green btn-sm">Learn more</a>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="col-md-4">
+
+                    <div class="row">
+
+                        <div class="col-lg-2 col-md-3 col-2">
+                            <i class="fas fa-tachometer-alt purple-text fa-2x"></i>
+                        </div>
+
+                        <div class="col-lg-10 col-md-9 col-10">
+                            <h4 class="font-weight-bold">Support</h4>
+                            <p class="grey-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                            <a class="btn btn-purple btn-sm">Learn more</a>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
 
         </section>
 

@@ -144,7 +144,7 @@
 
 	font-size: .2em;
 	position: relative;
-	background: #21d17d;
+	background: $mint;
 	border-radius: .5em;
 }
 
@@ -156,7 +156,7 @@
 	width: 0;
 	height: 0;
 	border: 36px solid transparent;
-	border-top-color: #21d17d;
+	border-top-color: $mint;
 	border-bottom: 0;
 	border-left: 0;
 	margin-left: -18px;

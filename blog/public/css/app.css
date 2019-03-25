@@ -1,4 +1,6 @@
-@import url(https://fonts.googleapis.com/css?family=Nunito);@charset "UTF-8";
+@import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);@import url(https://fonts.googleapis.com/css?family=Nunito);@charset "UTF-8";
+
+/* Background pattern from Toptal Subtle Patterns */
 
 /*!
  * Bootstrap v4.3.1 (https://getbootstrap.com/)
@@ -10819,7 +10821,7 @@ a.text-dark:focus {
   height: 100%;
   font-size: 0.2em;
   position: relative;
-  background: #21d17d;
+  background: #26C281;
   border-radius: 0.5em;
 }
 
@@ -10831,11 +10833,77 @@ a.text-dark:focus {
   width: 0;
   height: 0;
   border: 36px solid transparent;
-  border-top-color: #21d17d;
+  border-top-color: #26C281;
   border-bottom: 0;
   border-left: 0;
   margin-left: -18px;
   margin-bottom: -36px;
+}
+
+.starrating > input {
+  display: none;
+}
+
+/* Remove radio buttons */
+
+.starrating > label::before {
+  content: "\F005";
+  /* Star */
+  margin: 2px;
+  font-size: 1.4em;
+  font-family: FontAwesome;
+  display: inline-block;
+}
+
+.starrating > label {
+  color: #222222;
+  /* Start color when not clicked */
+}
+
+.starrating > input:checked ~ label {
+  color: #26C281;
+}
+
+/* Set yellow color when star checked */
+
+.starrating > input:hover ~ label {
+  color: #26C281;
+}
+
+/* Set yellow color when star hover */
+
+.profile-holder {
+  margin-top: 100px;
+  margin-bottom: 100px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-flow: row;
+}
+
+.card-personal {
+  margin-left: 50px;
+}
+
+.personal-details {
+  margin-top: -55px;
+  font-size: 8em;
+  font-weight: bold;
+}
+
+.personal-details :first-child {
+  color: #26C281;
+}
+
+.opinion-holder {
+  margin-top: -10px;
+  font-size: 0.8em;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.opinion-holder a:hover {
+  color: #26C281 !important;
 }
 
 .stat-info {
@@ -10972,6 +11040,4 @@ html {
   margin: 0;
   padding: 0;
 }
-
-/* Background pattern from Toptal Subtle Patterns */
 

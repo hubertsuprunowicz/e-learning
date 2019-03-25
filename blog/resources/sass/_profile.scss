@@ -1,0 +1,59 @@
+
+.starrating > input {display: none;}  /* Remove radio buttons */
+
+.starrating > label::before {
+	content: "\f005"; /* Star */
+	margin: 2px;
+	font-size: 1.4em;
+	font-family: FontAwesome;
+	display: inline-block;
+}
+
+.starrating > label
+{
+	color: #222222; /* Start color when not clicked */
+}
+
+.starrating > input:checked ~ label
+{ color: $mint ; } /* Set yellow color when star checked */
+
+.starrating > input:hover ~ label
+{ color: $mint ;  } /* Set yellow color when star hover */
+
+.profile-holder {
+	margin-top: 100px;
+	margin-bottom: 100px;
+	display: flex;
+	flex-wrap: wrap;
+	flex-flow: row;
+}
+.user-header {
+
+}
+
+.card-personal {
+	margin-left: 50px;
+}
+
+.personal-details {
+	margin-top: -55px;
+	font-size: 8em;
+	font-weight: bold;
+
+	:first-child {
+		color:$mint;
+	}
+}
+
+.opinion-holder {
+	margin-top: -10px;
+	font-size: .8em;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+
+	a:hover {
+		color:$mint !important;
+	}
+}
+

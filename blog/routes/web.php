@@ -34,5 +34,16 @@ Route::middleware(['auth'])->group(function () {
 		'uses' => 'MessagesController@postMessage',
 		'as' => 'message.postMessage'
 	]);
+
+	Route::get('/user/{profile}', [
+		'uses' => 'UserController@profile',
+		'as' => 'user.profile'
+	]);
+
+	Route::put('/user/{profile}/edit', [
+		'uses' => 'UserController@edit',
+		'as' => 'user.edit'
+	]);
+
 });
 
