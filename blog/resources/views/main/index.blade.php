@@ -181,7 +181,7 @@
 
 
 
-        <section class="my-5">
+        <section class="my-5 pt-3 pb-5">
 
             <!-- Section heading -->
             <h2 class="h1-responsive font-weight-bold text-center my-5">Why is it so great?</h2>
@@ -190,7 +190,7 @@
                 adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
                 veniam.</p>
 
-            <div class="row w-100">
+            <div class="row w-100 container-fluid">
 
                 <div class="col-md-4 mb-md-0 mb-5">
 

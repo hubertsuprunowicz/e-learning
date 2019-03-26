@@ -28,7 +28,7 @@
                 @endif
                 @else
                     <li class="nav-item ">
-                        <a class="nav-link" href="#">courses<span class="badge badge-danger ml-2">9</span></a>
+                        <a class="nav-link" href="{{ route('course.get') }}">courses<span class="badge badge-danger ml-2">9</span></a>
                     </li>
 
                     <li class="nav-item dropdown">

@@ -5,7 +5,7 @@
 <header class="user-header">
 
     <section class="profile-holder container-fluid">
-        <div class="card card-personal">
+        <div class="card card-profile">
             <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Avatars/img%20(29).jpg" alt="Card image cap">
             <div class="card-body">
 
@@ -32,17 +32,74 @@
                 </div>
             </div>
         </div>
-        <div class="container-fluid">
-            <div>description</div>
-            <div></div>
-        </div>
 
+        <div class="card-profile">
+            <div class="card-body">
+
+                <form>
+                    <p class="h4 text-center py-4">Text me!</p>
+
+                    <label for="defaultFormCardNameEx" class="grey-text font-weight-light">Title</label>
+                    <input type="text" id="defaultFormCardNameEx" class="form-control" required>
+
+                    <br>
+
+
+                    <label for="defaultFormCardEmailEx" class="grey-text font-weight-light">Your message</label>
+                    <textarea id="defaultFormCardEmailEx" class="form-control" rows="14" placeholder="Feel free..." required></textarea>
+
+                    <div class="text-center py-4 mt-3">
+                        <button class="btn btn-outline-theme" type="submit">Send</button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
     </section>
 
+</header>
+
+<article class="mt-5">
+
+    <section class="container-fluid">
+
+        <div class=" text-center p-4 d-flex flex-wrap-reverse">
+
+            <div class="row">
+
+                <div class="col-md-4 offset-md-1 mx-3 my-3" >
+
+                    <div class="view overlay pt-3">
+                        <p class="font-weight-normal">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque, totam
+                            rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae
+                            dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur.
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="col-md-7 text-md-left ml-3 mt-3" >
+
+                    <a href="#!" class="green-text">
+                        <h6 class="h6 pb-1"><i class="fas fa-user pr-1"></i> About Me</h6>
+                    </a>
+
+                    <h4 class="h4 mb-4">This is title of the news</h4>
+
+                    <p class="font-weight-normal">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque, totam
+                        rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae
+                        dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur.
+                    </p>
 
 
+                </div>
+            </div>
 
+        </div>
+    </section>
+</article>
 
+<aside class="mt-5 mb-5">
     <section id="opinions" class="container-fluid">
 
             <div class="card-columns">
@@ -52,11 +109,12 @@
                     <div class="card-body">
                         <!-- Name -->
                         <h4 class="card-title font-weight-bold">John Snow</h4>
-                        <span>2018-07-22</span>
                         <hr>
                         <!-- Quotation -->
                         <blockquote><i class="fas fa-quote-left"></i> Lorem ipsum dolorLorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse dictum ipsum non nulla pretium molestie. Quisque vulputate risus ac leo dictum tempor. Ut et elit eget ipsum fringilla imperdiet id eget mauris. Nulla placerat volutpat lectus eu venenatis. Nam scelerisque efficitur dictum. Curabitur mi neque, bibendum nec congue venenatis, convallis a diam. Nulla at lacus ac dui efficitur bibendum at sit amet purus.sicing elit. Eos,
                             adipisci</blockquote>
+
+                        <p class="quote-date"><i>19/08/2016</i></p>
                     </div>
 
                 </div>
@@ -69,6 +127,7 @@
                         <hr>
                         <!-- Quotation -->
                         <blockquote><i class="fas fa-quote-left"></i> LLorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse dictum ipsum non nulla pretium molestie. Quisque vulputate risus ac leo dictum tempor. Ut et elit eget ipsum fringilla imperdiet id eget mauris. Nuficitur dictum. Curabitur mi neque, bibendum nec congue venenatis, convallis a diam. Nulla at lacus ac dui efficitur bibendum at sit amet purus.</blockquote>
+                        <p class="quote-date"><i>19/08/2016</i></p>
                     </div>
 
                 </div>
@@ -89,6 +148,7 @@
                         <!-- Quotation -->
                         <blockquote><i class="fas fa-quote-left"></i> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos,
                             adipisci</blockquote>
+                        <p class="quote-date"><i>19/08/2016</i></p>
                     </div>
 
                 </div>
@@ -111,6 +171,7 @@
                         <!-- Quotation -->
                         <blockquote><i class="fas fa-quote-left"></i> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos,
                             adipisci</blockquote>
+                        <p class="quote-date"><i>19/08/2016</i></p>
                     </div>
 
                 </div>
@@ -131,27 +192,13 @@
                         <blockquote><i class="fas fa-quote-left"></i>
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse dictum ipsum non nulla pretium molestie. Quisque vulputate risus ac leo dictum tempor. Ut et elit eget ipsum fringilla imperdiet id eget mauris. Nulla placerat volutpat lectus eu venenatis. Nam scelerisque efficitur dictum. Curabitur mi neque, bibendum nec congue venenatis, convallis a diam. Nulla at lacus ac dui efficitur bibendum at sit amet purus.
                         </blockquote>
+                        <p class="quote-date"><i>19/08/2016</i></p>
                     </div>
-
                 </div>
-                <!--Card-->
-
-
             </div>
-            <!-- Card package -->
-
-
-
-
-
-
-
-
     </section>
 
-
-
-</header>
+</aside>
 
 
 @endsection

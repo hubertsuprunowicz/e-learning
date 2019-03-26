@@ -23,16 +23,17 @@
 .profile-holder {
 	margin-top: 100px;
 	margin-bottom: 100px;
-	display: flex;
-	flex-wrap: wrap;
-	flex-flow: row;
+	display: flex !important;
+	flex-wrap: wrap !important;
+	justify-content:center !important;
+	width: 100%;
 }
+
+
 .user-header {
-
-}
-
-.card-personal {
-	margin-left: 50px;
+	background: url('/../school_light.png');
+	padding-bottom: 50px;
+	padding-top: 50px;
 }
 
 .personal-details {
@@ -57,3 +58,14 @@
 	}
 }
 
+.card-profile {
+	max-width: 500px;
+	flex: 2 auto;
+}
+
+.quote-date {
+	font-weight: 300;
+	font-size: 1em;
+	text-align: right;
+	margin-bottom: -10px;
+}

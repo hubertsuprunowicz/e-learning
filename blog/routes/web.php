@@ -25,6 +25,11 @@ Route::get('/', [
 
 Route::middleware(['auth'])->group(function () {
 
+	Route::get('/courses', [
+		'uses' => 'SitesController@getCourses',
+		'as' => 'course.get'
+	]);
+
 	Route::get('/messages', [
 		'uses' => 'MessageController@messages',
 		'as' => 'message.messageList'

@@ -8,7 +8,7 @@
 
 
 
-/* COUNTER */
+/* Counter */
 let a = 0;
 $(window).scroll(function() {
 
@@ -42,6 +42,11 @@ $(window).scroll(function() {
 });
 
 
+/* Sidebar */
+$(document).ready(function () {
 
+    $('#sidebarCollapse').on('click', function () {
+        $('#sidebar').toggleClass('active');
+    });
 
-
+});
