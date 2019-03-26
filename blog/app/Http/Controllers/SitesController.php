@@ -15,4 +15,16 @@ class SitesController extends Controller
 
 		return view('main.courses');
 	}
+
+	public function loadContent() {
+
+		return view('partials.footer');
+	}
+
+	public function loadActiveCourse() {
+
+		return view('partials.videochat');
+	}
+
+
 }

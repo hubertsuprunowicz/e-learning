@@ -22,6 +22,15 @@ Route::get('/', [
 ]);
 
 
+Route::get('/courses/GetContent', array(
+	'uses'  =>  'SitesController@loadContent'
+));
+
+Route::get('/courses/active', array(
+	'uses'  =>  'SitesController@loadActiveCourse'
+));
+
+
 
 Route::middleware(['auth'])->group(function () {
 

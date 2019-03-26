@@ -4,7 +4,45 @@
 
 
 
+/* load content  */
+$(document).on('click','#classifieds-ajax', function(){
+    $.ajax({
+        url: '/courses/GetContent',
+        type: "GET", //
+        success: function(data){
+            $data = $(data);
+            $('#content-ajax').fadeOut().html($data).fadeIn();
+        }
+    });
+});
 
+$(document).on('click','#your-ajax', function(){
+    $.ajax({
+        url: '/courses/active',
+        type: "GET", //
+        success: function(data){
+            $data = $(data);
+            $('#content-ajax').html($data);
+        }
+    });
+});
+
+$(document).on('click','#about-ajax', function(){
+    $.ajax({
+        url: '/courses/GetContent',
+        type: "GET",
+        success: function(data){
+            $data = $(data);
+            $('#content-ajax').html($data);
+        }
+    });
+});
+
+
+$( '#sidebar .navbar-nav a' ).on( 'click', function () {
+    $( '#sidebar .navbar-nav' ).find( 'li.active' ).removeClass( 'active' );
+    $( this ).parent( 'li' ).addClass( 'active' );
+});
 
 
 
@@ -49,4 +87,30 @@ $(document).ready(function () {
         $('#sidebar').toggleClass('active');
     });
 
+});
+
+
+//Search for product by JSON
+$(document).ready(function(){
+    $('#search').keyup(function(){
+
+        $('#result').html('');
+        let searchField = $('#search').val();
+        let expression = new RegExp(searchField, "i");
+
+        if(searchField !== '') {
+            $.getJSON('products.json', function(data){
+                $.each(data, function(key, value){
+                    if(value.title.search(expression) !== -1)
+                        $('#result').append('<li class="list-group-item link-class">'+value.title+'</li>');
+                });
+            })
+        }
+    });
+
+    $('#result').on('click', 'li', function() {
+        let click_text = $(this).text().split('|');
+        $('#search').val($.trim(click_text[0]));
+        $("#result").html('');
+    });
 });
