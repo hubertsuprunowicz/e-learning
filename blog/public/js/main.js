@@ -5,40 +5,49 @@
 
 
 /* load content  */
-$(document).on('click','#classifieds-ajax', function(){
+$(document).on('click','#classifieds-ajax', function(e){
+    e.preventDefault();
     $.ajax({
-        url: '/courses/GetContent',
+        url: '/courses/list',
         type: "GET", //
         success: function(data){
-            $data = $(data);
-            $('#content-ajax').fadeOut().html($data).fadeIn();
+
+            let content = $(data).find('#content-ajax').html();
+            $("#content-ajax").html(content);
         }
     });
 });
 
-$(document).on('click','#your-ajax', function(){
+$(document).on('click','#your-ajax', function(e){
+    e.preventDefault();
     $.ajax({
         url: '/courses/active',
         type: "GET", //
         success: function(data){
-            $data = $(data);
-            $('#content-ajax').html($data);
+
+            let content = $(data).filter('#content-ajax').html();
+            $("#content-ajax").html(content);
         }
     });
 });
 
-$(document).on('click','#about-ajax', function(){
+$(document).on('click','#about-ajax', function(e){
+    e.preventDefault();
     $.ajax({
         url: '/courses/GetContent',
         type: "GET",
-        success: function(data){
+        complete: function(data){
             $data = $(data);
+
             $('#content-ajax').html($data);
         }
     });
 });
 
 
+
+
+/* Counter */
 $( '#sidebar .navbar-nav a' ).on( 'click', function () {
     $( '#sidebar .navbar-nav' ).find( 'li.active' ).removeClass( 'active' );
     $( this ).parent( 'li' ).addClass( 'active' );
@@ -69,7 +78,6 @@ $(window).scroll(function() {
                     },
                     complete: function() {
                         $this.text(this.countNum);
-                        //alert('finished');
                     }
 
                 });
@@ -92,14 +100,14 @@ $(document).ready(function () {
 
 //Search for product by JSON
 $(document).ready(function(){
-    $('#search').keyup(function(){
 
+    $('#search').keyup(function(){
         $('#result').html('');
         let searchField = $('#search').val();
         let expression = new RegExp(searchField, "i");
 
         if(searchField !== '') {
-            $.getJSON('products.json', function(data){
+            $.getJSON('../products.json', function(data){
                 $.each(data, function(key, value){
                     if(value.title.search(expression) !== -1)
                         $('#result').append('<li class="list-group-item link-class">'+value.title+'</li>');

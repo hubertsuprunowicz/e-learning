@@ -14,15 +14,14 @@
 Auth::routes();
 
 // Auth page
-Route::get('/home', 'HomeController@index')->name('home');
-
+Route::get('/home', 'HomeController@index')->name('homee');
 
 Route::get('/', [
 	'uses' => 'SitesController@index',
 ]);
 
 
-Route::get('/courses/GetContent', array(
+Route::get('/courses/lis', array(
 	'uses'  =>  'SitesController@loadContent'
 ));
 
@@ -30,14 +29,15 @@ Route::get('/courses/active', array(
 	'uses'  =>  'SitesController@loadActiveCourse'
 ));
 
+Route::get('/courses/list', [
+	'uses' => 'SitesController@getCourses',
+	'as' => 'course.get'
+]);
 
 
 Route::middleware(['auth'])->group(function () {
 
-	Route::get('/courses', [
-		'uses' => 'SitesController@getCourses',
-		'as' => 'course.get'
-	]);
+
 
 	Route::get('/messages', [
 		'uses' => 'MessageController@messages',

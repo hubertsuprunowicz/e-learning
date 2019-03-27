@@ -5,7 +5,6 @@
 
     <header class="no-repeat-img-header ">
 
-
         <div class="bg-container">
 
             <section class="choose-header">
@@ -29,9 +28,16 @@
             </section>
 
             <section class="text-abs-header text-uppercase">
-                <a href="#" class="text-abs-holder">
+                @guest
+                <a href="{{ route('register') }}" class="text-abs-holder">
                     JOIN US
                 </a>
+                @endguest
+                @auth
+                    <a href="{{ url('/') }}" class="text-abs-holder">
+                        JOIN US
+                    </a>
+                @endauth
             </section>
 
             <span class="vertical-line-header"></span>
@@ -49,21 +55,21 @@
                 <div class="card">
                     <div class="counter"><span class="counter-value" data-count="14">0</span></div>
                     <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
+                        <h5 class="card-title">Lorem ipsum</h5>
                         <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                     </div>
                 </div>
                 <div class="card">
                     <div class="counter"><span class="counter-value" data-count="254">0</span></div>
                     <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
+                        <h5 class="card-title">Lorem ipsum</h5>
                         <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
                     </div>
                 </div>
                 <div class="card">
                     <div class="counter"><span class="counter-value" data-count="1523">0</span></div>
                     <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
+                        <h5 class="card-title">Lorem ipsum</h5>
                         <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
                     </div>
                 </div>
@@ -71,12 +77,12 @@
         </section>
 
 
-        <section class="offer-section">
+        <section class="offer-section d-flex flex-column">
             <h2 class="h1-responsive font-weight-bold text-center my-5">Classifieds</h2>
 
             <div class="card-deck offer-card-deck justify-content-center align-content-around">
 
-                <div class="card">
+                <div class="card adv-card">
                     <div class="card-body offer-card-body">
                         <div>
                             <img src="https://facefacts.scot/images/science/Q2_high_health_f.jpg"  alt="...">
@@ -88,7 +94,7 @@
                     </div>
                 </div>
 
-                <div class="card ">
+                <div class="card adv-card">
                     <div class="card-body offer-card-body">
                         <div>
                             <img src="https://facefacts.scot/images/science/Q2_high_health_f.jpg"  alt="...">
@@ -100,7 +106,7 @@
                     </div>
                 </div>
 
-                <div class="card">
+                <div class="card adv-card">
                     <div class="card-body offer-card-body">
                         <div>
                             <img src="https://facefacts.scot/images/science/Q2_high_health_f.jpg" alt="...">
@@ -112,7 +118,7 @@
                     </div>
                 </div>
 
-                <div class="card">
+                <div class="card adv-card">
                     <div class="card-body offer-card-body">
                         <div>
                             <img src="https://facefacts.scot/images/science/Q2_high_health_f.jpg"  alt="...">
@@ -124,7 +130,7 @@
                     </div>
                 </div>
 
-                <div class="card">
+                <div class="card adv-card">
                     <div class="card-body offer-card-body">
                         <div>
                             <img src="https://facefacts.scot/images/science/Q2_high_health_f.jpg"  alt="...">
@@ -136,7 +142,7 @@
                     </div>
                 </div>
 
-                <div class="card">
+                <div class="card adv-card">
                     <div class="card-body offer-card-body">
                         <div>
                             <img src="https://facefacts.scot/images/science/Q2_high_health_f.jpg" alt="...">
@@ -148,7 +154,7 @@
                     </div>
                 </div>
 
-                <div class="card">
+                <div class="card adv-card">
                     <div class="card-body offer-card-body">
                         <div>
                             <img src="https://facefacts.scot/images/science/Q2_high_health_f.jpg"  alt="...">
@@ -160,7 +166,7 @@
                     </div>
                 </div>
 
-                <div class="card">
+                <div class="card adv-card">
                     <div class="card-body offer-card-body">
                         <div>
                             <img src="https://facefacts.scot/images/science/Q2_high_health_f.jpg"  alt="...">
@@ -174,7 +180,9 @@
 
             </div>
 
-            <h4 class="text-center mb-5"><a class="btn btn-outline-theme" href="#">Show more..</a></h4>
+
+            <a class="btn btn-primary btn-sm adv-button">Show more..</a>
+
 
 
         </section>
@@ -204,7 +212,6 @@
                             <h4 class="font-weight-bold">People</h4>
                             <p class="grey-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                                 incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
-                            <a class="btn btn-primary btn-sm">Learn more</a>
                         </div>
 
                     </div>
@@ -223,7 +230,6 @@
                             <h4 class="font-weight-bold">Money</h4>
                             <p class="grey-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                                 incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
-                            <a class="btn btn-green btn-sm">Learn more</a>
                         </div>
 
                     </div>
@@ -242,7 +248,6 @@
                             <h4 class="font-weight-bold">Support</h4>
                             <p class="grey-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                                 incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
-                            <a class="btn btn-purple btn-sm">Learn more</a>
                         </div>
 
                     </div>

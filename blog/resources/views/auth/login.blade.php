@@ -1,14 +1,14 @@
-@extends('layouts.app')
+@extends('layouts.master')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center mt-5">
+<div class="container auth-panel">
+    <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">{{ __('Login') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('login') }}">
+                    <form method="POST" action="{{ route('login') }}" class="ml-auto mr-auto">
                         @csrf
 
                         <div class="form-group row">
@@ -64,10 +64,29 @@
                                 @endif
                             </div>
                         </div>
+                        <div class="mt-3 text-center">
+
+                            <p>Not a member?
+                                <a href="">Register</a>
+                            </p>
+
+                            <p>or sign in with:</p>
+
+                            <div class="icon-prom shadow">
+                                <a href="#"><i class="fab fa-facebook-f text-facebook mr-2"></i></a>
+                                <a href="#"><i class="fab fa-twitter text-twitter mr-2"></i></a>
+                                <a href="#"><i class="fab fa-google text-google"></i></a>
+                            </div>
+
+
+                        </div>
                     </form>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+<!-- Default form login -->
+
 @endsection

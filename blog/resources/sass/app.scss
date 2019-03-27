@@ -19,9 +19,17 @@
 @import "profile";
 @import "courses";
 @import "content";
+@import "auth";
 @import "footer";
 
 
 * { box-sizing: border-box; }
 body, html { height: 100%; margin: 0; padding: 0; }
+body {	background: url('/../school_light.png'); }
+.text-mint { color: $mint !important; }
+.bg-mint { background-color: $mint !important; }
+
+.text-google { color: $google-color !important; }
+.text-facebook { color: $facebook-color !important; }
+.text-twitter { color: $twitter-color !important; }
 

@@ -1,26 +1,55 @@
 
-
-
 .stat-info {
 	padding: 35px;
 	background-color: $light-gray;
 }
 
 .offer-section {
-	padding: 50px;
+	padding: 40px;
 	background-color: $light-gray;
+
 }
 
-.offer-card-deck {
 
-	.card {
+.adv-card {
+	flex: 1 0 35% !important;
+	min-width: 240px !important;
+	max-width: 400px;
+	margin-bottom: 25px !important;
 
-		flex: 1 0 35% !important;
-		min-width: 240px;
-		max-width: 400px;
-
-		margin-bottom: 25px !important;
+	@media (max-width: 572px) {
+		margin-right: auto !important;
+		margin-left: auto !important;
 	}
+
+	color: gray;
+}
+
+.card-important-info {
+	color: $dark;
+	font-weight: bold;
+}
+
+.card-btn {
+	position: absolute;
+	height: 49px;
+	width: 70px;
+	border:none;
+	bottom:0;
+	right: 0;
+	line-height: 13px;
+}
+
+.card-list {
+	font-size: 0.8em;
+	> li { padding: 0 !important; border:none;}
+}
+
+.avatar-text-card {
+	max-width: 75px;
+	word-wrap: break-word;
+	font-size: .8em;
+	font-weight: 500;
 }
 
 .offer-card-body {
@@ -31,7 +60,14 @@
 	}
 }
 
+.card-avatar {
+	min-width: 60px;
+	display: flex;
+	flex-wrap: wrap;
 
+	:first-child { align-self: flex-start; }
+	:last-child { align-self: flex-end;	}
+}
 
 .counter {
 	margin-top: 50px;
@@ -45,113 +81,19 @@
 	color: $mint!important;
 }
 
-
+.adv-button {
+	display: flex;
+	margin-left: auto;
+	margin-right: auto;
+	width: 200px;
+	align-self: center;
+	background-color: $mint !important;
+}
 
 
 /*********************************** MESSAGES PAGE ***********************************/
 
 
 .main-messages {
-	background: url('/../foggy_birds.png');
-	width: 100%;
+	margin-top: 100px;
 }
-
-.article-messages-panel {
-
-	@include center-flex();
-	flex-wrap: wrap;
-	align-self: center;
-	flex: 1;
-
-	& > * { margin-top: 50px; }
-}
-
-
-.aside-message-panel {
-	//@include margins-horizontal(100px, 100px);
-
-}
-
-.aside-send-message-panel {
-
-	border: 1px solid #ccc;
-	border-radius: 5px;
-	background-color: transparent;
-
-	padding: 10px;
-}
-
-
-
-.message-panel-addition {
-	background-color: $sky-blue;
-	border: none;
-	color:white;
-	letter-spacing: 1px;
-	font-weight: bold;
-
-	z-index: 1;
-
-	-webkit-box-shadow: 0 5px 7px 0 rgba(0,0,0,0.25);
-	-moz-box-shadow: 0 5px 7px 0 rgba(0,0,0,0.25);
-	box-shadow: 0 5px 7px 0 rgba(0,0,0,0.25);
-}
-
-#bootstrap-overrides .message-panel-top {
-	border-radius: 5px 5px 0 0;
-
-}
-
-.message-panel {
-	padding-left: 10px;
-	overflow-y: scroll;
-	width: 150px;
-	height: 200px;
-	text-align: center;
-}
-
-#bootstrap-overrides .message-panel-bottom {
-	border-radius: 0 0 5px 5px;
-
-}
-
-.panel-default {
-	border-color: transparent;
-}
-
-#bootstrap-overrides .panel-heading {
-
-	border: 1px solid $sky-blue;
-	border-radius: 5px;
-	background-color: transparent;
-
-
-}
-
-#bootstrap-overrides .panel-body {
-	margin-top: 0;
-	border-top: none;
-
-	border-radius: 0 0 10px 10px;
-
-
-}
-
-#bootstrap-overrides .panel-collapse {
-	padding: 0 5px 0 5px;
-}
-
-
-.aside-messages-list {
-
-
-	min-width: 340px;
-	max-width: 686px;
-
-	@include margins-horizontal(auto, auto);
-	margin-top: 50px;
-
-}
-
-
-#username-msg-form { margin-right: 20px}

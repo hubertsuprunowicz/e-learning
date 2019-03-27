@@ -17,7 +17,7 @@
                 <h6 class="text-uppercase grey-text mb-3">front-end developer</h6>
                 <p class="card-meta">Joined in 2019</p>
 
-                <p class="card-text">Clara is an photographer living in Madrid.</p>
+                <p class="card-text">Lorem ipsum madre padre este meste heszke w keszke.</p>
 
                 <hr>
                 <div class="container">
@@ -28,7 +28,7 @@
                         <input type="radio" id="star2" name="rating" value="2" /><label for="star2" title="2 star"></label>
                         <input type="radio" id="star1" name="rating" value="1" /><label for="star1" title="1 star"></label>
                     </div>
-                    <div class="opinion-holder"><a href="#opinions" class="">Opinions<span class="badge badge-success ml-2">5</span></a></div>
+                    <div class="opinion-holder"><a href="#opinions" class="text-mint">Opinions<span class="badge badge-success ml-2">5</span></a></div>
                 </div>
             </div>
         </div>
@@ -46,10 +46,10 @@
 
 
                     <label for="defaultFormCardEmailEx" class="grey-text font-weight-light">Your message</label>
-                    <textarea id="defaultFormCardEmailEx" class="form-control" rows="14" placeholder="Feel free..." required></textarea>
+                    <textarea id="" class="form-control" rows="14" required></textarea>
 
                     <div class="text-center py-4 mt-3">
-                        <button class="btn btn-outline-theme" type="submit">Send</button>
+                        <button class="btn adv-button" type="submit">Send</button>
                     </div>
                 </form>
 
