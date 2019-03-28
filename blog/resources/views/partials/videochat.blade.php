@@ -15,75 +15,9 @@
                     <div class="inbox_msg">
 
 
-                        <div class="inbox_people">
-                            <div class="headind_srch">
-                                <div class="recent_heading">
-                                    <h4>Online</h4>
-                                </div>
-                            </div>
-                            <div class="inbox_chat">
-                                <div class="chat_list active_chat">
-                                    <div class="chat_people">
-                                        <div class="chat_img"> <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil"> </div>
-                                        <div class="chat_ib">
-                                            <h5>Admin</h5>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="chat_list">
-                                    <div class="chat_people">
-                                        <div class="chat_img"> <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil"> </div>
-                                        <div class="chat_ib">
-                                            <h5>Hubert Suprunowicz</h5>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="chat_list">
-                                    <div class="chat_people">
-                                        <div class="chat_img"> <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil"> </div>
-                                        <div class="chat_ib">
-                                            <h5>Hubert Suprunowicz</h5>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="chat_list">
-                                    <div class="chat_people">
-                                        <div class="chat_img"> <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil"> </div>
-                                        <div class="chat_ib">
-                                            <h5>Hubert Suprunowicz</h5>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="chat_list">
-                                    <div class="chat_people">
-                                        <div class="chat_img"> <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil"> </div>
-                                        <div class="chat_ib">
-                                            <h5>Hubert Suprunowicz</h5>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="chat_list">
-                                    <div class="chat_people">
-                                        <div class="chat_img"> <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil"> </div>
-                                        <div class="chat_ib">
-                                            <h5>Hubert Suprunowicz</h5>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="chat_list">
-                                    <div class="chat_people">
-                                        <div class="chat_img"> <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil"> </div>
-                                        <div class="chat_ib">
-                                            <h5>Hubert Suprunowicz</h5>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <div class="inbox_people inbox mr-auto ml-auto ">
 
-
-
-                        <div class="mesgs">
+                        <div class="mesgs messages w-100 ">
                             <div class="msg_history">
                                 <div class="incoming_msg">
                                     <div class="incoming_msg_img"> <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil"> </div>
@@ -132,7 +66,7 @@
                             </div>
                         </div>
                     </div>
-
+                    </div>
 
                 </div></div>
 

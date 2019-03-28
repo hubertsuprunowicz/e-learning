@@ -28,7 +28,7 @@
                 @endif
                 @else
                     <li class="nav-item ">
-                        <a class="nav-link" href="{{ route('course.get') }}">courses<span class="badge badge-danger ml-2">9</span></a>
+                        <a class="nav-link" href="{{ route('listOfLessons.get') }}">courses<span class="badge badge-danger ml-2">9</span></a>
                     </li>
 
                     <li class="nav-item dropdown">
@@ -38,7 +38,7 @@
 
                         <div class="dropdown-menu dropdown-menu-right " aria-labelledby="navbarDropdown">
                             @if(Auth::user()->name === 'admin')
-                                <a class="dropdown-item" href="#">admin panel</a>
+                                <a class="dropdown-item" href="{{ route('admin.panel') }}">admin panel</a>
                             @endif
 
                             <a class="dropdown-item" href="{{ route("user.profile", Auth::user()->name) }}">profile</a>

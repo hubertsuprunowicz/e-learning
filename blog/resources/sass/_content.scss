@@ -31,14 +31,26 @@
 }
 
 .card-btn {
+	text-transform: uppercase;
 	position: absolute;
 	height: 49px;
 	width: 70px;
 	border:none;
 	bottom:0;
 	right: 0;
+	padding-top: 10px;
+	padding-right: 3px;
+	padding-left: 3px;
 	line-height: 13px;
+	font-size: .7em;
+	letter-spacing: 1px;
+	text-align: center;
+	background-color: $mint;
+	color:$white;
 }
+
+.card-btn:hover {color:$white;}
+
 
 .card-list {
 	font-size: 0.8em;
@@ -90,7 +102,10 @@
 	background-color: $mint !important;
 }
 
-
+.bragging-icon {
+	font-size: 4em;
+	float: right;
+}
 /*********************************** MESSAGES PAGE ***********************************/
 
 

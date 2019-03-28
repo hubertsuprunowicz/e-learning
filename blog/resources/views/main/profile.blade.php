@@ -49,7 +49,7 @@
                     <textarea id="" class="form-control" rows="14" required></textarea>
 
                     <div class="text-center py-4 mt-3">
-                        <button class="btn adv-button" type="submit">Send</button>
+                        <button class="btn btn-sm adv-button" type="submit">Send</button>
                     </div>
                 </form>
 

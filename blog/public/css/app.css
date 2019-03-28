@@ -10936,8 +10936,9 @@ a.text-dark:focus {
   padding: 20px;
 }
 
-#sidebar ul.components {
-  padding: 20px 0;
+#sidebar ul li {
+  padding: 5px 0;
+  width: 100% !important;
 }
 
 #sidebar ul p {
@@ -11015,38 +11016,32 @@ a[data-toggle=collapse] {
 
 /*********************************** Lesson PAGE ***********************************/
 
-img {
-  max-width: 100%;
-}
-
 .inbox_people {
   background: #f8f8f8 none repeat scroll 0 0;
   float: left;
   overflow: hidden;
-  width: 40%;
-  border-right: 1px solid #c4c4c4;
+  border: none;
 }
 
-@media (max-width: 972px) {
-  .inbox_people {
-    display: none;
-  }
+.inbox-p {
+  max-width: 500px;
+  margin-bottom: 100px;
 }
 
 .mesgs {
   float: left;
   padding: 30px 15px 0 25px;
   width: 60%;
+  min-width: 300px;
 }
 
 @media (max-width: 972px) {
-  .mesgs {
+  .messages {
     width: 100%;
   }
 }
 
 .inbox_msg {
-  border: 1px solid #c4c4c4;
   clear: both;
   overflow: hidden;
 }
@@ -11235,6 +11230,37 @@ img {
   overflow-y: auto;
 }
 
+.add-product-form {
+  margin-top: 100px;
+}
+
+.passed {
+  background-color: gray !important;
+}
+
+.list-lessons {
+  margin-top: 100px;
+}
+
+.author-holder,
+.lesson-info-holder {
+  min-width: 350px;
+  max-width: 400px;
+}
+
+.lesson-info-holder {
+  min-width: 350px;
+  max-width: 700px;
+  max-height: 772px;
+}
+
+.lesson-holder {
+  max-width: 1200px;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+}
+
 .stat-info {
   padding: 35px;
   background-color: #ecf0f1;
@@ -11266,13 +11292,26 @@ img {
 }
 
 .card-btn {
+  text-transform: uppercase;
   position: absolute;
   height: 49px;
   width: 70px;
   border: none;
   bottom: 0;
   right: 0;
+  padding-top: 10px;
+  padding-right: 3px;
+  padding-left: 3px;
   line-height: 13px;
+  font-size: 0.7em;
+  letter-spacing: 1px;
+  text-align: center;
+  background-color: #26C281;
+  color: #ffffff;
+}
+
+.card-btn:hover {
+  color: #ffffff;
 }
 
 .card-list {
@@ -11335,6 +11374,11 @@ img {
   background-color: #26C281 !important;
 }
 
+.bragging-icon {
+  font-size: 4em;
+  float: right;
+}
+
 /*********************************** MESSAGES PAGE ***********************************/
 
 .main-messages {
@@ -11363,6 +11407,10 @@ html {
 
 body {
   background: url("/../school_light.png");
+}
+
+img {
+  max-width: 100%;
 }
 
 .text-mint {

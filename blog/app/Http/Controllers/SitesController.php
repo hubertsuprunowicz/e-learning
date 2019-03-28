@@ -11,19 +11,34 @@ class SitesController extends Controller
 		return view('main.index');
 	}
 
-	public function getCourses() {
+	public function getListOfLessons() {
 
 		return view('main.courses');
 	}
 
-	public function loadContent() {
-
-		return view('partials.footer');
-	}
-
-	public function loadActiveCourse() {
+	public function activeLesson() {
 
 		return view('partials.videochat');
+	}
+
+	public function getLesson() {
+
+		return view('partials.about_lesson');
+	}
+
+	public function addLesson() {
+
+		return view('partials.add_lesson');
+	}
+
+	public function getYourLessons() {
+
+		return view('partials.your_lessons');
+	}
+
+	public function adminPanel() {
+
+		return view('main.admin');
 	}
 
 

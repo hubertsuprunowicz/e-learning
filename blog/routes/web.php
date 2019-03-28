@@ -20,24 +20,35 @@ Route::get('/', [
 	'uses' => 'SitesController@index',
 ]);
 
-
-Route::get('/courses/lis', array(
-	'uses'  =>  'SitesController@loadContent'
-));
-
-Route::get('/courses/active', array(
-	'uses'  =>  'SitesController@loadActiveCourse'
-));
-
-Route::get('/courses/list', [
-	'uses' => 'SitesController@getCourses',
-	'as' => 'course.get'
+Route::get('/admin', [
+	'uses' => 'SitesController@adminPanel',
+	'as' => 'admin.panel'
 ]);
 
 
 Route::middleware(['auth'])->group(function () {
 
+	Route::get('/lessons', [
+		'uses' => 'SitesController@getListOfLessons',
+		'as' => 'listOfLessons.get'
+	]);
 
+	Route::get('/lessons/active', [
+		'uses'  =>  'SitesController@activeLesson'
+	]);
+
+	Route::get('/lessons/add', [
+		'uses'  =>  'SitesController@addLesson'
+	]);
+
+	Route::get('/lessons/yours', [
+		'uses'  =>  'SitesController@getYourLessons'
+	]);
+
+	Route::get('/lessons/1', [
+		'uses'  =>  'SitesController@getLesson',
+		'as' => 'lesson.get'
+	]);
 
 	Route::get('/messages', [
 		'uses' => 'MessageController@messages',

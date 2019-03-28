@@ -25,6 +25,7 @@
     },
     "dependencies": {
         "ajv": "^6.10.0",
-        "gulp": "^4.0.0"
+        "gulp": "^4.0.0",
+        "mdbootstrap": "^4.7.5"
     }
 }

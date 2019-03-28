@@ -52,27 +52,41 @@
             <h2 class="h1-responsive font-weight-bold text-center my-5">Just bragging</h2>
 
             <div class="card-group" id="counter">
+
                 <div class="card">
-                    <div class="counter"><span class="counter-value" data-count="14">0</span></div>
+                    <div class="d-flex flex-column">
+                        <div class="counter"><span class="counter-value w-50 text-google" data-count="14">0</span></div>
+                        <div class="w-50 text-google"><i class="fas fa-user-clock bragging-icon"></i></div>
+                    </div>
                     <div class="card-body">
-                        <h5 class="card-title">Lorem ipsum</h5>
+                        <h5 class="card-title text-google">Lorem ipsum</h5>
                         <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                     </div>
                 </div>
+
+
                 <div class="card">
-                    <div class="counter"><span class="counter-value" data-count="254">0</span></div>
+                    <div class="d-flex flex-column">
+                        <div class="counter"><span class="counter-value w-50 text-twitter" data-count="254">0</span></div>
+                        <div class="w-50 text-twitter"><i class="fas fa-user-cog bragging-icon"></i></div>
+                    </div>
                     <div class="card-body">
-                        <h5 class="card-title">Lorem ipsum</h5>
-                        <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                        <h5 class="card-title text-twitter">Lorem ipsum</h5>
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                     </div>
                 </div>
+
                 <div class="card">
-                    <div class="counter"><span class="counter-value" data-count="1523">0</span></div>
+                    <div class="d-flex flex-column">
+                        <div class="counter"><span class="counter-value w-50 text-facebook" data-count="1467">0</span></div>
+                        <div class="w-50 text-facebook"><i class="fas fa-users bragging-icon"></i></div>
+                    </div>
                     <div class="card-body">
-                        <h5 class="card-title">Lorem ipsum</h5>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                        <h5 class="card-title text-facebook">Lorem ipsum</h5>
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                     </div>
                 </div>
+
             </div>
         </section>
 
@@ -83,107 +97,289 @@
             <div class="card-deck offer-card-deck justify-content-center align-content-around">
 
                 <div class="card adv-card">
-                    <div class="card-body offer-card-body">
-                        <div>
+                    <div class="card-body offer-card-body" >
+                        <div class="card-avatar">
                             <img src="https://facefacts.scot/images/science/Q2_high_health_f.jpg"  alt="...">
+                            <h5 class="text-center avatar-text-card card-important-info"><strong>HTML lesson</strong></h5>
                         </div>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+
+                        <div class="d-flex flex-column align-content-center">
+                            <p class="card-text pl-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at eleifend leo, ut ultrices leo. Pellentesque malesuada purus a accumsan lobortis.</p>
+
+                            <div class="align-items-end">
+                                <ul class="list-group list-group-flush card-list pl-2">
+                                    <li class="list-group-item">
+                                        Vacancies: <span class="card-important-info">3 of 10</span>
+                                    </li>
+                                    <li class="list-group-item">
+                                        Video time: <span class="card-important-info">320min</span>
+                                    </li>
+                                    <li class="list-group-item">
+                                        Exam: <span class="card-important-info">none</span>
+                                    </li>
+                                    <li class="list-group-item">
+                                        Price: <span class="card-important-info">60$</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
                     </div>
                     <div class="card-footer">
                         <small class="text-muted">Last updated 3 mins ago</small>
+                        <a href="{{ route('lesson.get'), 1 }}" class="card-btn btn-success d-block">Check more</a>
                     </div>
                 </div>
 
                 <div class="card adv-card">
-                    <div class="card-body offer-card-body">
-                        <div>
+                    <div class="card-body offer-card-body" >
+                        <div class="card-avatar">
                             <img src="https://facefacts.scot/images/science/Q2_high_health_f.jpg"  alt="...">
+                            <h5 class="text-center avatar-text-card card-important-info"><strong>HTML lesson</strong></h5>
                         </div>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+
+                        <div class="d-flex flex-column align-content-center">
+                            <p class="card-text pl-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at eleifend leo, ut ultrices leo. Pellentesque malesuada purus a accumsan lobortis.</p>
+
+                            <div class="align-items-end">
+                                <ul class="list-group list-group-flush card-list pl-2">
+                                    <li class="list-group-item">
+                                        Vacancies: <span class="card-important-info">3 of 10</span>
+                                    </li>
+                                    <li class="list-group-item">
+                                        Video time: <span class="card-important-info">320min</span>
+                                    </li>
+                                    <li class="list-group-item">
+                                        Exam: <span class="card-important-info">none</span>
+                                    </li>
+                                    <li class="list-group-item">
+                                        Price: <span class="card-important-info">60$</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
                     </div>
                     <div class="card-footer">
                         <small class="text-muted">Last updated 3 mins ago</small>
+                        <a href="{{ route('lesson.get'), 1 }}" class="card-btn btn-success d-block">Check more</a>
                     </div>
                 </div>
 
                 <div class="card adv-card">
-                    <div class="card-body offer-card-body">
-                        <div>
-                            <img src="https://facefacts.scot/images/science/Q2_high_health_f.jpg" alt="...">
-                        </div>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    </div>
-                    <div class="card-footer">
-                        <small class="text-muted">Last updated 3 mins ago</small>
-                    </div>
-                </div>
-
-                <div class="card adv-card">
-                    <div class="card-body offer-card-body">
-                        <div>
+                    <div class="card-body offer-card-body" >
+                        <div class="card-avatar">
                             <img src="https://facefacts.scot/images/science/Q2_high_health_f.jpg"  alt="...">
+                            <h5 class="text-center avatar-text-card card-important-info"><strong>HTML lesson</strong></h5>
                         </div>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+
+                        <div class="d-flex flex-column align-content-center">
+                            <p class="card-text pl-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at eleifend leo, ut ultrices leo. Pellentesque malesuada purus a accumsan lobortis.</p>
+
+                            <div class="align-items-end">
+                                <ul class="list-group list-group-flush card-list pl-2">
+                                    <li class="list-group-item">
+                                        Vacancies: <span class="card-important-info">3 of 10</span>
+                                    </li>
+                                    <li class="list-group-item">
+                                        Video time: <span class="card-important-info">320min</span>
+                                    </li>
+                                    <li class="list-group-item">
+                                        Exam: <span class="card-important-info">none</span>
+                                    </li>
+                                    <li class="list-group-item">
+                                        Price: <span class="card-important-info">60$</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
                     </div>
                     <div class="card-footer">
                         <small class="text-muted">Last updated 3 mins ago</small>
+                        <a href="{{ route('lesson.get'), 1 }}" class="card-btn btn-success d-block">Check more</a>
                     </div>
                 </div>
 
                 <div class="card adv-card">
-                    <div class="card-body offer-card-body">
-                        <div>
+                    <div class="card-body offer-card-body" >
+                        <div class="card-avatar">
                             <img src="https://facefacts.scot/images/science/Q2_high_health_f.jpg"  alt="...">
+                            <h5 class="text-center avatar-text-card card-important-info"><strong>HTML lesson</strong></h5>
                         </div>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+
+                        <div class="d-flex flex-column align-content-center">
+                            <p class="card-text pl-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at eleifend leo, ut ultrices leo. Pellentesque malesuada purus a accumsan lobortis.</p>
+
+                            <div class="align-items-end">
+                                <ul class="list-group list-group-flush card-list pl-2">
+                                    <li class="list-group-item">
+                                        Vacancies: <span class="card-important-info">3 of 10</span>
+                                    </li>
+                                    <li class="list-group-item">
+                                        Video time: <span class="card-important-info">320min</span>
+                                    </li>
+                                    <li class="list-group-item">
+                                        Exam: <span class="card-important-info">none</span>
+                                    </li>
+                                    <li class="list-group-item">
+                                        Price: <span class="card-important-info">60$</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
                     </div>
                     <div class="card-footer">
                         <small class="text-muted">Last updated 3 mins ago</small>
+                        <a href="{{ route('lesson.get'), 1 }}" class="card-btn btn-success d-block">Check more</a>
                     </div>
                 </div>
 
                 <div class="card adv-card">
-                    <div class="card-body offer-card-body">
-                        <div>
-                            <img src="https://facefacts.scot/images/science/Q2_high_health_f.jpg" alt="...">
-                        </div>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    </div>
-                    <div class="card-footer">
-                        <small class="text-muted">Last updated 3 mins ago</small>
-                    </div>
-                </div>
-
-                <div class="card adv-card">
-                    <div class="card-body offer-card-body">
-                        <div>
+                    <div class="card-body offer-card-body" >
+                        <div class="card-avatar">
                             <img src="https://facefacts.scot/images/science/Q2_high_health_f.jpg"  alt="...">
+                            <h5 class="text-center avatar-text-card card-important-info"><strong>HTML lesson</strong></h5>
                         </div>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+
+                        <div class="d-flex flex-column align-content-center">
+                            <p class="card-text pl-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at eleifend leo, ut ultrices leo. Pellentesque malesuada purus a accumsan lobortis.</p>
+
+                            <div class="align-items-end">
+                                <ul class="list-group list-group-flush card-list pl-2">
+                                    <li class="list-group-item">
+                                        Vacancies: <span class="card-important-info">3 of 10</span>
+                                    </li>
+                                    <li class="list-group-item">
+                                        Video time: <span class="card-important-info">320min</span>
+                                    </li>
+                                    <li class="list-group-item">
+                                        Exam: <span class="card-important-info">none</span>
+                                    </li>
+                                    <li class="list-group-item">
+                                        Price: <span class="card-important-info">60$</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
                     </div>
                     <div class="card-footer">
                         <small class="text-muted">Last updated 3 mins ago</small>
+                        <a href="{{ route('lesson.get'), 1 }}" class="card-btn btn-success d-block">Check more</a>
                     </div>
                 </div>
 
                 <div class="card adv-card">
-                    <div class="card-body offer-card-body">
-                        <div>
+                    <div class="card-body offer-card-body" >
+                        <div class="card-avatar">
                             <img src="https://facefacts.scot/images/science/Q2_high_health_f.jpg"  alt="...">
+                            <h5 class="text-center avatar-text-card card-important-info"><strong>HTML lesson</strong></h5>
                         </div>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+
+                        <div class="d-flex flex-column align-content-center">
+                            <p class="card-text pl-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at eleifend leo, ut ultrices leo. Pellentesque malesuada purus a accumsan lobortis.</p>
+
+                            <div class="align-items-end">
+                                <ul class="list-group list-group-flush card-list pl-2">
+                                    <li class="list-group-item">
+                                        Vacancies: <span class="card-important-info">3 of 10</span>
+                                    </li>
+                                    <li class="list-group-item">
+                                        Video time: <span class="card-important-info">320min</span>
+                                    </li>
+                                    <li class="list-group-item">
+                                        Exam: <span class="card-important-info">none</span>
+                                    </li>
+                                    <li class="list-group-item">
+                                        Price: <span class="card-important-info">60$</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
                     </div>
                     <div class="card-footer">
                         <small class="text-muted">Last updated 3 mins ago</small>
+                        <a href="{{ route('lesson.get'), 1 }}" class="card-btn btn-success d-block">Check more</a>
+                    </div>
+                </div>
+
+                <div class="card adv-card">
+                    <div class="card-body offer-card-body" >
+                        <div class="card-avatar">
+                            <img src="https://facefacts.scot/images/science/Q2_high_health_f.jpg"  alt="...">
+                            <h5 class="text-center avatar-text-card card-important-info"><strong>HTML lesson</strong></h5>
+                        </div>
+
+                        <div class="d-flex flex-column align-content-center">
+                            <p class="card-text pl-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at eleifend leo, ut ultrices leo. Pellentesque malesuada purus a accumsan lobortis.</p>
+
+                            <div class="align-items-end">
+                                <ul class="list-group list-group-flush card-list pl-2">
+                                    <li class="list-group-item">
+                                        Vacancies: <span class="card-important-info">3 of 10</span>
+                                    </li>
+                                    <li class="list-group-item">
+                                        Video time: <span class="card-important-info">320min</span>
+                                    </li>
+                                    <li class="list-group-item">
+                                        Exam: <span class="card-important-info">none</span>
+                                    </li>
+                                    <li class="list-group-item">
+                                        Price: <span class="card-important-info">60$</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">Last updated 3 mins ago</small>
+                        <a href="{{ route('lesson.get'), 1 }}" class="card-btn btn-success d-block">Check more</a>
+                    </div>
+                </div>
+
+                <div class="card adv-card">
+                    <div class="card-body offer-card-body" >
+                        <div class="card-avatar">
+                            <img src="https://facefacts.scot/images/science/Q2_high_health_f.jpg"  alt="...">
+                            <h5 class="text-center avatar-text-card card-important-info"><strong>HTML lesson</strong></h5>
+                        </div>
+
+                        <div class="d-flex flex-column align-content-center">
+                            <p class="card-text pl-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at eleifend leo, ut ultrices leo. Pellentesque malesuada purus a accumsan lobortis.</p>
+
+                            <div class="align-items-end">
+                                <ul class="list-group list-group-flush card-list pl-2">
+                                    <li class="list-group-item">
+                                        Vacancies: <span class="card-important-info">3 of 10</span>
+                                    </li>
+                                    <li class="list-group-item">
+                                        Video time: <span class="card-important-info">320min</span>
+                                    </li>
+                                    <li class="list-group-item">
+                                        Exam: <span class="card-important-info">none</span>
+                                    </li>
+                                    <li class="list-group-item">
+                                        Price: <span class="card-important-info">60$</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">Last updated 3 mins ago</small>
+                        <a href="{{ route('lesson.get'), 1 }}" class="card-btn btn-success d-block">Check more</a>
                     </div>
                 </div>
 
             </div>
 
 
-            <a class="btn btn-primary btn-sm adv-button">Show more..</a>
-
-
+            <a href="{{ route('listOfLessons.get') }}" class="btn btn-sm adv-button mt-5 mb-5 text-white">Show more..</a>
 
         </section>
 

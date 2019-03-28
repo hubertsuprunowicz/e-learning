@@ -15,8 +15,10 @@
 	padding: 20px;
 }
 
-#sidebar ul.components {
-	padding: 20px 0;
+
+#sidebar ul li {
+	padding: 5px 0;
+	width: 100% !important;
 
 }
 
@@ -98,35 +100,39 @@ a[data-toggle="collapse"] {
 
 /*********************************** Lesson PAGE ***********************************/
 
-img{ max-width:100%;}
 
 
 .inbox_people {
 	background: #f8f8f8 none repeat scroll 0 0;
 	float: left;
 	overflow: hidden;
-	width: 40%; border-right:1px solid #c4c4c4;
+	border: none;
 
-	@media (max-width: 972px) {
-		display: none;
-	}
 
+
+}
+.inbox-p {
+	max-width: 500px;
+	margin-bottom: 100px;
 }
 
 .mesgs {
 	float: left;
 	padding: 30px 15px 0 25px;
 	width: 60%;
+	min-width: 300px;
+}
 
+
+
+.messages {
 	@media (max-width: 972px) {
 		width: 100%;
 	}
 }
 
 
-
 .inbox_msg {
-	border: 1px solid #c4c4c4;
 	clear: both;
 	overflow: hidden;
 }
@@ -246,4 +252,34 @@ img{ max-width:100%;}
 .msg_history {
 	height: 516px;
 	overflow-y: auto;
+}
+
+.add-product-form{
+	margin-top: 100px;
+}
+
+.passed {
+	background-color: gray !important;
+}
+
+.list-lessons {
+	margin-top: 100px;
+}
+
+.author-holder, .lesson-info-holder {
+	min-width: 350px;
+	max-width: 400px;
+}
+
+.lesson-info-holder {
+	min-width: 350px;
+	max-width: 700px;
+	max-height: 772px;
+}
+
+.lesson-holder {
+	max-width: 1200px;
+	display: block;
+	margin-right: auto;
+	margin-left: auto;
 }

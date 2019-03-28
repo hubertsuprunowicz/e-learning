@@ -2,44 +2,51 @@
  * Created by Dakruzz on 22.03.2019.
  */
 
-
-
 /* load content  */
 $(document).on('click','#classifieds-ajax', function(e){
     e.preventDefault();
     $.ajax({
-        url: '/courses/list',
+        url: '/lessons',
         type: "GET", //
         success: function(data){
-
             let content = $(data).find('#content-ajax').html();
             $("#content-ajax").html(content);
         }
     });
 });
 
-$(document).on('click','#your-ajax', function(e){
+$(document).on('click','#active-ajax', function(e){
     e.preventDefault();
     $.ajax({
-        url: '/courses/active',
+        url: '/lessons/active',
         type: "GET", //
         success: function(data){
-
             let content = $(data).filter('#content-ajax').html();
             $("#content-ajax").html(content);
         }
     });
 });
 
-$(document).on('click','#about-ajax', function(e){
+$(document).on('click','#add-l-ajax', function(e){
     e.preventDefault();
     $.ajax({
-        url: '/courses/GetContent',
+        url: '/lessons/add',
         type: "GET",
-        complete: function(data){
-            $data = $(data);
+        success: function(data){
+            let content = $(data).filter('#content-ajax').html();
+            $('#content-ajax').html(content);
+        }
+    });
+});
 
-            $('#content-ajax').html($data);
+$(document).on('click','#your-l-ajax', function(e){
+    e.preventDefault();
+    $.ajax({
+        url: '/lessons/yours',
+        type: "GET",
+        success: function(data){
+            let content = $(data).filter('#content-ajax').html();
+            $('#content-ajax').html(content);
         }
     });
 });
@@ -122,3 +129,32 @@ $(document).ready(function(){
         $("#result").html('');
     });
 });
+
+
+
+
+
+window.onload = function () {
+
+    let chart = new CanvasJS.Chart("chartContainer", {
+        theme: "light1",
+        animationEnabled: false,
+        title:{
+            text: "User statistics"
+        },
+        data: [
+            {
+                type: "column",
+                dataPoints: [
+                    { label: "lorem",  y: 10  },
+                    { label: "lorem", y: 15  },
+                    { label: "lorem", y: 25  },
+                    { label: "lorem",  y: 30  },
+                    { label: "lorem",  y: 28  }
+                ]
+            }
+        ]
+    });
+    chart.render();
+
+};
