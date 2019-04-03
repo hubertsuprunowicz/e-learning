@@ -19,7 +19,7 @@ class Message extends Model
 	 * @var array
 	 */
 	protected $fillable = [
-		'title', 'message', 'received', 'sent'
+		'title', 'message', 'user_id', 'sent_to'
 	];
 
 	/**
@@ -35,7 +35,7 @@ class Message extends Model
 	{
 		DB::table('messages')->insert([
 			'ip' => request()->ip(),
-			'received' => Auth::user()->name,
+			'user_id' => Auth::user()->name,
 			'sent' => $username,
 			'message' => $message,
 			'title' => $title,

@@ -56,7 +56,7 @@ Route::middleware(['auth'])->group(function () {
 	]);
 
 	Route::post('/messages/post', [
-		'uses' => 'MessagesController@postMessage',
+		'uses' => 'MessageController@postMessage',
 		'as' => 'message.postMessage'
 	]);
 

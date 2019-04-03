@@ -25,18 +25,12 @@
                     </div>
                 </div>
 
-
-
-
                 <div class="col-md-3 mb-4">
-                    
-                    <!--Card-->
+
                     <div class="card mb-4">
 
-                        <!--Card content-->
                         <div class="card-body">
 
-                            <!-- List group links -->
                             <div class="list-group list-group-flush">
                                 <a class="list-group-item list-group-item-action waves-effect">Sales
                                     <span class="badge badge-success badge-pill pull-right">22%
@@ -58,20 +52,15 @@
                                     <span class="badge badge-primary badge-pill pull-right">8</span>
                                 </a>
                             </div>
-                            <!-- List group links -->
 
                         </div>
 
                     </div>
-                    <!--/.Card-->
 
                 </div>
-                <!--Grid column-->
 
             </div>
-            <!--Grid row-->
 
-            <!--Grid row-->
             <div class="row wow fadeIn">
 
                 <!--Grid column-->
@@ -94,9 +83,7 @@
                                     <th>Dolor</th>
                                 </tr>
                                 </thead>
-                                <!-- Table head -->
 
-                                <!-- Table body -->
                                 <tbody>
                                 <tr>
                                     <th scope="row">1</th>
@@ -117,9 +104,7 @@
                                     <td>Cell 9</td>
                                 </tr>
                                 </tbody>
-                                <!-- Table body -->
                             </table>
-                            <!-- Table  -->
 
                         </div>
 
@@ -127,20 +112,14 @@
                     <!--/.Card-->
 
                 </div>
-                <!--Grid column-->
 
-                <!--Grid column-->
                 <div class="col-md-6 mb-4">
 
-                    <!--Card-->
                     <div class="card">
 
-                        <!--Card content-->
                         <div class="card-body">
 
-                            <!-- Table  -->
                             <table class="table table-hover">
-                                <!-- Table head -->
                                 <thead class="blue lighten-4">
                                 <tr>
                                     <th>#</th>
@@ -149,9 +128,7 @@
                                     <th>Dolor</th>
                                 </tr>
                                 </thead>
-                                <!-- Table head -->
 
-                                <!-- Table body -->
                                 <tbody>
                                 <tr>
                                     <th scope="row">1</th>
@@ -172,21 +149,12 @@
                                     <td>Cell 9</td>
                                 </tr>
                                 </tbody>
-                                <!-- Table body -->
                             </table>
-                            <!-- Table  -->
-
                         </div>
 
                     </div>
-                    <!--/.Card-->
-
                 </div>
-                <!--Grid column-->
-
             </div>
-            <!--Grid row-->
-
 
             </div>
 
