@@ -17,5 +17,7 @@ class DatabaseSeeder extends Seeder
          $this->call(LessonEnrollsTableSeeder::class);
          $this->call(AdvertisementsTableSeeder::class);
          $this->call(OpinionsTableSeeder::class);
+         $this->call(ResetPasswordTableSeeder::class);
+         $this->call(PaymentsTableSeeder::class);
     }
 }
