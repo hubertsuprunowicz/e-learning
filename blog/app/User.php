@@ -39,6 +39,10 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+	public function lessons() {
+		return $this->hasMany(Lesson::class, 'author_id');
+	}
+
 	public function setPasswordAttribute($password)
 	{
 		$this->attributes['password'] = \Hash::make($password);

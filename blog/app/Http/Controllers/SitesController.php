@@ -2,14 +2,28 @@
 
 namespace App\Http\Controllers;
 
+use App\Advertisement;
+use App\Lesson;
+use App\User;
 use Illuminate\Http\Request;
 
 class SitesController extends Controller
 {
-	public function index() {
+	protected $lessons;
+	protected $advertisements;
 
-		return view('main.index');
+	public function __construct(Lesson $lessons, Advertisement $advertisements)
+	{
+		$this->lessons = $lessons;
+		$this->advertisements = $advertisements;
 	}
+
+	public function index() {
+		$advertisements = $this->advertisements->with('lesson')->limit(6)->get();
+//		$advs = Advertisement::with('lesson')->limit(6)->get();
+		return view('main.index', compact('advertisements'));
+	}
+
 
 	public function getListOfLessons() {
 
@@ -21,9 +35,9 @@ class SitesController extends Controller
 		return view('partials.videochat');
 	}
 
-	public function getLesson() {
-
-		return view('partials.about_lesson');
+	public function getLesson($id) {
+		$lesson = Lesson::find($id)->lesson()->get();
+		return view('partials.about_lesson', compact('lesson'));
 	}
 
 	public function addLesson() {
@@ -31,10 +45,13 @@ class SitesController extends Controller
 		return view('partials.add_lesson');
 	}
 
-	public function getYourLessons() {
 
-		return view('partials.your_lessons');
+	public function getYourLessons($id) {
+		$lessons = User::find($id)->lessons()->get();
+		return view('partials.your_lessons', compact('lessons'));
 	}
+
+
 
 	public function adminPanel() {
 

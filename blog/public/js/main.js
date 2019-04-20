@@ -40,13 +40,18 @@ $(document).on('click','#add-l-ajax', function(e){
 });
 
 $(document).on('click','#your-l-ajax', function(e){
+    const author_id = $(this).attr('data-index');
     e.preventDefault();
     $.ajax({
-        url: '/lessons/yours',
+        url: '/lessons/yours/'+author_id,
+        data: {'id': author_id},
         type: "GET",
+        _token: '{{ csrf_token() }}',
         success: function(data){
             let content = $(data).filter('#content-ajax').html();
             $('#content-ajax').html(content);
+        }, error: function () {
+            window.location.href = "/";
         }
     });
 });

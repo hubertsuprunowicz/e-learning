@@ -30,7 +30,7 @@ Route::middleware(['auth'])->group(function () {
 
 	Route::get('/lessons', [
 		'uses' => 'SitesController@getListOfLessons',
-		'as' => 'listOfLessons.get'
+		'as' => 'listOfLessons.all'
 	]);
 
 	Route::get('/lessons/active', [
@@ -41,14 +41,20 @@ Route::middleware(['auth'])->group(function () {
 		'uses'  =>  'SitesController@addLesson'
 	]);
 
-	Route::get('/lessons/yours', [
-		'uses'  =>  'SitesController@getYourLessons'
+
+
+	Route::get('/lessons/yours/{author_id}', [
+		'uses'  =>  'SitesController@getYourLessons',
+		'as' => 'listOfLessons.get'
 	]);
 
-	Route::get('/lessons/1', [
+
+	Route::get('/lessons/{lesson_id}', [
 		'uses'  =>  'SitesController@getLesson',
 		'as' => 'lesson.get'
 	]);
+
+
 
 	Route::get('/messages', [
 		'uses' => 'MessageController@messages',

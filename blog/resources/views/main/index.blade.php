@@ -90,35 +90,40 @@
             </div>
         </section>
 
-
         <section class="offer-section d-flex flex-column">
-            <h2 class="h1-responsive font-weight-bold text-center my-5">Classifieds</h2>
+            <h1 class="h1-responsive font-weight-bold text-center my-5">Classifieds</h1>
 
             <div class="card-deck offer-card-deck justify-content-center align-content-around">
 
+
+                @foreach($advertisements as $adv)
+
+
+
+
                 <div class="card adv-card">
                     <div class="card-body offer-card-body" >
                         <div class="card-avatar">
                             <img src="https://facefacts.scot/images/science/Q2_high_health_f.jpg"  alt="...">
-                            <h5 class="text-center avatar-text-card card-important-info"><strong>HTML lesson</strong></h5>
+                            <h2 class="text-center avatar-text-card card-important-info text-mint"><strong>{{ $adv->lesson->subject }}</strong></h2>
                         </div>
 
                         <div class="d-flex flex-column align-content-center">
-                            <p class="card-text pl-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at eleifend leo, ut ultrices leo. Pellentesque malesuada purus a accumsan lobortis.</p>
+                            <p class="card-text pl-2">{{ substr($adv->lesson->description,0, 150)."..." }}</p>
 
                             <div class="align-items-end">
                                 <ul class="list-group list-group-flush card-list pl-2">
                                     <li class="list-group-item">
-                                        Vacancies: <span class="card-important-info">3 of 10</span>
+                                        Vacancies: <span class="card-important-info">0 of {{ $adv->lesson->student_limit }}</span>
                                     </li>
                                     <li class="list-group-item">
-                                        Video time: <span class="card-important-info">320min</span>
+                                        Video time: <span class="card-important-info">{{ $adv->lesson->length }}min</span>
                                     </li>
                                     <li class="list-group-item">
                                         Exam: <span class="card-important-info">none</span>
                                     </li>
                                     <li class="list-group-item">
-                                        Price: <span class="card-important-info">60$</span>
+                                        Price: <span class="card-important-info text-danger">{{ $adv->lesson->price }}$</span>
                                     </li>
                                 </ul>
                             </div>
@@ -126,263 +131,16 @@
 
                     </div>
                     <div class="card-footer">
-                        <small class="text-muted">Last updated 3 mins ago</small>
-                        <a href="{{ route('lesson.get'), 1 }}" class="card-btn btn-success d-block">Check more</a>
+                        <small class="text-muted">{{ $adv->updated_at->diffForHumans() }}</small>
+                        <a href="{{ route('lesson.get', $adv->lesson->id) }}" class="card-btn d-block bg-mint">Check more</a>
                     </div>
                 </div>
 
-                <div class="card adv-card">
-                    <div class="card-body offer-card-body" >
-                        <div class="card-avatar">
-                            <img src="https://facefacts.scot/images/science/Q2_high_health_f.jpg"  alt="...">
-                            <h5 class="text-center avatar-text-card card-important-info"><strong>HTML lesson</strong></h5>
-                        </div>
-
-                        <div class="d-flex flex-column align-content-center">
-                            <p class="card-text pl-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at eleifend leo, ut ultrices leo. Pellentesque malesuada purus a accumsan lobortis.</p>
-
-                            <div class="align-items-end">
-                                <ul class="list-group list-group-flush card-list pl-2">
-                                    <li class="list-group-item">
-                                        Vacancies: <span class="card-important-info">3 of 10</span>
-                                    </li>
-                                    <li class="list-group-item">
-                                        Video time: <span class="card-important-info">320min</span>
-                                    </li>
-                                    <li class="list-group-item">
-                                        Exam: <span class="card-important-info">none</span>
-                                    </li>
-                                    <li class="list-group-item">
-                                        Price: <span class="card-important-info">60$</span>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="card-footer">
-                        <small class="text-muted">Last updated 3 mins ago</small>
-                        <a href="{{ route('lesson.get'), 1 }}" class="card-btn btn-success d-block">Check more</a>
-                    </div>
-                </div>
-
-                <div class="card adv-card">
-                    <div class="card-body offer-card-body" >
-                        <div class="card-avatar">
-                            <img src="https://facefacts.scot/images/science/Q2_high_health_f.jpg"  alt="...">
-                            <h5 class="text-center avatar-text-card card-important-info"><strong>HTML lesson</strong></h5>
-                        </div>
-
-                        <div class="d-flex flex-column align-content-center">
-                            <p class="card-text pl-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at eleifend leo, ut ultrices leo. Pellentesque malesuada purus a accumsan lobortis.</p>
-
-                            <div class="align-items-end">
-                                <ul class="list-group list-group-flush card-list pl-2">
-                                    <li class="list-group-item">
-                                        Vacancies: <span class="card-important-info">3 of 10</span>
-                                    </li>
-                                    <li class="list-group-item">
-                                        Video time: <span class="card-important-info">320min</span>
-                                    </li>
-                                    <li class="list-group-item">
-                                        Exam: <span class="card-important-info">none</span>
-                                    </li>
-                                    <li class="list-group-item">
-                                        Price: <span class="card-important-info">60$</span>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="card-footer">
-                        <small class="text-muted">Last updated 3 mins ago</small>
-                        <a href="{{ route('lesson.get'), 1 }}" class="card-btn btn-success d-block">Check more</a>
-                    </div>
-                </div>
-
-                <div class="card adv-card">
-                    <div class="card-body offer-card-body" >
-                        <div class="card-avatar">
-                            <img src="https://facefacts.scot/images/science/Q2_high_health_f.jpg"  alt="...">
-                            <h5 class="text-center avatar-text-card card-important-info"><strong>HTML lesson</strong></h5>
-                        </div>
-
-                        <div class="d-flex flex-column align-content-center">
-                            <p class="card-text pl-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at eleifend leo, ut ultrices leo. Pellentesque malesuada purus a accumsan lobortis.</p>
-
-                            <div class="align-items-end">
-                                <ul class="list-group list-group-flush card-list pl-2">
-                                    <li class="list-group-item">
-                                        Vacancies: <span class="card-important-info">3 of 10</span>
-                                    </li>
-                                    <li class="list-group-item">
-                                        Video time: <span class="card-important-info">320min</span>
-                                    </li>
-                                    <li class="list-group-item">
-                                        Exam: <span class="card-important-info">none</span>
-                                    </li>
-                                    <li class="list-group-item">
-                                        Price: <span class="card-important-info">60$</span>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="card-footer">
-                        <small class="text-muted">Last updated 3 mins ago</small>
-                        <a href="{{ route('lesson.get'), 1 }}" class="card-btn btn-success d-block">Check more</a>
-                    </div>
-                </div>
-
-                <div class="card adv-card">
-                    <div class="card-body offer-card-body" >
-                        <div class="card-avatar">
-                            <img src="https://facefacts.scot/images/science/Q2_high_health_f.jpg"  alt="...">
-                            <h5 class="text-center avatar-text-card card-important-info"><strong>HTML lesson</strong></h5>
-                        </div>
-
-                        <div class="d-flex flex-column align-content-center">
-                            <p class="card-text pl-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at eleifend leo, ut ultrices leo. Pellentesque malesuada purus a accumsan lobortis.</p>
-
-                            <div class="align-items-end">
-                                <ul class="list-group list-group-flush card-list pl-2">
-                                    <li class="list-group-item">
-                                        Vacancies: <span class="card-important-info">3 of 10</span>
-                                    </li>
-                                    <li class="list-group-item">
-                                        Video time: <span class="card-important-info">320min</span>
-                                    </li>
-                                    <li class="list-group-item">
-                                        Exam: <span class="card-important-info">none</span>
-                                    </li>
-                                    <li class="list-group-item">
-                                        Price: <span class="card-important-info">60$</span>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="card-footer">
-                        <small class="text-muted">Last updated 3 mins ago</small>
-                        <a href="{{ route('lesson.get'), 1 }}" class="card-btn btn-success d-block">Check more</a>
-                    </div>
-                </div>
-
-                <div class="card adv-card">
-                    <div class="card-body offer-card-body" >
-                        <div class="card-avatar">
-                            <img src="https://facefacts.scot/images/science/Q2_high_health_f.jpg"  alt="...">
-                            <h5 class="text-center avatar-text-card card-important-info"><strong>HTML lesson</strong></h5>
-                        </div>
-
-                        <div class="d-flex flex-column align-content-center">
-                            <p class="card-text pl-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at eleifend leo, ut ultrices leo. Pellentesque malesuada purus a accumsan lobortis.</p>
-
-                            <div class="align-items-end">
-                                <ul class="list-group list-group-flush card-list pl-2">
-                                    <li class="list-group-item">
-                                        Vacancies: <span class="card-important-info">3 of 10</span>
-                                    </li>
-                                    <li class="list-group-item">
-                                        Video time: <span class="card-important-info">320min</span>
-                                    </li>
-                                    <li class="list-group-item">
-                                        Exam: <span class="card-important-info">none</span>
-                                    </li>
-                                    <li class="list-group-item">
-                                        Price: <span class="card-important-info">60$</span>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="card-footer">
-                        <small class="text-muted">Last updated 3 mins ago</small>
-                        <a href="{{ route('lesson.get'), 1 }}" class="card-btn btn-success d-block">Check more</a>
-                    </div>
-                </div>
-
-                <div class="card adv-card">
-                    <div class="card-body offer-card-body" >
-                        <div class="card-avatar">
-                            <img src="https://facefacts.scot/images/science/Q2_high_health_f.jpg"  alt="...">
-                            <h5 class="text-center avatar-text-card card-important-info"><strong>HTML lesson</strong></h5>
-                        </div>
-
-                        <div class="d-flex flex-column align-content-center">
-                            <p class="card-text pl-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at eleifend leo, ut ultrices leo. Pellentesque malesuada purus a accumsan lobortis.</p>
-
-                            <div class="align-items-end">
-                                <ul class="list-group list-group-flush card-list pl-2">
-                                    <li class="list-group-item">
-                                        Vacancies: <span class="card-important-info">3 of 10</span>
-                                    </li>
-                                    <li class="list-group-item">
-                                        Video time: <span class="card-important-info">320min</span>
-                                    </li>
-                                    <li class="list-group-item">
-                                        Exam: <span class="card-important-info">none</span>
-                                    </li>
-                                    <li class="list-group-item">
-                                        Price: <span class="card-important-info">60$</span>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="card-footer">
-                        <small class="text-muted">Last updated 3 mins ago</small>
-                        <a href="{{ route('lesson.get'), 1 }}" class="card-btn btn-success d-block">Check more</a>
-                    </div>
-                </div>
-
-                <div class="card adv-card">
-                    <div class="card-body offer-card-body" >
-                        <div class="card-avatar">
-                            <img src="https://facefacts.scot/images/science/Q2_high_health_f.jpg"  alt="...">
-                            <h5 class="text-center avatar-text-card card-important-info"><strong>HTML lesson</strong></h5>
-                        </div>
-
-                        <div class="d-flex flex-column align-content-center">
-                            <p class="card-text pl-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at eleifend leo, ut ultrices leo. Pellentesque malesuada purus a accumsan lobortis.</p>
-
-                            <div class="align-items-end">
-                                <ul class="list-group list-group-flush card-list pl-2">
-                                    <li class="list-group-item">
-                                        Vacancies: <span class="card-important-info">3 of 10</span>
-                                    </li>
-                                    <li class="list-group-item">
-                                        Video time: <span class="card-important-info">320min</span>
-                                    </li>
-                                    <li class="list-group-item">
-                                        Exam: <span class="card-important-info">none</span>
-                                    </li>
-                                    <li class="list-group-item">
-                                        Price: <span class="card-important-info">60$</span>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="card-footer">
-                        <small class="text-muted">Last updated 3 mins ago</small>
-                        <a href="{{ route('lesson.get'), 1 }}" class="card-btn btn-success d-block">Check more</a>
-                    </div>
-                </div>
-
+                @endforeach
             </div>
-
-
-            <a href="{{ route('listOfLessons.get') }}" class="btn btn-sm adv-button mt-5 mb-5 text-white">Show more..</a>
+            <a href="{{ route('listOfLessons.all') }}" class="btn btn-sm adv-button mt-5 mb-5 text-white">Show more..</a>
 
         </section>
-
 
 
         <section class="my-5 pt-3 pb-5">

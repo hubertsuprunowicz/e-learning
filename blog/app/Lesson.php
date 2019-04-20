@@ -19,8 +19,16 @@ class Lesson extends Model
 		'author_id', 'date', 'price', 'subject', 'length', 'student_limit', 'description'
 	];
 
-	public function lesson() {
+	public function user() {
 		return $this->belongsTo(User::class);
+	}
+
+	public function lesson() {
+		return $this->belongsTo(Lesson::class);
+	}
+
+	public function advertisement() {
+		return $this->hasMany(Advertisement::class);
 	}
 
 	public function lessonPost($lesson) {
