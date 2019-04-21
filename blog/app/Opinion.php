@@ -18,5 +18,12 @@ class Opinion extends Model
 		'user_id', 'teacher_id', 'rating', 'details', 'first_name', 'last_name', 'educational_degree', 'phone_number'
 	];
 
+	public function user(){
+		return $this->belongsTo(User::class, 'user_id');
+	}
+
+	public function teacher(){
+		return $this->belongsTo(User::class, 'teacher_id');
+	}
 
 }

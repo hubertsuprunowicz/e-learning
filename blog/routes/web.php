@@ -41,6 +41,11 @@ Route::middleware(['auth'])->group(function () {
 		'uses'  =>  'SitesController@addLesson'
 	]);
 
+	Route::get('/lessons/{lesson_id}', [
+		'uses'  =>  'SitesController@getLesson',
+		'as' => 'lesson.get'
+	]);
+
 
 
 	Route::get('/lessons/yours/{author_id}', [
@@ -49,10 +54,7 @@ Route::middleware(['auth'])->group(function () {
 	]);
 
 
-	Route::get('/lessons/{lesson_id}', [
-		'uses'  =>  'SitesController@getLesson',
-		'as' => 'lesson.get'
-	]);
+
 
 
 

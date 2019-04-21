@@ -11,11 +11,13 @@ class SitesController extends Controller
 {
 	protected $lessons;
 	protected $advertisements;
+	protected $users;
 
-	public function __construct(Lesson $lessons, Advertisement $advertisements)
+	public function __construct(Lesson $lessons, Advertisement $advertisements, User $users)
 	{
 		$this->lessons = $lessons;
 		$this->advertisements = $advertisements;
+		$this->users = $users;
 	}
 
 	public function index() {
@@ -26,8 +28,8 @@ class SitesController extends Controller
 
 
 	public function getListOfLessons() {
-
-		return view('main.courses');
+		$lessons = $this->lessons->all();
+		return view('main.courses', compact('lessons'));
 	}
 
 	public function activeLesson() {
@@ -36,8 +38,9 @@ class SitesController extends Controller
 	}
 
 	public function getLesson($id) {
-		$lesson = Lesson::find($id)->lesson()->get();
-		return view('partials.about_lesson', compact('lesson'));
+		$lesson = Lesson::with('lesson')->find($id);
+		$author = User::with('user')->find($id);
+		return view('partials.about_lesson', compact('lesson', 'author'));
 	}
 
 	public function addLesson() {

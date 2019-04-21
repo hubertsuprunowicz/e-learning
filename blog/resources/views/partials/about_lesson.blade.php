@@ -16,8 +16,9 @@
                         <div class="card-body">
 
                             <div>
-                                <h4 class="card-title">Hubert</h4>
-                                <h4 class="card-title">Suprunowicz</h4>
+                                {{ $author }}
+                                <h4 class="card-title">{{ $author->first_name }}</h4>
+                                <h4 class="card-title">{{ $author->last_name }}</h4>
                             </div>
 
                             <h6 class="text-uppercase grey-text mb-3">front-end developer</h6>
@@ -45,36 +46,31 @@
 
             <div class="lesson-info-holder d-flex flex-column align-content-center justify-content-between w-50">
 
-                <h2 class="card-title h2">HTML lesson</h2>
+                <h2 class="card-title h2">{{ $lesson->subject }}</h2>
                 <ul class="list-group list-group-flush card-list pl-2 text-lg-center">
                     <li class="list-group-item">
-                        <h3><span class="card-important-info text-danger">04-04-2019, 19:45</span></h3>
+                        <h3><span class="card-important-info text-danger">{{ $lesson->date }}</span></h3>
                     </li>
                     <li class="list-group-item">
                         <br>
                     </li>
                     <li class="list-group-item">
-                        <h3>Vacancies: <span class="card-important-info">3 of 10</span></h3>
+                        <h3>Vacancies: <span class="card-important-info">3 of {{ $lesson->student_limit }}</span></h3>
                     </li>
                     <li class="list-group-item">
-                        <h3>Video time: <span class="card-important-info">320min</span></h3>
+                        <h3>Video time: <span class="card-important-info">{{ $lesson->length }}min</span></h3>
                     </li>
                     <li class="list-group-item">
                         <h3>Exam: <span class="card-important-info">none</span></h3>
                     </li>
                     <li class="list-group-item">
-                        <h3> Price: <span class="card-important-info">60$</span></h3>
+                        <h3> Price: <span class="card-important-info">{{ $lesson->price }}$</span></h3>
                     </li>
                 </ul>
 
                 <div class="row d-flex justify-content-center">
                     <div class="col-xl-7 pl-1 pr-1">
-                        <p class="card-text pl-3 pr-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga aliquid dolorem ea distinctio exercitationem delectus qui,
-                            quas eum architecto, amet quasi accusantium, fugit consequatur ducimus obcaecati numquam molestias
-                            hic itaque accusantium doloremque laudantium, totam rem aperiaming elit. Fuga aliquid dolorem ea distinctio exercitationem delectus qui,
-                            quas eum architecto, amet quasi accusantium, i accusantium, fugit consequatur ducimus obcaecati numquam molestias
-                            hic itaque accusantium doloremque laudantium, totam refugit consequatur ducimus obcaecati numquam molestitam rem aperiaming elit. Fuga aliquid dolorem ea distinctio exercitationem delectus qui,
-                            quas eum architecto, amet quasi accusantium, i accusantium, fugit consequatur ducimu.</p>
+                        <p class="card-text pl-3 pr-3">{{ $lesson->description }}</p>
                     </div>
                 </div>
 
