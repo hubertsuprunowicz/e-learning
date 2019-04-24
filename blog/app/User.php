@@ -39,16 +39,9 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-	public function user() {
-		return $this->belongsTo(User::class);
-	}
-
-	public function lesson() {
-		return $this->hasMany(Lesson::class, 'author_id');
-	}
 
 	public function lessons() {
-		return $this->hasMany(Lesson::class, 'author_id');
+		return $this->hasMany(Lesson::class);
 	}
 
 	public function setPasswordAttribute($password)

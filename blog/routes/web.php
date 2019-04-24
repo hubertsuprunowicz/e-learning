@@ -11,14 +11,13 @@
 |
 */
 
+
 Auth::routes();
 
 // Auth page
 Route::get('/home', 'HomeController@index')->name('homee');
 
-Route::get('/', [
-	'uses' => 'SitesController@index',
-]);
+Route::get('/', 'AdvertisementController@index')->name('advertisements');
 
 Route::get('/admin', [
 	'uses' => 'SitesController@adminPanel',
@@ -28,10 +27,18 @@ Route::get('/admin', [
 
 Route::middleware(['auth'])->group(function () {
 
-	Route::get('/lessons', [
-		'uses' => 'SitesController@getListOfLessons',
-		'as' => 'listOfLessons.all'
+	Route::get('/lessons', 'LessonController@index')->name('lessons');
+
+	Route::post('/lessons/{lesson_id}', [
+		'uses'  =>  'LessonController@create'
 	]);
+
+	Route::get('/lessons/{lesson_id}', [
+		'uses'  =>  'LessonController@show',
+		'as' => 'lesson.get'
+	]);
+
+
 
 	Route::get('/lessons/active', [
 		'uses'  =>  'SitesController@activeLesson'
@@ -41,10 +48,7 @@ Route::middleware(['auth'])->group(function () {
 		'uses'  =>  'SitesController@addLesson'
 	]);
 
-	Route::get('/lessons/{lesson_id}', [
-		'uses'  =>  'SitesController@getLesson',
-		'as' => 'lesson.get'
-	]);
+
 
 
 
@@ -52,9 +56,6 @@ Route::middleware(['auth'])->group(function () {
 		'uses'  =>  'SitesController@getYourLessons',
 		'as' => 'listOfLessons.get'
 	]);
-
-
-
 
 
 
@@ -68,8 +69,12 @@ Route::middleware(['auth'])->group(function () {
 		'as' => 'message.postMessage'
 	]);
 
+
+
+
+
 	Route::get('/user/{profile}', [
-		'uses' => 'UserController@profile',
+		'uses' => 'UserController@show',
 		'as' => 'user.profile'
 	]);
 

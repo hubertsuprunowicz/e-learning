@@ -4,31 +4,27 @@ namespace App\Http\Controllers;
 
 use App\Advertisement;
 use App\Lesson;
+use App\Opinion;
 use App\User;
 use Illuminate\Http\Request;
 
 class SitesController extends Controller
 {
-	protected $lessons;
-	protected $advertisements;
-	protected $users;
 
-	public function __construct(Lesson $lessons, Advertisement $advertisements, User $users)
-	{
-		$this->lessons = $lessons;
-		$this->advertisements = $advertisements;
-		$this->users = $users;
-	}
+//		$public function index(): Response
+//		{
+//			$posts = Cache::remember('feed-posts', now()->addHour(), function () {
+//				return Post::latest()->limit(20)->get();
+//			});
+//			return response()->view('posts_feed.index', [
+//				'posts' => $posts
+//			], 200)->header('Content-Type', 'text/xml');
+//		}
 
-	public function index() {
-		$advertisements = $this->advertisements->with('lesson')->limit(6)->get();
-//		$advs = Advertisement::with('lesson')->limit(6)->get();
-		return view('main.index', compact('advertisements'));
-	}
 
 
 	public function getListOfLessons() {
-		$lessons = $this->lessons->all();
+		$lessons = Lesson::all();
 		return view('main.courses', compact('lessons'));
 	}
 
@@ -38,9 +34,10 @@ class SitesController extends Controller
 	}
 
 	public function getLesson($id) {
-		$lesson = Lesson::with('lesson')->find($id);
-		$author = User::with('user')->find($id);
-		return view('partials.about_lesson', compact('lesson', 'author'));
+		$lesson = Lesson::find($id);
+		$author = Lesson::find($id)->user()->pluck('last_name', 'first_name');
+		$opinions = Opinion::with('teacher')->get();
+		return view('partials.about_lesson', compact('lesson', 'author', 'opinions'));
 	}
 
 	public function addLesson() {
@@ -50,15 +47,17 @@ class SitesController extends Controller
 
 
 	public function getYourLessons($id) {
-		$lessons = User::find($id)->lessons()->get();
+		$lessons = User::find($id, 'userna')->lessons()->get();
 		return view('partials.your_lessons', compact('lessons'));
 	}
-
-
 
 	public function adminPanel() {
 
 		return view('main.admin');
+	}
+
+	public function index() {
+
 	}
 
 

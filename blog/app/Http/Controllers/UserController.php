@@ -3,20 +3,33 @@
 namespace App\Http\Controllers;
 
 use App\User;
+use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
-	public function profile()
-	{
-		$user = User::with('user')->find($id);
-		return view('main.profile');
+	protected  $primaryKey = 'user';
+
+	public function index() : View {
+		$user = Lesson::all();
+		return view('main.profile', compact('user'));
 	}
 
-	public function index() {
-		//$advertisements = $this->advertisements->with('lesson')->limit(6)->get();
-//		$advs = Advertisement::with('lesson')->limit(6)->get();
-		return view('main.index', compact('advertisements'));
+	public function create(Request $request) {
+
+	}
+
+	public function edit() {
+		return view('main.admin', compact('user'));
+	}
+
+	public function delete() {
+
+	}
+
+	public function show($username, User $user) : View {
+		$user = $user->find($username);
+		return view('main.profile', compact('user'));
 	}
 
 }

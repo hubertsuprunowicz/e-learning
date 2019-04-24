@@ -96,34 +96,32 @@
             <div class="card-deck offer-card-deck justify-content-center align-content-around">
 
 
-                @foreach($advertisements as $adv)
 
-
-
+                @foreach($advertisements as $advertisement)
 
                 <div class="card adv-card">
                     <div class="card-body offer-card-body" >
                         <div class="card-avatar">
                             <img src="https://facefacts.scot/images/science/Q2_high_health_f.jpg"  alt="...">
-                            <h2 class="text-center avatar-text-card card-important-info text-mint"><strong>{{ $adv->lesson->subject }}</strong></h2>
+                            <h2 class="text-center avatar-text-card card-important-info text-mint"><strong>{{ $advertisement->lesson->subject }}</strong></h2>
                         </div>
 
                         <div class="d-flex flex-column align-content-center">
-                            <p class="card-text pl-2">{{ substr($adv->lesson->description,0, 150)."..." }}</p>
+                            <p class="card-text pl-2">{{ substr($advertisement->lesson->description,0, 150)."..." }}</p>
 
                             <div class="align-items-end">
                                 <ul class="list-group list-group-flush card-list pl-2">
                                     <li class="list-group-item">
-                                        Vacancies: <span class="card-important-info">0 of {{ $adv->lesson->student_limit }}</span>
+                                        Vacancies: <span class="card-important-info">0 of {{ $advertisement->lesson->student_limit }}</span>
                                     </li>
                                     <li class="list-group-item">
-                                        Video time: <span class="card-important-info">{{ $adv->lesson->length }}min</span>
+                                        Video time: <span class="card-important-info">{{ $advertisement->lesson->length }}min</span>
                                     </li>
                                     <li class="list-group-item">
                                         Exam: <span class="card-important-info">none</span>
                                     </li>
                                     <li class="list-group-item">
-                                        Price: <span class="card-important-info text-danger">{{ $adv->lesson->price }}$</span>
+                                        Price: <span class="card-important-info text-danger">{{ $advertisement->lesson->price }}$</span>
                                     </li>
                                 </ul>
                             </div>
@@ -131,14 +129,14 @@
 
                     </div>
                     <div class="card-footer">
-                        <small class="text-muted">{{ $adv->updated_at->diffForHumans() }}</small>
-                        <a href="{{ route('lesson.get', $adv->lesson->id) }}" class="card-btn d-block bg-mint">Check more</a>
+                        <small class="text-muted">{{ $advertisement->updated_at->diffForHumans() }}</small>
+                        <a href="{{ route('lesson.get', $advertisement->lesson->id) }}" class="card-btn d-block bg-mint">Check more</a>
                     </div>
                 </div>
 
                 @endforeach
             </div>
-            <a href="{{ route('listOfLessons.all') }}" class="btn btn-sm adv-button mt-5 mb-5 text-white">Show more..</a>
+            <a href="{{ route('lessons') }}" class="btn btn-sm adv-button mt-5 mb-5 text-white">Show more..</a>
 
         </section>
 

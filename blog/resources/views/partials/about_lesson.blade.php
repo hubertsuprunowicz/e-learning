@@ -16,9 +16,9 @@
                         <div class="card-body">
 
                             <div>
-                                {{ $author }}
-                                <h4 class="card-title">{{ $author->first_name }}</h4>
-                                <h4 class="card-title">{{ $author->last_name }}</h4>
+
+                                <h4 class="card-title">{{ $lesson->user->first_name }}</h4>
+                                <h4 class="card-title">{{ $lesson->user->last_name }}</h4>
                             </div>
 
                             <h6 class="text-uppercase grey-text mb-3">front-end developer</h6>
@@ -45,7 +45,6 @@
 
 
             <div class="lesson-info-holder d-flex flex-column align-content-center justify-content-between w-50">
-
                 <h2 class="card-title h2">{{ $lesson->subject }}</h2>
                 <ul class="list-group list-group-flush card-list pl-2 text-lg-center">
                     <li class="list-group-item">

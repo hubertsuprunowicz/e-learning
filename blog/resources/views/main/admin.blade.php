@@ -3,7 +3,6 @@
 @section('content')
 
 
-
     <!--Main Navigation-->
 
     <!--Main layout-->
