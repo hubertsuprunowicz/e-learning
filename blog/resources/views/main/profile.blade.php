@@ -4,18 +4,21 @@
 
 <header class="user-header">
 
+
+
     <section class="profile-holder container-fluid">
         <div class="card card-profile">
             <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Avatars/img%20(29).jpg" alt="Card image cap">
             <div class="card-body">
 
                 <div class="personal-details">
-                    <h4 class="card-title title-one">Hubert</h4>
-                    <h4 class="card-title title-one">Suprunowicz</h4>
+                    <h4 class="card-title title-one">{{ $user->first_name }}</h4>
+                    <h4 class="card-title title-one">{{ $user->last_name }}</h4>
                 </div>
 
-                <h6 class="text-uppercase grey-text mb-3">front-end developer</h6>
-                <p class="card-meta">Joined in 2019</p>
+                <h6 class="text-uppercase grey-text mb-3">{{ $user->educational_degree }}</h6>
+                <p class="card-meta">Joined in {{ $user->created_at->diffForHumans() }}</p>
+
 
                 <p class="card-text">Lorem ipsum madre padre este meste heszke w keszke.</p>
 
@@ -46,7 +49,7 @@
 
 
                     <label for="defaultFormCardEmailEx" class="grey-text font-weight-light">Your message</label>
-                    <textarea id="" class="form-control" rows="14" required></textarea>
+                    <textarea id="defaultFormCardEmailEx" class="form-control" rows="14" required></textarea>
 
                     <div class="text-center py-4 mt-3">
                         <button class="btn btn-sm adv-button" type="submit">Send</button>

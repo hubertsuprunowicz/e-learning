@@ -19,14 +19,12 @@ Route::get('/home', 'HomeController@index')->name('homee');
 
 Route::get('/', 'AdvertisementController@index')->name('advertisements');
 
-Route::get('/admin', [
-	'uses' => 'SitesController@adminPanel',
-	'as' => 'admin.panel'
-]);
+
 
 
 Route::middleware(['auth'])->group(function () {
 
+	// Lessons...
 	Route::get('/lessons', 'LessonController@index')->name('lessons');
 
 	Route::post('/lessons/{lesson_id}', [
@@ -39,7 +37,7 @@ Route::middleware(['auth'])->group(function () {
 	]);
 
 
-
+	// TODO: change URL
 	Route::get('/lessons/active', [
 		'uses'  =>  'SitesController@activeLesson'
 	]);
@@ -48,10 +46,6 @@ Route::middleware(['auth'])->group(function () {
 		'uses'  =>  'SitesController@addLesson'
 	]);
 
-
-
-
-
 	Route::get('/lessons/yours/{author_id}', [
 		'uses'  =>  'SitesController@getYourLessons',
 		'as' => 'listOfLessons.get'
@@ -59,6 +53,8 @@ Route::middleware(['auth'])->group(function () {
 
 
 
+
+	// Messages Panel...
 	Route::get('/messages', [
 		'uses' => 'MessageController@messages',
 		'as' => 'message.messageList'
@@ -72,15 +68,22 @@ Route::middleware(['auth'])->group(function () {
 
 
 
-
-	Route::get('/user/{profile}', [
+	// User Profile...
+	Route::get('/user/{id}', [
 		'uses' => 'UserController@show',
 		'as' => 'user.profile'
 	]);
 
-	Route::put('/user/{profile}/edit', [
+	Route::put('/user/{id}/edit', [
 		'uses' => 'UserController@edit',
 		'as' => 'user.edit'
+	]);
+
+
+	// Admin Panel...
+	Route::get('/admin', [
+		'uses' => 'SitesController@adminPanel',
+		'as' => 'admin.panel'
 	]);
 
 });
