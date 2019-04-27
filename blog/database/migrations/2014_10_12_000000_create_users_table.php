@@ -23,7 +23,9 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->ipAddress('ip')->nullable();
             $table->bigInteger('phone_number')->nullable();
-            $table->string('educational_degree')->nullable();
+            $table->string('occupation')->default('none');
+            $table->longText('about')->nullable();
+			$table->text('image')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

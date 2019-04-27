@@ -61,10 +61,42 @@ class MessagesTableSeeder extends Seeder
 		$message->save();
 
 		$message = new \App\Message([
-			'title' => 'title test 04',
+			'title' => 'title test 06',
 			'message' => 'Etiam faucibus cursus urna. Ut tellus. :)))',
-			'user_id' => 3,
-			'sent_to' => 4
+			'user_id' => 2,
+			'sent_to' => 6
+		]);
+		$message->save();
+
+		$message = new \App\Message([
+			'title' => 'title test 07',
+			'message' => 'uspendisse potenti. In  faucibus cursus urna. Ut tellus.',
+			'user_id' => 2,
+			'sent_to' => 6
+		]);
+		$message->save();
+
+		$message = new \App\Message([
+			'title' => 'title test 08',
+			'message' => 'Etiam faucibus cursus urna. Uuspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictt tellus.  tincidunt. Nulla mollis molestie lorem. Quisque ut erat',
+			'user_id' => 1,
+			'sent_to' => 2
+		]);
+		$message->save();
+
+		$message = new \App\Message([
+			'title' => 'title test 08',
+			'message' => 'EtSomia dictt tellus. ',
+			'user_id' => 7,
+			'sent_to' => 2
+		]);
+		$message->save();
+
+		$message = new \App\Message([
+			'title' => 'title test 08',
+			'message' => 'Etiam faucibus cursus uoone reading more than thhac habitasse platea dictt tellus.',
+			'user_id' => 2,
+			'sent_to' => 7
 		]);
 		$message->save();
     }

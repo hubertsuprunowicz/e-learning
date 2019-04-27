@@ -42,7 +42,7 @@
                             @endif
 
                             <a class="dropdown-item" href="{{ route("user.profile", Auth::user()->name) }}">profile</a>
-                            <a class="dropdown-item" href="{{ route('message.messageList') }}">messages<span class="badge badge-danger ml-2">2</span></a>
+                            <a class="dropdown-item" href="{{ route('messages') }}">messages<span class="badge badge-danger ml-2">2</span></a>
                             <a class="dropdown-item btn-danger" href="{{ route('logout') }}"
                                onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">

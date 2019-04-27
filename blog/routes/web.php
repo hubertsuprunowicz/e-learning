@@ -55,17 +55,12 @@ Route::middleware(['auth'])->group(function () {
 
 
 	// Messages Panel...
-	Route::get('/messages', [
-		'uses' => 'MessageController@messages',
-		'as' => 'message.messageList'
-	]);
+	Route::get('/messages', 'MessageController@index')->name('messages');
 
-	Route::post('/messages/post', [
-		'uses' => 'MessageController@postMessage',
+	Route::post('/messages/{id}', [
+		'uses' => 'MessageController@create',
 		'as' => 'message.postMessage'
 	]);
-
-
 
 
 	// User Profile...

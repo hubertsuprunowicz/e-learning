@@ -23,6 +23,7 @@ class CreateLessonsTable extends Migration
 			$table->integer('length')->default(0);
 			$table->integer('student_limit')->default(1);
 			$table->longText('description');
+			$table->boolean('exam')->default(0);
 			$table->timestamps();
         });
     }

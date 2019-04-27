@@ -31,52 +31,10 @@ class Message extends Model
 		'ip',
 	];
 
-	public static function send($username, $title, $message)
-	{
-		DB::table('messages')->insert([
-			'ip' => request()->ip(),
-			'user_id' => Auth::user()->name,
-			'sent' => $username,
-			'message' => $message,
-			'title' => $title,
-			'created_at' => Carbon::now()->format('Y-m-d H:i:s')
-		]);
+
+	public function user() {
+		return $this->belongsTo(User::class);
 	}
-
-	public static function getMessages()
-	{
-		$messageInfo = DB::table('messages')
-			->where('sent', Auth::user()->name)
-			->latest()
-			->get();
-
-		return $messageInfo;
-	}
-
-	public static function getMessagesFromWantedUser($wantedUser)
-	{
-		$messages = DB::table('messages')
-			->where('received', $wantedUser)
-			->orWhere('sent', $wantedUser)
-			->where('received', Auth::user()->name)
-			->latest()
-			->get();
-
-		return $messages;
-	}
-
-	public static function getUserList($sent)
-	{
-		$userList = DB::table('messages')
-			->where('sent', $sent)
-			->latest()
-			->pluck('received');
-
-		$userList = array_unique(json_decode(json_encode($userList), true));
-
-		return $userList;
-	}
-
 
 
 }

@@ -95,14 +95,12 @@
 
             <div class="card-deck offer-card-deck justify-content-center align-content-around">
 
-
-
                 @foreach($advertisements as $advertisement)
 
                 <div class="card adv-card">
                     <div class="card-body offer-card-body" >
                         <div class="card-avatar">
-                            <img src="https://facefacts.scot/images/science/Q2_high_health_f.jpg"  alt="...">
+                            <img src="{{ $advertisement->lesson->user->image }}"  alt="...">
                             <h2 class="text-center avatar-text-card card-important-info text-mint"><strong>{{ $advertisement->lesson->subject }}</strong></h2>
                         </div>
 

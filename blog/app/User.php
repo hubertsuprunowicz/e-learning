@@ -18,7 +18,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'first_name', 'last_name', 'phone_number'
+        'name', 'email', 'password', 'first_name', 'last_name', 'phone_number', 'image'
     ];
 
     /**
@@ -42,6 +42,10 @@ class User extends Authenticatable
 
 	public function lessons() {
 		return $this->hasMany(Lesson::class);
+	}
+
+	public function messages() {
+		return $this->hasMany(Message::class);
 	}
 
 	public function setPasswordAttribute($password)
