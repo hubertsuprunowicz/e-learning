@@ -7,18 +7,15 @@
  */
 namespace App\Http\Controllers;
 
-use App\Advertisement;
 use App\Lesson;
-use App\Opinion;
 use App\User;
-
 use Illuminate\Http\Request;
 use Illuminate\Contracts\View\View;
 
 class LessonController extends Controller
 {
 	public function index() : View {
-		$lessons = Lesson::all();
+		$lessons = Lesson::all()->sortByDesc('created_at');
 		return view('main.courses', compact('lessons'));
 	}
 
@@ -26,8 +23,8 @@ class LessonController extends Controller
 
 	}
 
-	public function edit(Request $request, Lesson $lesson) {
-		return view('main.admin', compact('user'));
+	public function edit() {
+
 	}
 
 	public function delete(Request $request) {

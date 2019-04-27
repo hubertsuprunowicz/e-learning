@@ -48,6 +48,10 @@ class User extends Authenticatable
 		return $this->hasMany(Message::class);
 	}
 
+	public function opinions() {
+		return $this->hasMany(Opinion::class);
+	}
+
 	public function setPasswordAttribute($password)
 	{
 		$this->attributes['password'] = \Hash::make($password);

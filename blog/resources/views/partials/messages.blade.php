@@ -39,26 +39,24 @@
                     </div>
 
 
-
-
                     <div class="card-profile">
                         <div class="card-body">
 
-                            <form>
+                            <form method="POST" action="{{ route('message.create') }}">
+                                @csrf
                                 <label for="usernameForm" class="grey-text font-weight-light">Username</label>
-                                <input type="text" id="usernameForm" class="form-control" required>
+                                <input type="text" id="usernameForm" class="form-control" name="sent_to" required>
 
                                 <label for="defaultFormCardNameEx" class="grey-text font-weight-light">Title</label>
-                                <input type="text" id="defaultFormCardNameEx" class="form-control" required>
+                                <input type="text" id="defaultFormCardNameEx" class="form-control" name="title" required>
 
                                 <br>
 
-
                                 <label for="messageForm" class="grey-text font-weight-light">Your message</label>
-                                <textarea id="messageForm" class="form-control" rows="14" required></textarea>
+                                <textarea id="messageForm" class="form-control" name="body" rows="14" required></textarea>
 
                                 <div class="text-center py-4 mt-3">
-                                    <button class="btn btn-sm adv-button text-white" type="submit">Send</button>
+                                    <input class="btn btn-sm adv-button text-white" type="submit" value="Send">
                                 </div>
                             </form>
 

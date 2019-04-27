@@ -22,7 +22,7 @@ use Illuminate\Contracts\View\View;
 class AdvertisementController extends Controller
 {
 	public function index() : View {
-		$advertisements = Advertisement::with('lesson.user')->limit(6)->get();
+		$advertisements = Advertisement::with('lesson.user')->limit(6)->latest()->get();
 		return view('main.index', compact('advertisements'));
 	}
 

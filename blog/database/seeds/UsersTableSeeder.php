@@ -48,7 +48,7 @@ class UsersTableSeeder extends Seeder
 		$user = new \App\User([
 			'first_name' => 'testfname03',
 			'last_name' => 'testlname03',
-			'name' => 'test3',
+			'name' => 'test03',
 			'email' => 'test03@test.com',
 			'password' => 'test03',
 			'occupation' => 'Freelancer',

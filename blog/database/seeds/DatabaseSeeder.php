@@ -43,7 +43,7 @@ class DatabaseSeeder extends Seeder
 				factory(Opinion::class, 6)->create();
 			})
 			->each(function () {
-				factory(Message::class, 10)->create();
+				factory(Message::class, 14)->create();
 			})
 			->each(function () {
 				factory(Payment::class, 2)->create();

@@ -28,9 +28,8 @@ class UserController extends Controller
 
 	}
 
-	public function show($username, User $user) : View {
-		$user = $user->where('name', $username)->firstOrFail();
-		//$user->created_at = date_format($user->created_at, 'Y');
+	public function show($username) : View {
+		$user = User::with('opinions')->where('name', $username)->firstOrFail();
 		return view('main.profile', compact('user'));
 	}
 

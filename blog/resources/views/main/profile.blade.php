@@ -16,7 +16,7 @@
                     <h4 class="card-title title-one">{{ $user->last_name }}</h4>
                 </div>
 
-                <h6 class="text-uppercase grey-text mb-3">{{ $user->educational_degree }}</h6>
+                <h6 class="text-uppercase grey-text mb-3">{{ $user->occupation }}</h6>
                 <p class="card-meta">Joined in {{ $user->created_at->diffForHumans() }}</p>
 
 
@@ -63,6 +63,8 @@
 </header>
 
 <article class="mt-5">
+
+    {{ $user->opinions }}
 
     <section class="container-fluid">
 

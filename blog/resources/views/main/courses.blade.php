@@ -35,28 +35,21 @@
                 <span>Menu</span>
             </button>
 
-
             <section id="content-ajax" class="w-100">
                 <div class="input-group md-form form-sm form-2 pl-0 search-position d-flex justify-content-center">
-
                     <input id="search" class="form-control my-0 py-1 " type="text" placeholder="Search" aria-label="Search" autocomplete="off">
                     <div class="input-group-append">
                         <span class="input-group-text" id="basic-text1"><i class="fas fa-search text-grey" aria-hidden="true"></i></span>
                     </div>
                     <ul class="list-group" id="result"></ul>
-
                 </div>
 
-
                 <div class="card-deck offer-card-deck justify-content-center align-content-around mt-5">
-
                     @foreach($lessons as $lesson)
-
-
                         <div class="card adv-card">
                             <div class="card-body offer-card-body" >
                                 <div class="card-avatar">
-                                    <img src="https://facefacts.scot/images/science/Q2_high_health_f.jpg"  alt="...">
+                                    <img src="{{ $lesson->user->image }}"  alt="{{ $lesson->user->name }} img">
                                     <h2 class="text-center avatar-text-card card-important-info text-mint"><strong>{{ $lesson->subject }}</strong></h2>
                                 </div>
 
@@ -87,10 +80,21 @@
                                 <a href="{{ route('lesson.get', $lesson->id) }}" class="card-btn d-block bg-mint">Check more</a>
                             </div>
                         </div>
-
                     @endforeach
-
                 </div>
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination justify-content-end">
+                        <li class="page-item disabled">
+                            <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+                        </li>
+                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">Next</a>
+                        </li>
+                    </ul>
+                </nav>
             </section>
 
 

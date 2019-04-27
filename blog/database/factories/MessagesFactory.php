@@ -19,7 +19,7 @@ $factory->define(Message::class, function (Faker $faker) {
 		'title' => $faker->word,
 		'message' => $faker->realText(500),
 		'sent_to' => function () {
-			return factory(User::class)->create()->id;
+			return factory(User::class)->create()->name;
 		}
 	];
 });
