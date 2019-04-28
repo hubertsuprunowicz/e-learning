@@ -5,6 +5,8 @@
 
     <header class="no-repeat-img-header ">
 
+
+
         <div class="bg-container">
 
             <section class="choose-header">
@@ -47,7 +49,6 @@
 
 
     <article>
-
         <section class="stat-info">
             <h2 class="h1-responsive font-weight-bold text-center my-5">Just bragging</h2>
 
@@ -110,7 +111,9 @@
                             <div class="align-items-end">
                                 <ul class="list-group list-group-flush card-list pl-2">
                                     <li class="list-group-item">
-                                        Vacancies: <span class="card-important-info">0 of {{ $advertisement->lesson->student_limit }}</span>
+                                        Vacancies: <span class="card-important-info">
+                                            {{ $advertisement->lesson->student_limit }}({{ $advertisement->lesson->student_limit - $advertisement->lesson->enroll->count() }} left)
+                                        </span>
                                     </li>
                                     <li class="list-group-item">
                                         Video time: <span class="card-important-info">{{ $advertisement->lesson->length }}min</span>
@@ -127,7 +130,7 @@
 
                     </div>
                     <div class="card-footer">
-                        <small class="text-muted">{{ $advertisement->updated_at->diffForHumans() }}</small>
+                        <small class="text-muted">updated {{ $advertisement->updated_at->diffForHumans() }}</small>
                         <a href="{{ route('lesson.get', $advertisement->lesson->id) }}" class="card-btn d-block bg-mint">Check more</a>
                     </div>
                 </div>
@@ -149,65 +152,44 @@
                 veniam.</p>
 
             <div class="row w-100 container-fluid">
-
                 <div class="col-md-4 mb-md-0 mb-5">
-
                     <div class="row">
-
                         <div class="col-lg-2 col-md-3 col-2">
                             <i class="fas fa-user-friends blue-text fa-2x"></i>
                         </div>
-
                         <div class="col-lg-10 col-md-9 col-10">
                             <h4 class="font-weight-bold">People</h4>
                             <p class="grey-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                                 incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
                         </div>
-
                     </div>
-
                 </div>
-
                 <div class="col-md-4 mb-md-0 mb-5">
-
                     <div class="row">
-
                         <div class="col-lg-2 col-md-3 col-2">
                             <i class="fas fa-dollar-sign green-text fa-2x"></i>
                         </div>
-
                         <div class="col-lg-10 col-md-9 col-10">
                             <h4 class="font-weight-bold">Money</h4>
                             <p class="grey-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                                 incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
                         </div>
-
                     </div>
-
                 </div>
-
                 <div class="col-md-4">
-
                     <div class="row">
-
                         <div class="col-lg-2 col-md-3 col-2">
                             <i class="fas fa-tachometer-alt purple-text fa-2x"></i>
                         </div>
-
                         <div class="col-lg-10 col-md-9 col-10">
                             <h4 class="font-weight-bold">Support</h4>
                             <p class="grey-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                                 incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
                         </div>
-
                     </div>
-
                 </div>
-
             </div>
-
         </section>
-
 
     </article>
 

@@ -23,6 +23,10 @@ class Lesson extends Model
 		return $this->belongsTo(User::class, 'author_id');
 	}
 
+	public function enroll() {
+		return $this->hasMany(Lesson_enroll::class);
+	}
+
 	public function advertisement() {
 		return $this->hasMany(Advertisement::class);
 	}

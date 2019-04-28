@@ -7,6 +7,7 @@
  */
 
 use App\User;
+use App\Lesson;
 use App\Opinion;
 use Illuminate\Support\Str;
 use Faker\Generator as Faker;
@@ -16,10 +17,11 @@ $factory->define(Opinion::class, function (Faker $faker) {
 		'user_id' => function () {
 			return factory(User::class)->create()->id;
 		},
-		'teacher_id' => function () {
-			return factory(User::class)->create()->id;
-		},
-		'rating' => $faker->numberBetween(0,5),
+//		'teacher_id' => function () {
+//			return factory(User::class)->create()->id;
+//		},
+		'teacher_id' => $faker->numberBetween(2, User::count()),
+		'rating' => $faker->numberBetween(1,5),
 		'details' => $faker->text(200)
 	];
 });

@@ -49,7 +49,11 @@ class User extends Authenticatable
 	}
 
 	public function opinions() {
-		return $this->hasMany(Opinion::class);
+		return $this->hasMany(Opinion::class, 'teacher_id');
+	}
+
+	public function enrolls() {
+		return $this->hasMany(Lesson_enroll::class);
 	}
 
 	public function setPasswordAttribute($password)

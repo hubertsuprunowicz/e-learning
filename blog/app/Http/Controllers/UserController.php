@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\User;
+use App\Lesson;
+use App\Opinion;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
@@ -29,7 +31,7 @@ class UserController extends Controller
 	}
 
 	public function show($username) : View {
-		$user = User::with('opinions')->where('name', $username)->firstOrFail();
+		$user = User::with('opinions.user')->where('name', $username)->firstOrFail();
 		return view('main.profile', compact('user'));
 	}
 

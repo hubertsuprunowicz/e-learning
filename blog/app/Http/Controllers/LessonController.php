@@ -15,7 +15,7 @@ use Illuminate\Contracts\View\View;
 class LessonController extends Controller
 {
 	public function index() : View {
-		$lessons = Lesson::all()->sortByDesc('created_at');
+		$lessons = Lesson::with('enroll')->get()->sortByDesc('created_at');
 		return view('main.courses', compact('lessons'));
 	}
 

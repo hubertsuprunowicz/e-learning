@@ -12,7 +12,7 @@
                 <div class= mb-4">
                     <div class="view overlay">
                         <h3>Author</h3>
-                        <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Avatars/img%20(29).jpg" alt="Card image cap">
+                        <img class="card-img-top" src="{{ $lesson->user->image }}" alt="{{ $lesson->user->name }} img">
                         <div class="card-body">
 
                             <div>
@@ -21,9 +21,9 @@
                                 <h4 class="card-title">{{ $lesson->user->last_name }}</h4>
                             </div>
 
-                            <h6 class="text-uppercase grey-text mb-3">front-end developer</h6>
+                            <h6 class="text-uppercase grey-text mb-3">{{ $lesson->user->occupation }}</h6>
 
-                            <p class="card-text">Lorem ipsum madre padre este meste heszke w keszke.</p>
+                            <p class="card-text">{{ $lesson->user->email }}</p>
 
                             <hr>
                             <div class="container">
@@ -37,7 +37,7 @@
                             </div>
                         </div>
                     </div>
-                    <a href="{{ route("user.profile", Auth::user()->name) }}" class="btn adv-button text-white btn-md ">Read more</a>
+                    <a href="{{ route("user.profile", $lesson->user->name) }}" class="btn adv-button text-white btn-md ">Read more</a>
                     <hr>
                 </div>
 

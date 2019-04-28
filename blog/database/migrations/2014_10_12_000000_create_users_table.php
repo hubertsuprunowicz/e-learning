@@ -23,7 +23,7 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->ipAddress('ip')->nullable();
             $table->bigInteger('phone_number')->nullable();
-            $table->string('occupation')->default('none');
+            $table->string('occupation')->nullable();
             $table->longText('about')->nullable();
 			$table->text('image')->nullable();
             $table->rememberToken();

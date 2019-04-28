@@ -59,7 +59,10 @@
                                     <div class="align-items-end">
                                         <ul class="list-group list-group-flush card-list pl-2">
                                             <li class="list-group-item">
-                                                Vacancies: <span class="card-important-info">0 of {{ $lesson->student_limit }}</span>
+                                                Vacancies:
+                                                <span class="card-important-info">
+                                                    {{ $lesson->student_limit }}({{ $lesson->student_limit - $lesson->enroll->count() }} left)
+                                                </span>
                                             </li>
                                             <li class="list-group-item">
                                                 Video time: <span class="card-important-info">{{ $lesson->length }}min</span>

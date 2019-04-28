@@ -14,7 +14,7 @@ $factory->define(Lesson::class, function (Faker $faker) {
 		'price' => $faker->randomFloat(2, 0, 500),
 		'subject' => $faker->jobTitle,
 		'length' => $faker->numberBetween(30, 240),
-		'student_limit' => $faker->numberBetween(1,300),
+		'student_limit' => $faker->numberBetween(10,300),
 		'description' => $faker->text(1200),
 		'exam' => $faker->boolean,
 	];

@@ -29,24 +29,28 @@ class DatabaseSeeder extends Seeder
 
 		factory(User::class, 7)
 			->create()
-			->each(function () {
-				factory(Lesson::class, 5)
-					->create()
-					->each(function () {
-						factory(Lesson_enroll::class, 3)->create();
+			->each(function ($user) {
+				factory(Lesson::class, 4)
+					->create(['author_id' => $user->id])
+					->each(function ($lesson) {
+						factory(Lesson_enroll::class, 10)->create(['lesson_id' => $lesson->id]);
 					})
-					->each(function () {
-						factory(Advertisement::class, 1)->create();
+					->each(function ($lesson) {
+						factory(Advertisement::class, 1)
+							->create(['lesson_id' => $lesson->id])
+							->each(function ($user, $lesson) {
+								factory(Payment::class, 5)->create(['user_id' => $user->id]);
+							})
+							->each(function ($user) {
+								factory(Opinion::class, 6)->create(['user_id' => $user->id]);
+							});
+
 					});
+
 			})
-			->each(function () {
-				factory(Opinion::class, 6)->create();
-			})
-			->each(function () {
-				factory(Message::class, 14)->create();
-			})
-			->each(function () {
-				factory(Payment::class, 2)->create();
+
+			->each(function ($user) {
+				factory(Message::class, 14)->create(['user_id' => $user->id, 'sent_to' => $user->name]);
 			});
 
     }
