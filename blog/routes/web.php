@@ -25,13 +25,13 @@ Route::get('/', 'AdvertisementController@index')->name('advertisements');
 Route::middleware(['auth'])->group(function () {
 
 	// Lessons...
-	Route::get('/lessons', 'LessonController@index')->name('lessons');
+	Route::get('/lessons/page/{pageNumber}', 'LessonController@index')->name('lessons_page');
 
-	Route::post('/lessons/{lesson_id}', [
+	Route::post('/lessons/{lessonId}', [
 		'uses'  =>  'LessonController@create'
 	]);
 
-	Route::get('/lessons/{lesson_id}', [
+	Route::get('/lessons/{lessonId}', [
 		'uses'  =>  'LessonController@show',
 		'as' => 'lesson.get'
 	]);
@@ -46,7 +46,7 @@ Route::middleware(['auth'])->group(function () {
 		'uses'  =>  'SitesController@addLesson'
 	]);
 
-	Route::get('/lessons/yours/{author_id}', [
+	Route::get('/lessons/yours/{authorId}', [
 		'uses'  =>  'SitesController@getYourLessons',
 		'as' => 'listOfLessons.get'
 	]);
@@ -76,10 +76,7 @@ Route::middleware(['auth'])->group(function () {
 
 
 	// Admin Panel...
-	Route::get('/admin', [
-		'uses' => 'SitesController@adminPanel',
-		'as' => 'admin.panel'
-	]);
+	Route::get('/admin', 'SitesController@index')->name('adminPanel');
 
 });
 

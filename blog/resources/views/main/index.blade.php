@@ -5,8 +5,6 @@
 
     <header class="no-repeat-img-header ">
 
-
-
         <div class="bg-container">
 
             <section class="choose-header">
@@ -49,8 +47,8 @@
 
 
     <article>
-        <section class="stat-info">
-            <h2 class="h1-responsive font-weight-bold text-center my-5">Just bragging</h2>
+        <section id="stat-info" class="stat-info">
+            <h2 class="h2-responsive font-weight-bold text-center my-5">Just bragging</h2>
 
             <div class="card-group" id="counter">
 
@@ -137,7 +135,7 @@
 
                 @endforeach
             </div>
-            <a href="{{ route('lessons') }}" class="btn btn-sm adv-button mt-5 mb-5 text-white">Show more..</a>
+            <a href="{{ route('lessons_page', 1) }}" class="btn btn-sm adv-button mt-5 mb-5 text-white">Show more..</a>
 
         </section>
 

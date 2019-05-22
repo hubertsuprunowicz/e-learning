@@ -59,7 +59,7 @@ $(document).on('click','#your-l-ajax', function(e){
 
 
 
-/* Counter */
+/* Lessons menu */
 $( '#sidebar .navbar-nav a' ).on( 'click', function () {
     $( '#sidebar .navbar-nav' ).find( 'li.active' ).removeClass( 'active' );
     $( this ).parent( 'li' ).addClass( 'active' );
@@ -68,36 +68,30 @@ $( '#sidebar .navbar-nav a' ).on( 'click', function () {
 
 
 /* Counter */
-let a = 0;
-$(window).scroll(function() {
-
-    let oTop = $('#counter').offset().top - window.innerHeight;
-    if (a == 0 && $(window).scrollTop() > oTop) {
+$(window).scroll(function () {
+    if( ($(window).scrollTop() < $('#stat-info').position().top + 150) &&
+        ($(window).scrollTop() > $('#stat-info').position().top - 300)) {
         $('.counter-value').each(function() {
             let $this = $(this),
                 countTo = $this.attr('data-count');
-            $({
-                countNum: $this.text()
-            }).animate({
-                    countNum: countTo
+
+            $({ countNum: $this.text()}).animate({
+                countNum: countTo
+            },{
+                duration: 3000,
+                easing:'linear',
+                step: function() {
+                    $this.text(Math.floor(this.countNum));
                 },
+                complete: function() {
+                    $this.text(this.countNum);
+                }
 
-                {
-                    duration: 3000,
-                    easing: 'swing',
-                    step: function() {
-                        $this.text(Math.floor(this.countNum));
-                    },
-                    complete: function() {
-                        $this.text(this.countNum);
-                    }
-
-                });
+            });
         });
-        a = 1;
     }
-
 });
+
 
 
 /* Sidebar */
@@ -140,7 +134,6 @@ $(document).ready(function(){
 
 
 window.onload = function () {
-
     let chart = new CanvasJS.Chart("chartContainer", {
         theme: "light1",
         animationEnabled: false,
@@ -161,5 +154,4 @@ window.onload = function () {
         ]
     });
     chart.render();
-
 };

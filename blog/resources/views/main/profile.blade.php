@@ -49,7 +49,7 @@
 
 
                     <label for="defaultFormCardEmailEx" class="grey-text font-weight-light">Your message</label>
-                    <textarea id="defaultFormCardEmailEx" class="form-control" rows="14" required></textarea>
+                    <textarea id="defaultFormCardEmailEx" class="form-control" rows="14" minlength="20" required></textarea>
 
                     <div class="text-center py-4 mt-3">
                         <button class="btn btn-sm adv-button" type="submit">Send</button>
@@ -82,13 +82,10 @@
                 </div>
 
                 <div class="col-md-7 text-md-left ml-3 mt-3" >
-
                     <a href="#!" class="green-text ">
                         <h4 class="h4 pb-1 mt-2"><i class="fas fa-user pr-1"></i> About Me</h4>
                     </a>
-
                     <p class="font-weight-normal">{{ $user->about }}</p>
-
 
                 </div>
             </div>

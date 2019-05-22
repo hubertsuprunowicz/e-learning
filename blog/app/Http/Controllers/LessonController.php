@@ -14,9 +14,19 @@ use Illuminate\Contracts\View\View;
 
 class LessonController extends Controller
 {
-	public function index() : View {
+	public const LESSONS_PER_PAGE = 30;
+
+	public function index($pageNumber) {
+		$pageNumberLimit = Lesson::lessonsLimiter(self::LESSONS_PER_PAGE);
+		if($pageNumber < 1 || $pageNumber > $pageNumberLimit) {
+			return redirect('/');
+		}
+
+		$startRange = ($pageNumber * self::LESSONS_PER_PAGE) - self::LESSONS_PER_PAGE;
+		$endRange = ($pageNumber * self::LESSONS_PER_PAGE) - 1;
 		$lessons = Lesson::with('enroll')->get()->sortByDesc('created_at');
-		return view('main.courses', compact('lessons'));
+
+		return view('main.courses', compact('lessons', 'startRange', 'endRange', 'pageNumber', 'pageNumberLimit'));
 	}
 
 	public function create(Request $request) {

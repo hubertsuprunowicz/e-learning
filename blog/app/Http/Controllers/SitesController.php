@@ -21,7 +21,7 @@ class SitesController extends Controller
 //			], 200)->header('Content-Type', 'text/xml');
 //		}
 
-	public function index() {}
+	public function index() {return view('main.admin');}
 	public function show() {}
 	public function delete() {}
 //

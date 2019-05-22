@@ -44,5 +44,9 @@ class Lesson extends Model
 		]);
 	}
 
+	public static function lessonsLimiter($lessonsPerPage) {
+		return ceil(DB::table('lessons')->count() / $lessonsPerPage);
+	}
+
 
 }
