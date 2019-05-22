@@ -49,7 +49,7 @@
 
 
                     <label for="defaultFormCardEmailEx" class="grey-text font-weight-light">Your message</label>
-                    <textarea id="defaultFormCardEmailEx" class="form-control" rows="14" minlength="20" required></textarea>
+                    <textarea id="defaultFormCardEmailEx" class="form-control" rows="14" minlength="" required></textarea>
 
                     <div class="text-center py-4 mt-3">
                         <button class="btn btn-sm adv-button" type="submit">Send</button>

@@ -10691,7 +10691,7 @@ a.text-dark:focus {
   width: 100%;
   top: 0;
   z-index: -1;
-  background: url("/../school.png") repeat 0 0 fixed;
+  background: url("/img/school.png") repeat 0 0 fixed;
   display: flex;
   align-items: center;
 }
@@ -10882,7 +10882,7 @@ a.text-dark:focus {
 }
 
 .user-header {
-  background: url("/../school_light.png");
+  background: url("/img/school_light.png");
   padding-bottom: 50px;
   padding-top: 50px;
 }
