@@ -6,7 +6,8 @@
     <div class="wrapper">
         <!-- Sidebar -->
         <nav id="sidebar">
-            <div class="sidebar-header mt-5">
+
+            <div id="lesson-slogan" class="sidebar-header mt-5">
                 <h3>Find your wanted course</h3>
             </div>
 

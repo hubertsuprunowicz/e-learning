@@ -38,15 +38,15 @@ Route::middleware(['auth'])->group(function () {
 
 
 	// TODO: change URL
-	Route::get('/lessons/active', [
+	Route::get('/lessons/menu/active/{id}', [
 		'uses'  =>  'SitesController@activeLesson'
 	]);
 
-	Route::get('/lessons/add', [
+	Route::get('/lessons/menu/add', [
 		'uses'  =>  'SitesController@addLesson'
 	]);
 
-	Route::get('/lessons/yours/{authorId}', [
+	Route::get('/lessons/menu/{authorId}', [
 		'uses'  =>  'SitesController@getYourLessons',
 		'as' => 'listOfLessons.get'
 	]);

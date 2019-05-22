@@ -7,6 +7,7 @@ use App\Lesson;
 use App\Opinion;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\View\View;
 
 class SitesController extends Controller
 {
@@ -21,43 +22,32 @@ class SitesController extends Controller
 //			], 200)->header('Content-Type', 'text/xml');
 //		}
 
-	public function index() {return view('main.admin');}
+	public function index() : View {
+		return view('main.admin');
+	}
+
 	public function show() {}
 	public function delete() {}
-//
-//
-//	public function getListOfLessons() {
-//		$lessons = Lesson::all();
-//		return view('main.courses', compact('lessons'));
-//	}
-//
-//	public function activeLesson() {
-//
-//		return view('partials.videochat');
-//	}
-//
-//	public function getLesson($id) {
-//		$lesson = Lesson::find($id);
-//		$author = Lesson::find($id)->user()->pluck('last_name', 'first_name');
-//		$opinions = Opinion::with('teacher')->get();
-//		return view('partials.about_lesson', compact('lesson', 'author', 'opinions'));
-//	}
-//
-//	public function addLesson() {
-//
-//		return view('partials.add_lesson');
-//	}
-//
-//
-//	public function getYourLessons($id) {
-//		$lessons = User::find($id, 'userna')->lessons()->get();
-//		return view('partials.your_lessons', compact('lessons'));
-//	}
-//
-//	public function adminPanel() {
-//
-//		return view('main.admin');
-//	}
+
+
+
+
+
+//	TEMPORARY SOLUTION
+	public function activeLesson() {
+
+		return view('partials.videochat');
+	}
+
+	public function addLesson() {
+		return view('partials.add_lesson');
+	}
+
+	public function getYourLessons($id) {
+		$lessons = User::find($id, 'username')->lessons()->get();
+		return view('partials.your_lessons', compact('lessons'));
+	}
+
 
 
 

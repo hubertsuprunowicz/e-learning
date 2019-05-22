@@ -6,7 +6,7 @@
 $(document).on('click','#classifieds-ajax', function(e){
     e.preventDefault();
     $.ajax({
-        url: '/lessons',
+        url: '/lessons/page/1',
         type: "GET", //
         success: function(data){
             let content = $(data).find('#content-ajax').html();
@@ -67,8 +67,13 @@ $( '#sidebar .navbar-nav a' ).on( 'click', function () {
 
 
 
-/* Counter */
+
 $(window).scroll(function () {
+
+    /* Lessons Sidebar Sticky Menu */
+    $('#topheader').css('margin-top', $(window).scrollTop() );;
+
+    /* Counter */
     if( ($(window).scrollTop() < $('#stat-info').position().top + 150) &&
         ($(window).scrollTop() > $('#stat-info').position().top - 300)) {
         $('.counter-value').each(function() {
@@ -94,7 +99,7 @@ $(window).scroll(function () {
 
 
 
-/* Sidebar */
+/* Lessons Sidebar */
 $(document).ready(function () {
 
     $('#sidebarCollapse').on('click', function () {

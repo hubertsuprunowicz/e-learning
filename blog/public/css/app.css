@@ -10930,6 +10930,9 @@ a.text-dark:focus {
   background-color: #201e1c;
   transition: all 0.3s;
   color: #26C281;
+  min-width: 250px;
+  max-width: 250px;
+  min-height: 100vh;
 }
 
 #sidebar .sidebar-header {
@@ -10979,12 +10982,6 @@ a[data-toggle=collapse] {
 .wrapper {
   display: flex;
   align-items: stretch;
-}
-
-#sidebar {
-  min-width: 250px;
-  max-width: 250px;
-  min-height: 100vh;
 }
 
 #sidebar.active {

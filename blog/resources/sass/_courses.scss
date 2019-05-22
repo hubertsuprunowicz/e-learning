@@ -5,10 +5,15 @@
 	z-index: 2;
 }
 
+
 #sidebar {
 	background-color: $bg-dark;
 	transition: all 0.3s;
 	color: $mint;
+
+	min-width: 250px;
+	max-width: 250px;
+	min-height: 100vh;
 }
 
 #sidebar .sidebar-header {
@@ -62,11 +67,6 @@ a[data-toggle="collapse"] {
 	align-items: stretch;
 }
 
-#sidebar {
-	min-width: 250px;
-	max-width: 250px;
-	min-height: 100vh;
-}
 
 #sidebar.active {
 	margin-left: -250px;
