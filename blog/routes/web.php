@@ -27,11 +27,11 @@ Route::middleware(['auth'])->group(function () {
 	// Lessons...
 	Route::get('/lessons/page/{pageNumber}', 'LessonController@index')->name('lessons_page');
 
-	Route::post('/lessons/{lessonId}', [
+	Route::post('/lessons', [
 		'uses'  =>  'LessonController@create'
 	]);
 
-	Route::get('/lessons/{lessonId}', [
+	Route::get('/lessons/{id}', [
 		'uses'  =>  'LessonController@show',
 		'as' => 'lesson.get'
 	]);
@@ -39,6 +39,7 @@ Route::middleware(['auth'])->group(function () {
 
 	// TODO: change URL
 	Route::get('/lessons/menu/active/{id}', [
+		// TODO: check if is it him
 		'uses'  =>  'SitesController@activeLesson'
 	]);
 
@@ -47,6 +48,7 @@ Route::middleware(['auth'])->group(function () {
 	]);
 
 	Route::get('/lessons/menu/{authorId}', [
+		// TODO: check if is it him
 		'uses'  =>  'SitesController@getYourLessons',
 		'as' => 'listOfLessons.get'
 	]);

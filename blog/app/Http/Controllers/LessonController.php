@@ -16,7 +16,7 @@ class LessonController extends Controller
 {
 	public const LESSONS_PER_PAGE = 30;
 
-	public function index($pageNumber) {
+	public function index($pageNumber) : View {
 		$pageNumberLimit = Lesson::lessonsLimiter(self::LESSONS_PER_PAGE);
 		if($pageNumber < 1 || $pageNumber > $pageNumberLimit) {
 			return redirect('/');
@@ -24,7 +24,7 @@ class LessonController extends Controller
 
 		$startRange = ($pageNumber * self::LESSONS_PER_PAGE) - self::LESSONS_PER_PAGE;
 		$endRange = ($pageNumber * self::LESSONS_PER_PAGE) - 1;
-		$lessons = Lesson::with('enroll')->get()->sortByDesc('created_at');
+		$lessons = Lesson::with('enroll')->latest()->get();
 
 		return view('main.courses', compact('lessons', 'startRange', 'endRange', 'pageNumber', 'pageNumberLimit'));
 	}

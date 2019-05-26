@@ -44,7 +44,10 @@
                 </div>
                 <div class="card-deck offer-card-deck justify-content-center align-content-around mt-5">
                     @for ($i = $startRange; $i <= $endRange; $i++)
-                        @break(empty($lessons[$i]))
+                        @break( empty($lessons[$i]) )
+
+                        <!-- No reason to show lesson without vacancies -->
+                        @continue( $lessons[$i]->student_limit - $lessons[$i]->enroll->count() <= 0 )
                         <div class="card adv-card">
                             <div class="card-body offer-card-body" >
                                 <div class="card-avatar">

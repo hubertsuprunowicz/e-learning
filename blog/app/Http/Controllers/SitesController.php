@@ -44,7 +44,7 @@ class SitesController extends Controller
 	}
 
 	public function getYourLessons($id) {
-		$lessons = User::find($id, 'username')->lessons()->get();
+		$lessons = Lesson::where('author_id', $id)->get();
 		return view('partials.your_lessons', compact('lessons'));
 	}
 

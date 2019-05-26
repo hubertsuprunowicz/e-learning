@@ -2,11 +2,8 @@
 
 @section('content')
 
-    <section id="content-ajax" class="w-100">
-
-
+    <section class="w-100">
         <div class="jumbotron text-center mt-5 d-flex flex-row flex-wrap justify-content-around lesson-holder">
-
             <div class="author-holder w-50">
 
                 <div class= mb-4">

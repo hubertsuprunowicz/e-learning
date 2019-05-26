@@ -7,10 +7,11 @@ $(document).on('click','#classifieds-ajax', function(e){
     e.preventDefault();
     $.ajax({
         url: '/lessons/page/1',
-        type: "GET", //
+        type: "GET",
         success: function(data){
             let content = $(data).find('#content-ajax').html();
             $("#content-ajax").html(content);
+
         }
     });
 });
@@ -18,8 +19,9 @@ $(document).on('click','#classifieds-ajax', function(e){
 $(document).on('click','#active-ajax', function(e){
     e.preventDefault();
     $.ajax({
-        url: '/lessons/active',
-        type: "GET", //
+        // lesson id
+        url: '/lessons/menu/active/1',
+        type: "GET",
         success: function(data){
             let content = $(data).filter('#content-ajax').html();
             $("#content-ajax").html(content);
@@ -30,7 +32,7 @@ $(document).on('click','#active-ajax', function(e){
 $(document).on('click','#add-l-ajax', function(e){
     e.preventDefault();
     $.ajax({
-        url: '/lessons/add',
+        url: '/lessons/menu/add',
         type: "GET",
         success: function(data){
             let content = $(data).filter('#content-ajax').html();
@@ -40,11 +42,11 @@ $(document).on('click','#add-l-ajax', function(e){
 });
 
 $(document).on('click','#your-l-ajax', function(e){
-    const author_id = $(this).attr('data-index');
+    const authorId = $(this).attr('data-index');
     e.preventDefault();
     $.ajax({
-        url: '/lessons/yours/'+author_id,
-        data: {'id': author_id},
+        url: '/lessons/menu/'+authorId,
+        data: {'id': authorId},
         type: "GET",
         _token: '{{ csrf_token() }}',
         success: function(data){
