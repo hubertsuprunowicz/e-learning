@@ -19,9 +19,6 @@ Route::get('/home', 'HomeController@index')->name('homee');
 
 Route::get('/', 'AdvertisementController@index')->name('advertisements');
 
-
-
-
 Route::middleware(['auth'])->group(function () {
 
 	// Lessons...

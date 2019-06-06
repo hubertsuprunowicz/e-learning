@@ -4,7 +4,7 @@
 
     <main class="main-messages ">
         <div class="container ">
-            <h2 class="h1-responsive font-weight-bold text-center my-5">Messages</h2>
+            <h2 class="h2-responsive font-weight-bold text-center my-5">Messages</h2>
             <div class="messaging">
 
                 <div class="inbox_msg d-flex flex-row flex-wrap justify-content-center w-100" id="inbox">
@@ -26,7 +26,7 @@
                             @foreach($messages as $message)
                             <div class="chat_list active_chat">
                                 <div class="chat_people">
-                                    <div class="chat_img"> <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil"> </div>
+                                    <div class="chat_img"> <img src="{{ $message->user->image }}" alt="avatar img"> </div>
                                     <div class="chat_ib">
                                         <h5>{{ $message->user->name }}<span class="chat_date">{{ $message->created_at }}</span></h5>
                                         <h6><strong>{{ $message->title }}</strong></h6>

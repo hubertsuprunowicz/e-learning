@@ -14,9 +14,9 @@ use Illuminate\Contracts\View\View;
 
 class LessonController extends Controller
 {
-	public const LESSONS_PER_PAGE = 30;
+	protected const LESSONS_PER_PAGE = 30;
 
-	public function index($pageNumber) : View {
+	public function index($pageNumber) {
 		$pageNumberLimit = Lesson::lessonsLimiter(self::LESSONS_PER_PAGE);
 		if($pageNumber < 1 || $pageNumber > $pageNumberLimit) {
 			return redirect('/');

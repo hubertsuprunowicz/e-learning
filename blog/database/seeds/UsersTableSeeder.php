@@ -17,7 +17,8 @@ class UsersTableSeeder extends Seeder
 			'name' => 'admin',
 			'email' => 'admin@admin.com',
 			'password' => 'admin',
-			'ip' => '127.0.0.1'
+			'ip' => '127.0.0.1',
+            'image' => '/img/default-avatar.png'
 		]);
 		$user->save();
 
@@ -29,7 +30,8 @@ class UsersTableSeeder extends Seeder
 			'password' => 'test01',
 			'occupation' => 'Freelancer',
 			'phone_number' => 48662133623,
-			'ip' => '109.231.32.75'
+			'ip' => '109.231.32.75',
+            'image' => '/img/default-avatar.png'
 		]);
 		$user->save();
 
@@ -41,7 +43,8 @@ class UsersTableSeeder extends Seeder
 			'password' => 'test02',
 			'occupation' => 'Freelancer',
 			'phone_number' => 48662133621,
-			'ip' => '119.231.32.75'
+			'ip' => '119.231.32.75',
+            'image' => '/img/default-avatar.png'
 		]);
 		$user->save();
 
@@ -53,7 +56,8 @@ class UsersTableSeeder extends Seeder
 			'password' => 'test03',
 			'occupation' => 'Freelancer',
 			'phone_number' => 48632133623,
-			'ip' => '109.231.32.35'
+			'ip' => '109.231.32.35',
+            'image' => '/img/default-avatar.png'
 		]);
 		$user->save();
 
@@ -65,7 +69,8 @@ class UsersTableSeeder extends Seeder
 			'password' => 'test04',
 			'occupation' => 'Freelancer',
 			'phone_number' => 48662133643,
-			'ip' => '109.231.42.75'
+			'ip' => '109.231.42.75',
+            'image' => '/img/default-avatar.png'
 		]);
 		$user->save();
 
@@ -77,7 +82,8 @@ class UsersTableSeeder extends Seeder
 			'password' => 'test05',
 			'occupation' => 'Freelancer',
 			'phone_number' => 48662555623,
-			'ip' => '109.555.32.75'
+			'ip' => '109.555.32.75',
+            'image' => '/img/default-avatar.png'
 		]);
 		$user->save();
 
@@ -89,7 +95,8 @@ class UsersTableSeeder extends Seeder
 			'password' => 'test06',
 			'occupation' => 'Freelancer',
 			'phone_number' => 48666133623,
-			'ip' => '109.231.66.75'
+			'ip' => '109.231.66.75',
+            'image' => '/img/default-avatar.png'
 		]);
 		$user->save();
 
