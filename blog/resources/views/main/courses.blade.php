@@ -16,7 +16,7 @@
                     <a id="classifieds-ajax">Classifieds</a>
                 </li>
                 <li class="dropdown-item">
-                    <a id="active-ajax">Active lesson</a>
+                    <a id="active-ajax">Livestream</a>
                 </li>
                 <li class="dropdown-item">
                     <a id="add-l-ajax">Add lesson</a>
@@ -35,6 +35,7 @@
             </button>
 
             <section id="content-ajax" class="w-100">
+
                 <div class="input-group md-form form-sm form-2 pl-0 search-position d-flex justify-content-center">
                     <input id="search" class="form-control my-0 py-1 " type="text" placeholder="Search" aria-label="Search" autocomplete="off">
                     <div class="input-group-append">

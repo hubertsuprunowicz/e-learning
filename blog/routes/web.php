@@ -15,17 +15,22 @@
 Auth::routes();
 
 // Auth page
-Route::get('/home', 'HomeController@index')->name('homee');
+Route::get('/home', 'AdvertisementController@index')->name('homee');
 
 Route::get('/', 'AdvertisementController@index')->name('advertisements');
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 67fe54dbc16ca6b27a72d8725ee9eee55331adc7
 Route::middleware(['auth'])->group(function () {
 
 	// Lessons...
 	Route::get('/lessons/page/{pageNumber}', 'LessonController@index')->name('lessons_page');
 
 	Route::post('/lessons', [
-		'uses'  =>  'LessonController@create'
+		'uses'  =>  'LessonController@create',
+		'as' => 'lesson.post'
 	]);
 
 	Route::get('/lessons/{id}', [
@@ -33,9 +38,22 @@ Route::middleware(['auth'])->group(function () {
 		'as' => 'lesson.get'
 	]);
 
+	Route::delete('/lessons/{id}', [
+		'uses'  =>  'LessonController@delete',
+		'as' => 'lesson.delete'
+	]);
+
+
+
+
+	Route::post('/lessons/enroll', [
+		'uses'  =>  'LessonEnrollController@create',
+		'as' => 'lessonEnroll.post'
+	]);
+
 
 	// TODO: change URL
-	Route::get('/lessons/menu/active/{id}', [
+	Route::get('/lessons/menu/active', [
 		// TODO: check if is it him
 		'uses'  =>  'SitesController@activeLesson'
 	]);

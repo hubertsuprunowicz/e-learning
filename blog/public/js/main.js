@@ -20,7 +20,7 @@ $(document).on('click','#active-ajax', function(e){
     e.preventDefault();
     $.ajax({
         // lesson id
-        url: '/lessons/menu/active/1',
+        url: '/lessons/menu/active',
         type: "GET",
         success: function(data){
             let content = $(data).filter('#content-ajax').html();
@@ -53,7 +53,7 @@ $(document).on('click','#your-l-ajax', function(e){
             let content = $(data).filter('#content-ajax').html();
             $('#content-ajax').html(content);
         }, error: function () {
-            window.location.href = "/";
+           // window.location.href = "/";
         }
     });
 });
@@ -137,6 +137,24 @@ $(document).ready(function(){
 });
 
 
+
+// release user-edit-btn on click in profile page
+profileReadToWritePermission();
+function profileReadToWritePermission() {
+
+    let userInfo = $(".user-info");
+
+    $("#user-edit-btn").click(function(){
+        userInfo.attr('readonly', false);
+        $(".input-edit-profile").css("border-bottom", "8px dotted #26C281");
+        $(".input-edit-avatar").css("color", "gray");
+    });
+    $("#user-save-btn").click(function(){
+        userInfo.attr('readonly', true);
+    });
+
+
+}
 
 
 

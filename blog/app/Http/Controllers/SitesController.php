@@ -4,9 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Advertisement;
 use App\Lesson;
+use App\Lesson_enroll;
 use App\Opinion;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\View\View;
 
 class SitesController extends Controller
@@ -31,12 +33,10 @@ class SitesController extends Controller
 
 
 
-
-
 //	TEMPORARY SOLUTION
 	public function activeLesson() {
-
-		return view('partials.videochat');
+		$lessons = Lesson::getIfActive();
+		return view('partials.videochat', compact('lessons'));
 	}
 
 	public function addLesson() {

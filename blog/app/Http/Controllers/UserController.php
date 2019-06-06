@@ -8,6 +8,7 @@ use App\Opinion;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
@@ -22,8 +23,21 @@ class UserController extends Controller
 
 	}
 
-	public function edit() {
-		return view('main.admin', compact('user'));
+	public function edit(Request $request) {
+
+		$userInformation = [
+			'id' => Auth::user()->id,
+			'firstName' => $request->firstName,
+			'lastName' => $request->lastName,
+			'image' => $request->image,
+			'occupation' => $request->occupation,
+			'about' => $request->about
+		];
+
+		$user = new User();
+		$user->userPut($userInformation);
+
+		return redirect()->route('user.profile', Auth::user()->name);
 	}
 
 	public function delete() {

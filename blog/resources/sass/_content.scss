@@ -1,3 +1,14 @@
+.btn-delete {
+	margin-bottom: 100px;
+	width: 8%;
+	min-width: 100px;
+	padding: 5px !important;
+	z-index: 10;
+}
+
+.expired {
+	opacity: 0.5;
+}
 
 .stat-info {
 	padding: 35px;
@@ -9,7 +20,6 @@
 	background-color: $light-gray;
 
 }
-
 
 .adv-card {
 	flex: 1 0 35% !important;

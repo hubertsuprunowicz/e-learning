@@ -22,12 +22,10 @@ class MessageController extends Controller
 
 	public function create(Request $request) {
 		$message = new Message;
-
 		$message->user_id = Auth::user()->id;
 		$message->sent_to = $request->sent_to;
 		$message->title = $request->title;
 		$message->message = $request->body;
-
 		$message->save();
 
 		return redirect()->back()->with('success');

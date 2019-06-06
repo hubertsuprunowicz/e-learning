@@ -13,7 +13,6 @@
                         <div class="card-body">
 
                             <div>
-
                                 <h4 class="card-title">{{ $lesson->user->first_name }}</h4>
                                 <h4 class="card-title">{{ $lesson->user->last_name }}</h4>
                             </div>
@@ -51,7 +50,7 @@
                         <br>
                     </li>
                     <li class="list-group-item">
-                        <h3>Vacancies: <span class="card-important-info">3 of {{ $lesson->student_limit }}</span></h3>
+                        <h3>Vacancies: <span class="card-important-info">{{  $lesson->enroll->count() }} of {{ $lesson->student_limit }} enrolled to this lesson</span></h3>
                     </li>
                     <li class="list-group-item">
                         <h3>Video time: <span class="card-important-info">{{ $lesson->length }}min</span></h3>
@@ -70,9 +69,17 @@
                     </div>
                 </div>
 
-
                 <div class="pt-2 align-self-">
-                    <button type="button" class="btn adv-button text-white">Join now <span class="far fa-gem ml-1"></span></button>
+                    @if($lesson->date < date(\Carbon\Carbon::now()))
+                    <form action="{{ route('lessonEnroll.post') }}" method="POST" class="d-flex flex-column">
+                        {{ csrf_field() }}
+                        <input name="lessonId" class="d-none" value="{{ $lesson->id }}">
+                        <button type="submit" class="btn adv-button text-white">Join now <span class="far fa-gem ml-1"></span></button>
+                        @if($errors->any())
+                            <strong class="text-danger">{{ $errors->first() }}</strong>
+                        @endif
+                    </form>
+                    @endif
                     <button type="button" class="btn btn-danger">Raport</button>
                 </div>
             </div>
