@@ -2,8 +2,10 @@
 
 namespace App;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class Lesson extends Model
@@ -47,6 +49,24 @@ class Lesson extends Model
 	public static function lessonsLimiter($lessonsPerPage) {
 		return ceil(DB::table('lessons')->count() / $lessonsPerPage);
 	}
+
+	public static function getIfActive()  {
+		$lesson = Lesson_enroll::with(['lesson' => function($query) {
+			$query->orderBy('date');
+		}])
+			->where('student_id', Auth::user()->id)
+			->get();
+
+		foreach ($lesson as $less){
+			$endOfLesson = Carbon::parse($less->lesson->date);
+			$endOfLesson->addHours($less->lesson->length/60);
+			if(date(Carbon::now()) <= date($endOfLesson) && $less->lesson->date <= date(Carbon::now()));
+				//return $less;
+		}
+
+		return $lesson;
+	}
+
 
 
 }

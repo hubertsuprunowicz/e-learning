@@ -11287,6 +11287,18 @@ a[data-toggle=collapse] {
   margin-left: auto;
 }
 
+.btn-delete {
+  margin-bottom: 100px;
+  width: 8%;
+  min-width: 100px;
+  padding: 5px !important;
+  z-index: 10;
+}
+
+.expired {
+  opacity: 0.5;
+}
+
 .stat-info {
   padding: 35px;
   background-color: #ecf0f1;

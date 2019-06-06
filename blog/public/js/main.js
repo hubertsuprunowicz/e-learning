@@ -20,7 +20,7 @@ $(document).on('click','#active-ajax', function(e){
     e.preventDefault();
     $.ajax({
         // lesson id
-        url: '/lessons/menu/active/1',
+        url: '/lessons/menu/active',
         type: "GET",
         success: function(data){
             let content = $(data).filter('#content-ajax').html();
@@ -53,7 +53,7 @@ $(document).on('click','#your-l-ajax', function(e){
             let content = $(data).filter('#content-ajax').html();
             $('#content-ajax').html(content);
         }, error: function () {
-            window.location.href = "/";
+           // window.location.href = "/";
         }
     });
 });

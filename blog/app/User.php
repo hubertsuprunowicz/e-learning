@@ -56,6 +56,16 @@ class User extends Authenticatable
 		return $this->hasMany(Lesson_enroll::class);
 	}
 
+	public function userPut($userInfo) {
+		$user = self::find($userInfo['id']);
+		$user->first_name = $userInfo['firstName'];
+		$user->last_name = $userInfo['lastName'];
+		$user->image = $userInfo['image'];
+		$user->occupation = $userInfo['occupation'];
+		$user->about = $userInfo['about'];
+		$user->save();
+	}
+
 	public function setPasswordAttribute($password)
 	{
 		$this->attributes['password'] = \Hash::make($password);

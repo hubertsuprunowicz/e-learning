@@ -27,8 +27,9 @@
                     </li>
                 @endif
                 @else
+
                     <li class="nav-item ">
-                        <a class="nav-link" href="{{ route('lessons_page', 1) }}">courses<span class="badge badge-danger ml-2">9</span></a>
+                        <a class="nav-link" href="{{ route('lessons_page', 1) }}">lessons</a>
                     </li>
 
                     <li class="nav-item dropdown">
@@ -42,7 +43,7 @@
                             @endif
 
                             <a class="dropdown-item" href="{{ route("user.profile", Auth::user()->name) }}">profile</a>
-                            <a class="dropdown-item" href="{{ route('messages') }}">messages<span class="badge badge-danger ml-2">2</span></a>
+                            <a class="dropdown-item" href="{{ route('messages') }}">messages</a>
                             <a class="dropdown-item btn-danger" href="{{ route('logout') }}"
                                onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">

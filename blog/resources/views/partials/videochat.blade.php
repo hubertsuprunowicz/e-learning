@@ -2,74 +2,48 @@
 
 @section('content')
 
+
+
+
         <section id="content-ajax" class="w-100">
-            <br>
-            <br>
+            @if(count($lessons) < 2)
+                <div class="embed-responsive embed-responsive-16by9 mt-5">
+                    <iframe class="embed-responsive-item" src="https://player.vimeo.com/video/137857207" allowfullscreen></iframe>
+                </div>
+            @else
+                <div class="list-group list-lessons text-center container mb-5">
+                    <br>
+                    <strong>There is no any livestream now, checkout your future lesson below.</strong>
+                    <br><br>
+                    @forelse($lessons as $lesson)
 
-            <div class="embed-responsive embed-responsive-16by9 mt-5">
-                <iframe class="embed-responsive-item" src="https://player.vimeo.com/video/137857207" allowfullscreen></iframe>
-            </div>
-
-            <div class="container mt-5">
-                <div class="messaging">
-                    <div class="inbox_msg">
-
-
-                        <div class="inbox_people inbox mr-auto ml-auto ">
-
-                        <div class="mesgs messages w-100 ">
-                            <div class="msg_history">
-                                <div class="incoming_msg">
-                                    <div class="incoming_msg_img"> <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil"> </div>
-                                    <div class="received_msg">
-                                        <div class="received_withd_msg">
-                                            <p>Test which is a new approach to have all
-                                                solutions</p>
-                                            <span class="time_date"> 11:01 AM    |    June 9</span></div>
-                                    </div>
+                        @if($lesson->lesson->date < date(\Carbon\Carbon::now()))
+                            <a href="{{ route('lesson.get', $lesson->lesson->id) }}" class="expired list-group-item list-group-item-action flex-column align-items-start">
+                                <div class="d-flex w-100 justify-content-between">
+                                    <h5 class="mb-2 h5">{{ $lesson->lesson->subject }}</h5>
+                                    <strong class="text-mint">{{ $lesson->lesson->date }}</strong>
                                 </div>
-                                <div class="outgoing_msg">
-                                    <div class="sent_msg">
-                                        <p>Test which is a new approach to have all
-                                            solutions</p>
-                                        <span class="time_date"> 11:01 AM    |    June 9</span> </div>
+                                <p class="mb-2">{{ substr($lesson->lesson->description,0, 100) . "..." }}</p>
+                                <small>Donec id elit non mi porta.</small>
+                            </a>
+                        @else
+                            <a href="{{ route('lesson.get', $lesson->lesson->id) }}" class="list-group-item list-group-item-action flex-column align-items-start">
+                                <div class="d-flex w-100 justify-content-between">
+                                    <h5 class="mb-2 h5">{{ $lesson->lesson->subject }}</h5>
+                                    <strong class="text-mint">{{ $lesson->lesson->date }}</strong>
                                 </div>
-                                <div class="incoming_msg">
-                                    <div class="incoming_msg_img"> <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil"> </div>
-                                    <div class="received_msg">
-                                        <div class="received_withd_msg">
-                                            <p>Test, which is a new approach to have</p>
-                                            <span class="time_date"> 11:01 AM    |    Yesterday</span></div>
-                                    </div>
-                                </div>
-                                <div class="outgoing_msg">
-                                    <div class="sent_msg">
-                                        <p>Apollo University, Delhi, India Test</p>
-                                        <span class="time_date"> 11:01 AM    |    Today</span> </div>
-                                </div>
-                                <div class="incoming_msg">
-                                    <div class="incoming_msg_img"> <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil"> </div>
-                                    <div class="received_msg">
-                                        <div class="received_withd_msg">
-                                            <p>We work directly with our designers and suppliers,
-                                                and sell direct to you, which means quality, exclusive
-                                                products, at a price anyone can afford.</p>
-                                            <span class="time_date"> 11:01 AM    |    Today</span></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="type_msg">
-                                <div class="input_msg_write">
-                                    <input type="text" class="write_msg" placeholder="Type a message" />
-                                    <button class="msg_send_btn" type="button"><i class="fa fa-paper-plane-o" aria-hidden="true"></i></button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    </div>
+                                <p class="mb-2">{{ substr($lesson->lesson->description,0, 100) . "..." }}</p>
+                                <small>Donec id elit non mi porta.</small>
+                            </a>
+                        @endif
 
-                </div></div>
 
+                    @empty
+                        <p>You have not joined to any lesson </p>
+                    @endforelse
+                </div>
+            @endif
         </section>
+
 
 @endsection
