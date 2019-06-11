@@ -61,7 +61,7 @@ class Lesson extends Model
 			$endOfLesson = Carbon::parse($less->lesson->date);
 			$endOfLesson->addHours($less->lesson->length/60);
 			if(date(Carbon::now()) <= date($endOfLesson) && $less->lesson->date <= date(Carbon::now()));
-				//return $less;
+				return $less;
 		}
 
 		return $lesson;

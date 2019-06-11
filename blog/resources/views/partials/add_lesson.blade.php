@@ -12,7 +12,6 @@
                     <input name="title" type="text" class="form-control" id="inputTitle" maxlength="30" required autofocus autocomplete="off">
                 </div>
             </div>
-=
             <div class="form-row">
                 <div class="form-group col-md-4 col-form-label">
                     <label for="example-datetime-local-input">Date and time</label>

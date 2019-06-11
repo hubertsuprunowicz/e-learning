@@ -4,7 +4,6 @@
     <div class="container text-center text-md-left ">
         <div class="row">
             <div class="col-md-4 col-lg-3 mr-auto my-md-4 my-0 mt-4 mb-1">
-
                 <!-- Content -->
                 <h5 class="font-weight-bold text-uppercase mb-4">Footer Content</h5>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit amet numquam.</p>

@@ -70,7 +70,7 @@
                 </div>
 
                 <div class="pt-2 align-self-">
-                    @if($lesson->date < date(\Carbon\Carbon::now()))
+                    @if($lesson->date > date(\Carbon\Carbon::now()))
                     <form action="{{ route('lessonEnroll.post') }}" method="POST" class="d-flex flex-column">
                         {{ csrf_field() }}
                         <input name="lessonId" class="d-none" value="{{ $lesson->id }}">
@@ -80,7 +80,7 @@
                         @endif
                     </form>
                     @endif
-                    <button type="button" class="btn btn-danger">Raport</button>
+                    {{--<button type="button" class="btn btn-danger">Raport</button>--}}
                 </div>
             </div>
 

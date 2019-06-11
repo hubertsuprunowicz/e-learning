@@ -19,81 +19,77 @@ Route::get('/home', 'AdvertisementController@index')->name('homee');
 
 Route::get('/', 'AdvertisementController@index')->name('advertisements');
 
-<<<<<<< HEAD
-=======
 
->>>>>>> 67fe54dbc16ca6b27a72d8725ee9eee55331adc7
 Route::middleware(['auth'])->group(function () {
 
-	// Lessons...
-	Route::get('/lessons/page/{pageNumber}', 'LessonController@index')->name('lessons_page');
+    // Lessons...
+    Route::get('/lessons/page/{pageNumber}', 'LessonController@index')->name('lessons_page');
 
-	Route::post('/lessons', [
-		'uses'  =>  'LessonController@create',
-		'as' => 'lesson.post'
-	]);
+    Route::post('/lessons', [
+        'uses'  =>  'LessonController@create',
+        'as' => 'lesson.post'
+    ]);
 
-	Route::get('/lessons/{id}', [
-		'uses'  =>  'LessonController@show',
-		'as' => 'lesson.get'
-	]);
+    Route::get('/lessons/{id}', [
+        'uses'  =>  'LessonController@show',
+        'as' => 'lesson.get'
+    ]);
 
-	Route::delete('/lessons/{id}', [
-		'uses'  =>  'LessonController@delete',
-		'as' => 'lesson.delete'
-	]);
-
-
-
-
-	Route::post('/lessons/enroll', [
-		'uses'  =>  'LessonEnrollController@create',
-		'as' => 'lessonEnroll.post'
-	]);
-
-
-	// TODO: change URL
-	Route::get('/lessons/menu/active', [
-		// TODO: check if is it him
-		'uses'  =>  'SitesController@activeLesson'
-	]);
-
-	Route::get('/lessons/menu/add', [
-		'uses'  =>  'SitesController@addLesson'
-	]);
-
-	Route::get('/lessons/menu/{authorId}', [
-		// TODO: check if is it him
-		'uses'  =>  'SitesController@getYourLessons',
-		'as' => 'listOfLessons.get'
-	]);
+    Route::delete('/lessons/{id}', [
+        'uses'  =>  'LessonController@delete',
+        'as' => 'lesson.delete'
+    ]);
 
 
 
 
-	// Messages Panel...
-	Route::get('/messages', 'MessageController@index')->name('messages');
-
-	Route::post('/messages', [
-		'uses' => 'MessageController@create',
-		'as' => 'message.create'
-	]);
+    Route::post('/lessons/enroll', [
+        'uses'  =>  'LessonEnrollController@create',
+        'as' => 'lessonEnroll.post'
+    ]);
 
 
-	// User Profile...
-	Route::get('/user/{id}', [
-		'uses' => 'UserController@show',
-		'as' => 'user.profile'
-	]);
+    // TODO: change URL
+    Route::get('/lessons/menu/active', [
+        // TODO: check if is it him
+        'uses'  =>  'SitesController@activeLesson'
+    ]);
 
-	Route::put('/user/{id}/edit', [
-		'uses' => 'UserController@edit',
-		'as' => 'user.edit'
-	]);
+    Route::get('/lessons/menu/add', [
+        'uses'  =>  'SitesController@addLesson'
+    ]);
+
+    Route::get('/lessons/menu/{authorId}', [
+        // TODO: check if is it him
+        'uses'  =>  'SitesController@getYourLessons',
+        'as' => 'listOfLessons.get'
+    ]);
 
 
-	// Admin Panel...
-	Route::get('/admin', 'SitesController@index')->name('adminPanel');
+
+
+    // Messages Panel...
+    Route::get('/messages', 'MessageController@index')->name('messages');
+
+    Route::post('/messages', [
+        'uses' => 'MessageController@create',
+        'as' => 'message.create'
+    ]);
+
+
+    // User Profile...
+    Route::get('/user/{id}', [
+        'uses' => 'UserController@show',
+        'as' => 'user.profile'
+    ]);
+
+    Route::put('/user/{id}/edit', [
+        'uses' => 'UserController@edit',
+        'as' => 'user.edit'
+    ]);
+
+
+    // Admin Panel...
+    Route::get('/admin', 'AdminController@index')->name('adminPanel');
 
 });
-

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Foundation\Auth\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use App\Message;
@@ -21,14 +22,21 @@ class MessageController extends Controller
 	}
 
 	public function create(Request $request) {
-		$message = new Message;
-		$message->user_id = Auth::user()->id;
-		$message->sent_to = $request->sent_to;
-		$message->title = $request->title;
-		$message->message = $request->body;
-		$message->save();
 
-		return redirect()->back()->with('success');
+	    $user = User::where('name', '=', $request->sent_to)->first();
+
+	    if(empty($user)) {
+            return redirect()->back()->withErrors(['User does not exist']);
+        } else {
+            $message = new Message;
+            $message->user_id = Auth::user()->id;
+            $message->sent_to = $request->sent_to;
+            $message->title = $request->title;
+            $message->message = $request->body;
+            $message->save();
+
+            return redirect()->back();
+        }
 	}
 
 	public function delete() {}

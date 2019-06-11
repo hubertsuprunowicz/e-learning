@@ -59,7 +59,7 @@
                                     {{--<input type="radio" id="star2" name="rating" value="2" /><label for="star2" title="2 star"></label>--}}
                                     {{--<input type="radio" id="star1" name="rating" value="1" /><label for="star1" title="1 star"></label>--}}
                                 </div>
-                                <div class="opinion-holder mt-3"><a href="#opinions" class="text-mint ">Opinions<span class="badge badge-success ml-2">5</span></a></div>
+                                <div class="opinion-holder mt-3"><a href="#opinions" class="text-mint ">Opinions<span class="badge badge-success ml-2">{{ $user->opinions->count() }}</span></a></div>
                             </div>
                         </div>
                     @endif

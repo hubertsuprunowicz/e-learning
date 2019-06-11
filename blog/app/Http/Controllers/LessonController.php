@@ -34,7 +34,7 @@ class LessonController extends Controller
 	public function create(Request $request) {
 
 		if($request->date < date(Carbon::now()))
-			return redirect()->back()->with('error', 'The date you wrote has already passed');
+            return redirect()->back()->withErrors(['The date you wrote has already passed']);
 
 		$lesson = new Lesson;
 		$lesson->author_id = Auth::user()->id;

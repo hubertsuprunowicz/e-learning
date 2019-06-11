@@ -90,7 +90,7 @@
         </section>
 
         <section class="offer-section d-flex flex-column">
-            <h1 class="h1-responsive font-weight-bold text-center my-5">Classifieds</h1>
+            <h1 class="h1-responsive font-weight-bold text-center my-5">Lessons</h1>
 
             <div class="card-deck offer-card-deck justify-content-center align-content-around">
 
