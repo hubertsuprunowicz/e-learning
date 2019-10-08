@@ -27,7 +27,7 @@
                 </div>
                 <div class="form-group col-md-2 col-form-label">
                     <label for="inputZip">Price</label>
-                    <input name="price" type="text" class="form-control" id="inputZip" pattern="[0-9]{1,5}" placeholder="Full prices" required>
+                    <input name="price" type="text" class="form-control" id="inputZip" pattern="[0-9]{1,5}" placeholder="Full price" required>
                 </div>
             </div>
 
@@ -41,7 +41,7 @@
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="inputLength">Length</label>
-                    <input name="length" type="text" class="form-control" id="inputLength" pattern="[0-9]{1,4}" required>
+                    <input name="length" type="text" class="form-control" placeholder="in minutes..." id="inputLength" pattern="[0-9]{1,4}" required>
                 </div>
             </div>
 

@@ -6,7 +6,7 @@
 
 
         <section id="content-ajax" class="w-100">
-            @if(count($lessons) < 2)
+            @if(collect($lessons)->count() < 2)
                 <div class="embed-responsive embed-responsive-16by9 mt-5">
                     <iframe class="embed-responsive-item" src="https://player.vimeo.com/video/137857207" allowfullscreen></iframe>
                 </div>
@@ -15,6 +15,7 @@
                     <br>
                     <strong>There is no any livestream now, checkout your future lesson below.</strong>
                     <br><br>
+
                     @forelse($lessons as $lesson)
 
                         @if($lesson->lesson->date < date(\Carbon\Carbon::now()))

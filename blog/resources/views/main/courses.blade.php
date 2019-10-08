@@ -36,14 +36,6 @@
 
             <section id="content-ajax" class="w-100">
 
-                {{--<div class="input-group md-form form-sm form-2 pl-0 search-position d-flex justify-content-center">--}}
-                    {{--<input id="search" class="form-control my-0 py-1 " type="text" placeholder="Search" aria-label="Search" autocomplete="off">--}}
-                    {{--<div class="input-group-append">--}}
-                        {{--<span class="input-group-text" id="basic-text1"><i class="fas fa-search text-grey" aria-hidden="true"></i></span>--}}
-                    {{--</div>--}}
-                    {{--<ul class="list-group" id="result"></ul>--}}
-                {{--</div>--}}
-
                 <div class="card-deck offer-card-deck justify-content-center align-content-around mt-5">
                     @for ($i = $startRange; $i <= $endRange; $i++)
                         @break( empty($lessons[$i]) )
