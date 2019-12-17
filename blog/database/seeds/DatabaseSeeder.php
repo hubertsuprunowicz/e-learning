@@ -4,7 +4,7 @@ use Illuminate\Database\Seeder;
 use App\User;
 use App\Lesson;
 use App\Opinion;
-use App\Lesson_enroll;
+use App\LessonEnroll;
 use App\Message;
 use App\Payment;
 use App\Advertisement;
@@ -33,7 +33,7 @@ class DatabaseSeeder extends Seeder
 				factory(Lesson::class, 4)
 					->create(['author_id' => $user->id])
 					->each(function ($lesson) {
-						factory(Lesson_enroll::class, 10)->create(['lesson_id' => $lesson->id]);
+						factory(LessonEnroll::class, 10)->create(['lesson_id' => $lesson->id]);
 					})
 					->each(function ($lesson) {
 						factory(Advertisement::class, 1)
@@ -46,7 +46,6 @@ class DatabaseSeeder extends Seeder
 							});
 
 					});
-
 			})
 
 			->each(function ($user) {

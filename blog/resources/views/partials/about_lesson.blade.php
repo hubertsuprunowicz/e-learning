@@ -20,17 +20,6 @@
                             <h6 class="text-uppercase grey-text mb-3">{{ $lesson->user->occupation }}</h6>
 
                             <p class="card-text">{{ $lesson->user->email }}</p>
-
-                            <hr>
-                            <div class="container">
-                                <div class="starrating risingstar d-flex justify-content-center flex-row-reverse">
-                                    <input type="radio" id="star5" name="rating" value="5" /><label for="star5" title="5 star"></label>
-                                    <input type="radio" id="star4" name="rating" value="4" /><label for="star4" title="4 star"></label>
-                                    <input type="radio" id="star3" name="rating" value="3" /><label for="star3" title="3 star"></label>
-                                    <input type="radio" id="star2" name="rating" value="2" /><label for="star2" title="2 star"></label>
-                                    <input type="radio" id="star1" name="rating" value="1" /><label for="star1" title="1 star"></label>
-                                </div>
-                            </div>
                         </div>
                     </div>
                     <a href="{{ route("user.profile", $lesson->user->name) }}" class="btn adv-button text-white btn-md ">Read more</a>
@@ -50,7 +39,11 @@
                         <br>
                     </li>
                     <li class="list-group-item">
-                        <h3>Vacancies: <span class="card-important-info">{{  $lesson->enroll->count() }} of {{ $lesson->student_limit }} enrolled to this lesson</span></h3>
+                        @if($lesson->student_limit === -1)
+                            <h3><span class="card-important-info">Unlimited</span></h3>
+                        @else
+                            <h3>Vacancies: <span class="card-important-info">{{  $lesson->enroll->count() }} of {{ $lesson->student_limit }} enrolled to this lesson</span></h3>
+                        @endif
                     </li>
                     <li class="list-group-item">
                         <h3>Video time: <span class="card-important-info">{{ $lesson->length }}min</span></h3>
@@ -64,7 +57,7 @@
                 </ul>
 
                 <div class="row d-flex justify-content-center">
-                    <div class="col-xl-7 pl-1 pr-1">
+                    <div class="col-xl-9 pl-1 pr-1">
                         <p class="card-text pl-3 pr-3">{{ $lesson->description }}</p>
                     </div>
                 </div>
@@ -80,7 +73,21 @@
                         @endif
                     </form>
                     @endif
-                    {{--<button type="button" class="btn btn-danger">Raport</button>--}}
+                        @if($lesson->user->id === Auth::user()->id)
+                            <a href="{{ route('lesson.edit.view', $lesson->user->id )}}" id="user-edit-btn" class="btn btn-primary btn-sm">
+                                Edit
+                            </a>
+                        @endif
+                        <form method="POST" action="{{ route('report.create') }}">
+                            {{ csrf_field() }}
+                            <label>
+                                <input type="number" value="{{$lesson->id}}" name="id" hidden/>
+                            </label>
+                            <label>
+                                <input type="text" value="LESSON" name="type" hidden/>
+                            </label>
+                            <button type="submit" class="btn btn-danger">Report</button>
+                        </form>
                 </div>
             </div>
 

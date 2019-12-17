@@ -9,34 +9,24 @@
 namespace App\Http\Controllers;
 
 
-use App\Lesson_enroll;
+use App\LessonEnroll;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class LessonEnrollController extends Controller
 {
-	public function index()  {
+    public function create(Request $request)
+    {
+        if (LessonEnroll::signed($request->lessonId))
+            return redirect()->back()->withErrors(['You have already signed to this lesson']);
 
-	}
+        $lesson = new LessonEnroll();
+        $lesson->student_id = Auth::user()->id;
+        $lesson->lesson_id = $request->lessonId;
+        $lesson->enroll_date = Carbon::now();
+        $lesson->save();
 
-	public function create(Request $request) {
-		$alreadySigned = Lesson_enroll::where('lesson_id', '=', $request->lessonId)
-							->where('student_id', '=', Auth::user()->id)
-							->first();
-
-		if($alreadySigned)
-			return redirect()->back()->withErrors(['You have already signed to this lesson']);
-
-		Lesson_enroll::lessonEnroll($request->lessonId);
-		return redirect()->back();
-	}
-
-	public function edit(Request $request) {
-
-	}
-
-	public function delete() {
-
-	}
-
+        return redirect()->back();
+    }
 }

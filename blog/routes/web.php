@@ -15,8 +15,6 @@
 Auth::routes();
 
 // Auth page
-Route::get('/home', 'AdvertisementController@index')->name('homee');
-
 Route::get('/', 'AdvertisementController@index')->name('advertisements');
 
 
@@ -30,6 +28,11 @@ Route::middleware(['auth'])->group(function () {
         'as' => 'lesson.post'
     ]);
 
+    Route::put('/lessons/{id}', [
+        'uses'  =>'LessonController@edit',
+        'as' => 'lesson.edit'
+    ]);
+
     Route::get('/lessons/{id}', [
         'uses'  =>  'LessonController@show',
         'as' => 'lesson.get'
@@ -40,18 +43,17 @@ Route::middleware(['auth'])->group(function () {
         'as' => 'lesson.delete'
     ]);
 
-
-
-
+    //
     Route::post('/lessons/enroll', [
         'uses'  =>  'LessonEnrollController@create',
         'as' => 'lessonEnroll.post'
     ]);
 
+    Route::post('/opinions', [
+        'uses'  =>  'OpinionController@create',
+    ]);
 
-    // TODO: change URL
     Route::get('/lessons/menu/active', [
-        // TODO: check if is it him
         'uses'  =>  'SitesController@activeLesson'
     ]);
 
@@ -60,12 +62,19 @@ Route::middleware(['auth'])->group(function () {
     ]);
 
     Route::get('/lessons/menu/{authorId}', [
-        // TODO: check if is it him
         'uses'  =>  'SitesController@getYourLessons',
         'as' => 'listOfLessons.get'
     ]);
 
+    Route::get('/user/edit/{id}', [
+        'uses'  =>  'SitesController@editUser',
+        'as' => 'user.edit.view'
+    ]);
 
+    Route::get('/lesson/edit/{id}', [
+        'uses'  =>  'SitesController@editLesson',
+        'as' => 'lesson.edit.view'
+    ]);
 
 
     // Messages Panel...
@@ -76,18 +85,22 @@ Route::middleware(['auth'])->group(function () {
         'as' => 'message.create'
     ]);
 
-
     // User Profile...
     Route::get('/user/{id}', [
         'uses' => 'UserController@show',
         'as' => 'user.profile'
     ]);
 
-    Route::put('/user/{id}/edit', [
+    Route::put('/user/{id}', [
         'uses' => 'UserController@edit',
         'as' => 'user.edit'
     ]);
 
+    // Reports...
+    Route::post('/report', [
+        'uses' => 'ReportController@create',
+        'as' => 'report.create'
+    ]);
 
     // Admin Panel...
     Route::get('/admin', 'AdminController@index')->name('adminPanel');

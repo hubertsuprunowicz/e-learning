@@ -1,7 +1,6 @@
 @extends('layouts.master')
 
 @section('content')
-
     <!--Main layout-->
     <main class="pt-5 mx-lg-5">
         <div class="container-fluid mt-5">
@@ -9,17 +8,37 @@
             <div class="row wow fadeIn">
                 <div class="col-md-9 mb-4">
                     <div class="card">
-
                         <div class="card-body">
                             <div id="chartContainer" style="height: 370px; width: 100%;"></div>
                         </div>
-
+                        <script>
+                            window.onload = function() {
+                                new CanvasJS.Chart("chartContainer", {
+                                    theme: "light1",
+                                    animationEnabled: false,
+                                    title: {
+                                        text: "Total amount user's lessons price"
+                                    },
+                                    data: [
+                                        {
+                                            type: "column",
+                                            dataPoints: [
+                                                { label: "{{ str_replace('\'', ' ', $userStats[4]->user->name) }}", y: parseInt({{ $userStats[4]->total }}) },
+                                                { label: "{{ str_replace('\'', ' ', $userStats[3]->user->name) }}", y: parseInt({{ $userStats[3]->total }}) },
+                                                { label: "{{ str_replace('\'', ' ', $userStats[0]->user->name) }}", y: parseInt({{ $userStats[0]->total }}) },
+                                                { label: "{{ str_replace('\'', ' ', $userStats[1]->user->name) }}", y: parseInt({{ $userStats[1]->total }}) },
+                                                { label: "{{ str_replace('\'', ' ', $userStats[2]->user->name) }}", y: parseInt({{ $userStats[2]->total }}) }
+                                            ]
+                                        }
+                                    ]
+                                }).render();
+                            };
+                        </script>
                     </div>
                 </div>
 
                 <div class="col-md-3 mb-4">
                     <div class="card mb-4">
-                        @if(isset($test)) {{ $test }} @endif
                         <div class="card-body">
 
                             <div class="list-group list-group-flush">
@@ -69,31 +88,22 @@
                                 <thead class="blue-grey lighten-4">
                                     <tr>
                                         <th>#</th>
-                                        <th>User</th>
-                                        <th>Total lessons created</th>
-                                        <th>Total price</th>
+                                        <th>Total reports</th>
+                                        <th>User name</th>
+                                        <th>User ping</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <th scope="row">1</th>
-                                        <td>{{ $topUserLesson[0]['user']['name'] }}</td>
-                                        <td>{{ $topUserLesson[0]['total'] }}</td>
-                                        <td>{{ $topUserLesson[0]['price'] }}</td>
-
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">2</th>
-                                        <td>{{ $topUserLesson[1]['user']['name'] }}</td>
-                                        <td>{{ $topUserLesson[1]['total'] }}</td>
-                                        <td>{{ $topUserLesson[1]['price'] }}</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">3</th>
-                                        <td>{{ $topUserLesson[2]['user']['name'] }}</td>
-                                        <td>{{ $topUserLesson[2]['total'] }}</td>
-                                        <td>{{ $topUserLesson[2]['price'] }}</td>
-                                    </tr>
+                                    @foreach($statistics['usersReports'] as $userReport)
+                                        <a href="{{ route('user.profile', $userReport->user_id) }}">
+                                        <tr>
+                                            <th scope="row">{{ $loop->index + 1 }}</th>
+                                            <td>{{ $userReport->total }}</td>
+                                            <td>{{ $userReport->user->name }}</td>
+                                            <td>{{ $userReport->user->ip }}</td>
+                                        </tr>
+                                        </a>
+                                    @endforeach
                                 </tbody>
                             </table>
 
@@ -114,31 +124,22 @@
                                 <thead class="blue lighten-4">
                                 <tr>
                                     <th>#</th>
-                                    <th>Lorem</th>
-                                    <th>Ipsum</th>
-                                    <th>Dolor</th>
+                                    <th>Total reports</th>
+                                    <th>Lesson subject</th>
+                                    <th>Lesson date</th>
                                 </tr>
                                 </thead>
-
                                 <tbody>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>Cell 1</td>
-                                    <td>Cell 2</td>
-                                    <td>Cell 3</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">2</th>
-                                    <td>Cell 4</td>
-                                    <td>Cell 5</td>
-                                    <td>Cell 6</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">3</th>
-                                    <td>Cell 7</td>
-                                    <td>Cell 8</td>
-                                    <td>Cell 9</td>
-                                </tr>
+                                @foreach($statistics['lessonsReports'] as $lessonReport)
+                                    <a href="{{ route('lesson.get', $lessonReport->lesson_id) }}">
+                                        <tr>
+                                            <th scope="row">{{ $loop->index + 1 }}</th>
+                                            <td>{{ $lessonReport->total }}</td>
+                                            <td>{{ $lessonReport->lesson->subject }}</td>
+                                            <td>{{ $lessonReport->lesson->date }}</td>
+                                        </tr>
+                                    </a>
+                                @endforeach
                                 </tbody>
                             </table>
                         </div>

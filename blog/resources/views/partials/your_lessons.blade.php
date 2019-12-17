@@ -38,7 +38,7 @@
                 @endif
 
             @empty
-                <p>You have not joined to any lesson </p>
+                <p>You have not created any lesson </p>
             @endforelse
         </div>
     </section>

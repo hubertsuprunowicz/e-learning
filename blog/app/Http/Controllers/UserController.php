@@ -2,51 +2,41 @@
 
 namespace App\Http\Controllers;
 
-use App\User;
 use App\Lesson;
-use App\Opinion;
+use App\User;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
-use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
-	protected  $primaryKey = 'name';
+    public function index(): View
+    {
+        $user = Lesson::all();
+        return view('main.profile', compact('user'));
+    }
 
-	public function index() : View {
-		$user = Lesson::all();
-		return view('main.profile', compact('user'));
-	}
+    public function edit($id, Request $request)
+    {
+        $user = User::find($id);
+        $user->first_name = $request->first_name;
+        $user->last_name = $request->last_name;
+        $user->image = $request->image;
+        $user->occupation = $request->occupation;
+        $user->about = $request->about;
+        $user->save();
 
-	public function create(Request $request) {
+//        dump(first_ame);
+//        print_r("aaaaa");
 
-	}
+        return redirect()->route('user.profile', Auth::user()->name);
+    }
 
-	public function edit(Request $request) {
-
-		$userInformation = [
-			'id' => Auth::user()->id,
-			'firstName' => $request->firstName,
-			'lastName' => $request->lastName,
-			'image' => $request->image,
-			'occupation' => $request->occupation,
-			'about' => $request->about
-		];
-
-		$user = new User();
-		$user->userPut($userInformation);
-
-		return redirect()->route('user.profile', Auth::user()->name);
-	}
-
-	public function delete() {
-
-	}
-
-	public function show($username) : View {
-		$user = User::with('opinions.user')->where('name', $username)->firstOrFail();
-		return view('main.profile', compact('user'));
-	}
-
+    public function show($username): View
+    {
+        $user = User::with('opinions.user')
+            ->where('name', $username)
+            ->firstOrFail();
+        return view('main.profile', compact('user'));
+    }
 }

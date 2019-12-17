@@ -7,12 +7,12 @@
  */
 
 use App\User;
-use App\Lesson_enroll;
+use App\LessonEnroll;
 use App\Lesson;
 use Illuminate\Support\Str;
 use Faker\Generator as Faker;
 
-$factory->define(Lesson_enroll::class, function (Faker $faker) {
+$factory->define(LessonEnroll::class, function (Faker $faker) {
 	return [
 		'student_id' => function () {
 			return factory(User::class)->create()->id;

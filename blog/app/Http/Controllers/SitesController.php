@@ -2,49 +2,37 @@
 
 namespace App\Http\Controllers;
 
-use App\Advertisement;
 use App\Lesson;
-use App\Lesson_enroll;
-use App\Opinion;
 use App\User;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\View\View;
 
 class SitesController extends Controller
 {
+    public function editUser($id)
+    {
+        $user = User::find($id);
+        return view('partials.edit_profile', compact('user'));
+    }
 
-//		$public function index(): Response
-//		{
-//			$posts = Cache::remember('feed-posts', now()->addHour(), function () {
-//				return Post::latest()->limit(20)->get();
-//			});
-//			return response()->view('posts_feed.index', [
-//				'posts' => $posts
-//			], 200)->header('Content-Type', 'text/xml');
-//		}
+    public function editLesson($id)
+    {
+        $lesson = Lesson::find($id);
+        return view('partials.edit_lesson', compact('lesson'));
+    }
 
-	public function index() {}
-	public function show() {}
-	public function delete() {}
+    public function activeLesson()
+    {
+        $lessons = Lesson::getIfActive();
+        return view('partials.videochat', compact('lessons'));
+    }
 
-//	TEMPORARY SOLUTION
-	public function activeLesson() {
-		$lessons = Lesson::getIfActive();
-		return view('partials.videochat', compact('lessons'));
-	}
+    public function addLesson()
+    {
+        return view('partials.add_lesson');
+    }
 
-	public function addLesson() {
-		return view('partials.add_lesson');
-	}
-
-	public function getYourLessons($id) {
-		$lessons = Lesson::where('author_id', $id)->get();
-		return view('partials.your_lessons', compact('lessons'));
-	}
-
-
-
-
-
+    public function getYourLessons($id)
+    {
+        $lessons = Lesson::where('author_id', $id)->get();
+        return view('partials.your_lessons', compact('lessons'));
+    }
 }

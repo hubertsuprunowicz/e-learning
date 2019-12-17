@@ -10,21 +10,26 @@ namespace App\Http\Controllers;
 
 
 use App\Advertisement;
-use App\Http\Controllers\Controller;
 use App\Lesson;
 use App\Opinion;
 use App\User;
-
-use Illuminate\Http\Request;
 use Illuminate\Contracts\View\View;
+use Illuminate\Support\Facades\DB;
 
 
 class AdvertisementController extends Controller
 {
 	public function index() : View {
+        $stats = [
+            'lessonsHours' => round(Lesson::sum('length') / 60),
+            'totalUsers' => User::count(),
+            'opinions' => Opinion::count(),
+        ];
+
 		$advertisements = Advertisement::with('lesson.user', 'lesson.enroll')->limit(6)->latest()->get();
 
-		return view('main.index', compact('advertisements'));
+
+		return view('main.index', compact('advertisements'), compact('stats'));
 	}
 
 }

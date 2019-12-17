@@ -11,16 +11,17 @@
                 <span class="choose-holder">Choose</span>
             </section>
 
-
             <section class="student-header panel-header">
-                <div class="speech-bubble">Lorem ipsum dolor sit amet, consectetur adipiscing. Nulla eu lorem. Mauris sapien ipsum, condimentum atlacerat leo. Vivamus sit amet meros .
+                <div class="speech-bubble">Lorem ipsum dolor sit amet, consectetur adipiscing. Nulla eu lorem. Mauris
+                    sapien ipsum, condimentum atlacerat leo. Vivamus sit amet meros .
                 </div>
                 <div class="icon-holder">
                     <i class="fas fa-graduation-cap"></i>
                 </div>
             </section>
             <section class="instructor-header panel-header">
-                <div class="speech-bubble">ing elit.m. Mauris sapien ipsum, condimentum at mi vitae, bibendum leo. Vivamus sit amet molestie neque. Suspendisse sed eros sagittis.
+                <div class="speech-bubble">ing elit.m. Mauris sapien ipsum, condimentum at mi vitae, bibendum leo.
+                    Vivamus sit amet molestie neque. Suspendisse sed eros sagittis.
                 </div>
                 <div class="icon-holder">
                     <i class="fas fa-chalkboard-teacher"></i>
@@ -29,9 +30,9 @@
 
             <section class="text-abs-header text-uppercase">
                 @guest
-                <a href="{{ route('register') }}" class="text-abs-holder">
-                    JOIN US
-                </a>
+                    <a href="{{ route('register') }}" class="text-abs-holder">
+                        JOIN US
+                    </a>
                 @endguest
                 @auth
                     <a href="{{ url('/') }}" class="text-abs-holder">
@@ -54,35 +55,40 @@
 
                 <div class="card">
                     <div class="d-flex flex-column">
-                        <div class="counter"><span class="counter-value w-50 text-google" data-count="14">0</span></div>
+                        <div class="counter"><span class="counter-value w-50 text-google" data-count="{{ $stats['lessonsHours'] }}">0</span></div>
                         <div class="w-50 text-google"><i class="fas fa-user-clock bragging-icon"></i></div>
                     </div>
                     <div class="card-body">
-                        <h5 class="card-title text-google">Lorem ipsum</h5>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <h5 class="card-title text-google">Hours of lessons</h5>
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                            additional content. This content is a little bit longer.</p>
                     </div>
                 </div>
 
 
                 <div class="card">
                     <div class="d-flex flex-column">
-                        <div class="counter"><span class="counter-value w-50 text-twitter" data-count="254">0</span></div>
+                        <div class="counter"><span class="counter-value w-50 text-twitter" data-count="{{ $stats['opinions'] }}">0</span>
+                        </div>
                         <div class="w-50 text-twitter"><i class="fas fa-user-cog bragging-icon"></i></div>
                     </div>
                     <div class="card-body">
-                        <h5 class="card-title text-twitter">Lorem ipsum</h5>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <h5 class="card-title text-twitter">5 star opinions</h5>
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                            additional content. This content is a little bit longer.</p>
                     </div>
                 </div>
 
                 <div class="card">
                     <div class="d-flex flex-column">
-                        <div class="counter"><span class="counter-value w-50 text-facebook" data-count="1467">0</span></div>
+                        <div class="counter"><span class="counter-value w-50 text-facebook" data-count="{{ $stats['totalUsers'] }}">0</span>
+                        </div>
                         <div class="w-50 text-facebook"><i class="fas fa-users bragging-icon"></i></div>
                     </div>
                     <div class="card-body">
-                        <h5 class="card-title text-facebook">Lorem ipsum</h5>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <h5 class="card-title text-facebook">Satisfied users</h5>
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                            additional content. This content is a little bit longer.</p>
                     </div>
                 </div>
 
@@ -96,42 +102,44 @@
 
                 @foreach($advertisements as $advertisement)
 
-                <div class="card adv-card">
-                    <div class="card-body offer-card-body" >
-                        <div class="card-avatar">
-                            <img src="{{ $advertisement->lesson->user->image }}"  alt="...">
-                            <h2 class="text-center avatar-text-card card-important-info text-mint"><strong>{{ $advertisement->lesson->subject }}</strong></h2>
-                        </div>
+                    <div class="card adv-card">
+                        <div class="card-body offer-card-body">
+                            <div class="card-avatar">
+                                <img src="{{ $advertisement->lesson->user->image }}" alt="...">
+                                <h2 class="text-center avatar-text-card card-important-info text-mint">
+                                    <strong>{{ $advertisement->lesson->subject }}</strong></h2>
+                            </div>
 
-                        <div class="d-flex flex-column align-content-center">
-                            <p class="card-text pl-2">{{ substr($advertisement->lesson->description,0, 150)."..." }}</p>
+                            <div class="d-flex flex-column align-content-center">
+                                <p class="card-text pl-2">{{ substr($advertisement->lesson->description,0, 150)."..." }}</p>
 
-                            <div class="align-items-end">
-                                <ul class="list-group list-group-flush card-list pl-2">
-                                    <li class="list-group-item">
-                                        Vacancies: <span class="card-important-info">
+                                <div class="align-items-end">
+                                    <ul class="list-group list-group-flush card-list pl-2">
+                                        <li class="list-group-item">
+                                            Vacancies: <span class="card-important-info">
                                             {{ $advertisement->lesson->student_limit }}({{ $advertisement->lesson->student_limit - $advertisement->lesson->enroll->count() }} left)
                                         </span>
-                                    </li>
-                                    <li class="list-group-item">
-                                        Video time: <span class="card-important-info">{{ $advertisement->lesson->length }}min</span>
-                                    </li>
-                                    <li class="list-group-item">
-                                        Exam: <span class="card-important-info">none</span>
-                                    </li>
-                                    <li class="list-group-item">
-                                        Price: <span class="card-important-info text-danger">{{ $advertisement->lesson->price }}$</span>
-                                    </li>
-                                </ul>
+                                        </li>
+                                        <li class="list-group-item">
+                                            Video time: <span class="card-important-info">{{ $advertisement->lesson->length }}min</span>
+                                        </li>
+                                        <li class="list-group-item">
+                                            Exam: <span class="card-important-info">none</span>
+                                        </li>
+                                        <li class="list-group-item">
+                                            Price: <span class="card-important-info text-danger">{{ $advertisement->lesson->price }}$</span>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
-                        </div>
 
+                        </div>
+                        <div class="card-footer">
+                            <small class="text-muted">updated {{ $advertisement->updated_at->diffForHumans() }}</small>
+                            <a href="{{ route('lesson.get', $advertisement->lesson->id) }}"
+                               class="card-btn d-block bg-mint">Check more</a>
+                        </div>
                     </div>
-                    <div class="card-footer">
-                        <small class="text-muted">updated {{ $advertisement->updated_at->diffForHumans() }}</small>
-                        <a href="{{ route('lesson.get', $advertisement->lesson->id) }}" class="card-btn d-block bg-mint">Check more</a>
-                    </div>
-                </div>
 
                 @endforeach
             </div>
@@ -157,7 +165,8 @@
                         </div>
                         <div class="col-lg-10 col-md-9 col-10">
                             <h4 class="font-weight-bold">People</h4>
-                            <p class="grey-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                            <p class="grey-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                                tempor
                                 incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
                         </div>
                     </div>
@@ -169,7 +178,8 @@
                         </div>
                         <div class="col-lg-10 col-md-9 col-10">
                             <h4 class="font-weight-bold">Money</h4>
-                            <p class="grey-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                            <p class="grey-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                                tempor
                                 incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
                         </div>
                     </div>
@@ -181,7 +191,8 @@
                         </div>
                         <div class="col-lg-10 col-md-9 col-10">
                             <h4 class="font-weight-bold">Support</h4>
-                            <p class="grey-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                            <p class="grey-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                                tempor
                                 incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
                         </div>
                     </div>

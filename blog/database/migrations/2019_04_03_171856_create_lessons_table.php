@@ -21,9 +21,9 @@ class CreateLessonsTable extends Migration
 			$table->double('price',8,2)->default(0.0);
 			$table->string('subject');
 			$table->integer('length')->default(0);
-			$table->integer('student_limit')->default(1);
+			$table->integer('student_limit')->default(-1);
 			$table->longText('description');
-			$table->boolean('exam')->default(0);
+			$table->string('video_link');
 			$table->timestamps();
         });
     }

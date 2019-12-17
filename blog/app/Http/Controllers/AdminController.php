@@ -2,44 +2,45 @@
 
 namespace App\Http\Controllers;
 
-use App\Admin;
-use App\Advertisement;
 use App\Lesson;
-use App\Opinion;
+use App\Message;
+use App\Report;
 use App\User;
-use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class AdminController extends Controller
 {
-    public function index() {
-        $stats = new Admin();
+    public function index()
+    {
+        $usersReports = Report::with('user')
+            ->select('user_id', DB::raw('count(*) as total'))
+            ->whereNotNull('user_id')
+            ->groupBy('user_id')
+            ->orderByDesc('total')
+            ->get();
+
+        $lessonsReports = Report::with('lesson')
+            ->select('lesson_id', DB::raw('count(*) as total'))
+            ->whereNotNull('lesson_id')
+            ->groupBy('lesson_id')
+            ->orderByDesc('total')
+            ->get();
+
+        $userStats = Lesson::with('user')
+            ->select('author_id', DB::raw('sum(price) as total'))
+            ->groupBy('author_id')
+            ->orderByDesc('total')
+            ->limit(5)
+            ->get();
 
         $statistics = [];
-        $statistics['totalMessages'] = $stats->totalMessages();
-        $statistics['totalUsers'] = $stats->totalUsers();
-        $statistics['totalLessons'] = $stats->totalLessons();
+        $statistics['totalMessages'] = Message::count();
+        $statistics['totalUsers'] = User::count();
+        $statistics['totalLessons'] = Lesson::count();
+        $statistics['usersReports'] = $usersReports;
+        $statistics['lessonsReports'] = $lessonsReports;
 
-        $info = $stats->mostLessonCreatedTop3();
-        $topUserLesson = [];
-        $topUserLesson[0]['user'] =  User::find($info[0]->author_id);
-        $topUserLesson[0]['total'] =  $info[0]->total;
-        $topUserLesson[0]['price'] =  $info[0]->price;
-
-        $topUserLesson[1]['user'] =  User::find($info[1]->author_id);
-        $topUserLesson[1]['total'] =  $info[1]->total;
-        $topUserLesson[1]['price'] =  $info[1]->price;
-
-        $topUserLesson[2]['user'] =  User::find($info[2]->author_id);
-        $topUserLesson[2]['total'] =  $info[2]->total;
-        $topUserLesson[2]['price'] =  $info[2]->price;
-
-        return view('main.admin', compact('statistics', 'topUserLesson'));
+        return view('main.admin', compact('statistics', 'userStats'));
     }
-
-    public function create(Request $request) {
-
-    }
-
-    public function delete() {}
-    public function edit() {}
 }

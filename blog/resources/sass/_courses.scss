@@ -274,7 +274,11 @@ a[data-toggle="collapse"] {
 .lesson-info-holder {
 	min-width: 350px;
 	max-width: 700px;
-	max-height: 772px;
+
+    > p {
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
 }
 
 .lesson-holder {

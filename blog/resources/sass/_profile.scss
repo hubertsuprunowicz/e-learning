@@ -1,99 +1,125 @@
+.starrating > input {
+    display: none;
+}
 
-.starrating > input {display: none;}  /* Remove radio buttons */
+/* Remove radio buttons */
 
 .starrating > label::before {
-	content: "\f005"; /* Star */
-	margin: 2px;
-	font-size: 1.4em;
-	font-family: FontAwesome;
-	display: inline-block;
+    content: "\f005"; /* Star */
+    margin: 2px;
+    font-size: 1.4em;
+    font-family: FontAwesome;
+    display: inline-block;
 }
 
-.starrating > label
-{
-	color: #222222; /* Start color when not clicked */
+.starrating > label {
+    color: #222222; /* Start color when not clicked */
 }
 
-.starrating > input:checked ~ label
-{ color: $mint ; } /* Set yellow color when star checked */
+.starrating > input:checked ~ label {
+    color: $mint;
+}
 
-.starrating > input:hover ~ label
-{ color: $mint ;  } /* Set yellow color when star hover */
+/* Set yellow color when star checked */
+
+.starrating > input:hover ~ label {
+    color: $mint;
+}
+
+/* Set yellow color when star hover */
 
 .rating-avg {
-	margin-left: 20px;
-	font-size: 2em;
-	color: $mint;
-	border-bottom: 2px solid $mint;
+    margin-left: 20px;
+    font-size: 2em;
+    color: $mint;
+    border-bottom: 2px solid $mint;
 }
 
 .profile-holder {
-	margin-top: 100px;
-	margin-bottom: 100px;
-	display: flex !important;
-	flex-wrap: wrap !important;
-	justify-content:center !important;
-	width: 100%;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    width: 100%;
 }
 
 .input-edit-profile {
-	position: relative;
-	font-size: 30px;
-	top: -80px;
-	border: transparent;
-	padding-left: 5px;
-	background-color: transparent;
+    position: relative;
+    font-size: 30px;
+    top: -80px;
+    border: transparent;
+    padding-left: 5px;
+    background-color: transparent;
 }
 
 .input-edit-avatar {
-	position: relative;
-	top: -650px;
-	left: 120px;
-	width: 250px !important;
-	color: transparent;
+    position: relative;
+    top: -650px;
+    left: 120px;
+    width: 250px !important;
+    color: transparent;
 }
 
 .input-edit-about {
-	padding-top: 80px;
-	width: 80vw;
-	font-size: 1em !important;
+    padding-top: 80px;
+    width: 80vw;
+    font-size: 1em !important;
 }
 
 .user-header {
-	background: url('/img/school_light.png');
-	padding-bottom: 50px;
-	padding-top: 50px;
+    background: url("/img/school_light.png");
+    padding-bottom: 50px;
+    padding-top: 50px;
 }
 
 .personal-details {
-	margin-top: -55px;
-	font-weight: bold;
+    margin-top: -60px;
+    font-weight: 900;
+    font-size: 2rem;
 
-	:first-child {
-		color:$mint;
-	}
+    :first-child {
+        color: $mint;
+        font-size: 2.2rem;
+        text-shadow: 2px 2px 2px #000;
+
+        * {
+
+        }
+    }
 }
 
 .opinion-holder {
-	margin-top: -10px;
-	font-size: .8em;
-	text-align: center;
-	margin-left: auto;
-	margin-right: auto;
+    margin-top: -10px;
+    font-size: 0.8em;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
 
-	a:hover {
-		color:$mint !important;
-	}
+    a:hover {
+        color: $mint !important;
+    }
 }
 
 .card-profile {
-	max-width: 500px;
-	flex: 2 auto;
+    max-width: 500px;
+    flex: 2 auto;
 }
 
 .quote-date {
-	font-weight: 300;
-	font-size: 1em;
-	text-align: right;
-	margin-bottom: -10px;
+    font-weight: 300;
+    font-size: 1em;
+    text-align: right;
+    margin-bottom: -10px;
+}
+
+.edit-profile-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 20px;
+
+    > * {
+        width: 200px;
+    }
 }

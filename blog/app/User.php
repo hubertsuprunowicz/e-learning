@@ -3,9 +3,9 @@
 namespace App;
 
 
-use Illuminate\Notifications\Notifiable;
-use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\DB;
 
 
 class User extends Authenticatable
@@ -40,41 +40,39 @@ class User extends Authenticatable
     ];
 
 
-	public function lessons() {
-		return $this->hasMany(Lesson::class);
-	}
+    public function lessons()
+    {
+        return $this->hasMany(Lesson::class);
+    }
 
-	public function messages() {
-		return $this->hasMany(Message::class);
-	}
+    public function messages()
+    {
+        return $this->hasMany(Message::class);
+    }
 
-	public function opinions() {
-		return $this->hasMany(Opinion::class, 'teacher_id');
-	}
+    public function opinions()
+    {
+        return $this->hasMany(Opinion::class, 'teacher_id');
+    }
 
-	public function enrolls() {
-		return $this->hasMany(Lesson_enroll::class);
-	}
+    public function enrolls()
+    {
+        return $this->hasMany(LessonEnroll::class);
+    }
 
-	public function userPut($userInfo) {
-		$user = self::find($userInfo['id']);
-		$user->first_name = $userInfo['firstName'];
-		$user->last_name = $userInfo['lastName'];
-		$user->image = $userInfo['image'];
-		$user->occupation = $userInfo['occupation'];
-		$user->about = $userInfo['about'];
-		$user->save();
-	}
+    public function setPasswordAttribute($password)
+    {
+        $this->attributes['password'] = \Hash::make($password);
+    }
 
-	public function setPasswordAttribute($password)
-	{
-		$this->attributes['password'] = \Hash::make($password);
-	}
+    public function sendPasswordResetNotification($token)
+    {
+        $this->notify(new ResetPasswordNotification($token));
+    }
 
-	public function sendPasswordResetNotification($token)
-	{
-		$this->notify(new ResetPasswordNotification($token));
-	}
-
+    public static function count()
+    {
+        return DB::table('users')->count();
+    }
 }
 

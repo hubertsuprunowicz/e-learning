@@ -57,7 +57,11 @@
                                             <li class="list-group-item">
                                                 Vacancies:
                                                 <span class="card-important-info">
-                                                    {{ $lessons[$i]->student_limit }}({{ $lessons[$i]->student_limit - $lessons[$i]->enroll->count() }} left)
+                                                    @if($lessons[$i]->student_limit === -1)
+                                                        unlimited
+                                                    @else
+                                                        {{ $lessons[$i]->student_limit }}({{ $lessons[$i]->student_limit - $lessons[$i]->enroll->count() }} left)
+                                                    @endif
                                                 </span>
                                             </li>
                                             <li class="list-group-item">

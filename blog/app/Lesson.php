@@ -10,63 +10,89 @@ use Illuminate\Support\Facades\DB;
 
 class Lesson extends Model
 {
-	use Notifiable;
+    use Notifiable;
 
-	/**
-	 * The attributes that are mass assignable.
-	 *
-	 * @var array
-	 */
-	protected $fillable = [
-		'author_id', 'date', 'price', 'subject', 'length', 'student_limit', 'description'
-	];
+    protected const LESSONS_PER_PAGE = 30;
 
-	public function user() {
-		return $this->belongsTo(User::class, 'author_id');
-	}
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = [
+        'author_id',
+        'date',
+        'price',
+        'subject',
+        'length',
+        'student_limit',
+        'description',
+        'video_link'
+    ];
 
-	public function enroll() {
-		return $this->hasMany(Lesson_enroll::class);
-	}
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'author_id');
+    }
 
-	public function advertisement() {
-		return $this->hasMany(Advertisement::class);
-	}
+    public function enroll()
+    {
+        return $this->hasMany(LessonEnroll::class);
+    }
 
-	public function lessonPost($lesson) {
-		DB::table('users')->insert([
-			[
-				'date' => $lesson['date'],
-				'price' => $lesson['price'],
-				'subject' => $lesson['subject'],
-				'length' => $lesson['length'],
-				'student_limit' => $lesson['student_limit'],
-				'description' => $lesson['description']
-			]
-		]);
-	}
+    public function advertisement()
+    {
+        return $this->hasMany(Advertisement::class);
+    }
 
-	public static function lessonsLimiter($lessonsPerPage) {
-		return ceil(DB::table('lessons')->count() / $lessonsPerPage);
-	}
+    public static function lessonsLimiter()
+    {
+        return ceil(DB::table('lessons')->count() / self::LESSONS_PER_PAGE);
+    }
 
-	public static function getIfActive()  {
-		$lesson = Lesson_enroll::with(['lesson' => function($query) {
-			$query->orderBy('date');
-		}])
-			->where('student_id', Auth::user()->id)
-			->get();
+    public static function getIfActive()
+    {
+        $lessons = LessonEnroll::with([
+            'lesson' => function ($query) {
+                $query->orderBy('date');
+            }
+        ])
+            ->where('student_id', Auth::user()->id)
+            ->get();
 
-		foreach ($lesson as $less){
-			$endOfLesson = Carbon::parse($less->lesson->date);
-			$endOfLesson->addHours($less->lesson->length/60);
-			if(date(Carbon::now()) <= date($endOfLesson) && $less->lesson->date <= date(Carbon::now()))
-				return $less;
-		}
+        foreach ($lessons as $lessonEnrolled) {
+            $endOfLesson = Carbon::parse($lessonEnrolled->lesson->date);
+            $endOfLesson->addHours($lessonEnrolled->lesson->length / 60);
 
-		return $lesson;
-	}
+            if (
+                date(Carbon::now()) <= date($endOfLesson) &&
+                date($lessonEnrolled->lesson->date) <= date(Carbon::now())
+            ) {
+                return $lessonEnrolled;
+            }
+        }
 
+        return $lessons;
+    }
 
+    public function mostLessonCreated($top = 3)
+    {
+        $lesson = DB::table('lessons')
+            ->select(
+                'author_id',
+                DB::raw('count(*) as total'),
+                DB::raw('sum(price) as price')
+            )
+            ->groupBy('author_id')
+            ->orderBy('total', 'DESC')
+            ->limit($top)
+            ->get();
 
+        return $lesson;
+    }
+
+    public static function count()
+    {
+        return DB::table('lessons')->count();
+    }
 }
