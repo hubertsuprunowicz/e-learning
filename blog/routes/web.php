@@ -81,7 +81,6 @@ Route::middleware(['auth'])->group(function () {
     ]);
 
     // User Profile...
-
     Route::get('/user/{id}', [
         'uses' => 'UserController@show',
         'as' => 'user.profile'
@@ -105,5 +104,4 @@ Route::middleware(['auth'])->group(function () {
 
     // Admin Panel...
     Route::get('/admin', 'AdminController@index')->name('adminPanel');
-
 });

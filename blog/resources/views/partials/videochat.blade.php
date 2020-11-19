@@ -3,8 +3,6 @@
 @section('content')
 
 
-
-
     <section id="content-ajax" class="w-100">
         @if(!is_iterable($lessons))
 
@@ -63,14 +61,16 @@
                         </label>
 
                         <div class="form-action">
-                            <input id="rating-submit" class="btn-reset" type="submit" data-index={{$lessons->lesson->author_id}} value="Submit"/>
+                            <input id="rating-submit" class="btn-reset" type="submit"
+                                   data-index={{$lessons->lesson->author_id}} value="Submit"/>
                         </div>
 
                     </div>
 
                 </fieldset>
                 <label>
-                    <textarea id="details" name="details" class="form-control opinion-details" data-index="test" cols="30" rows="3"></textarea>
+                    <textarea id="details" name="details" class="form-control opinion-details" data-index="test"
+                              cols="30" rows="3"></textarea>
                 </label>
             </form>
         @else

@@ -3,6 +3,7 @@
 namespace App;
 
 use Carbon\Carbon;
+use Exception;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Facades\Auth;
@@ -62,11 +63,11 @@ class Lesson extends Model
 
         foreach ($lessons as $lessonEnrolled) {
             $endOfLesson = Carbon::parse($lessonEnrolled->lesson->date);
-            $endOfLesson->addHours($lessonEnrolled->lesson->length / 60);
+            $endOfLesson->addMinute($lessonEnrolled->lesson->length);
 
             if (
-                date(Carbon::now()) <= date($endOfLesson) &&
-                date($lessonEnrolled->lesson->date) <= date(Carbon::now())
+                Carbon::now()->timestamp <= $endOfLesson->timestamp &&
+				Carbon::parse($lessonEnrolled->lesson->date)->timestamp <= Carbon::now()->timestamp
             ) {
                 return $lessonEnrolled;
             }
