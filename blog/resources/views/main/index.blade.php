@@ -7,28 +7,28 @@
 
         <div class="bg-container">
 
-            <section class="choose-header">
+            <div class="choose-header">
                 <span class="choose-holder">Choose</span>
-            </section>
+            </div>
 
-            <section class="student-header panel-header">
+            <div class="student-header panel-header">
                 <div class="speech-bubble">Lorem ipsum dolor sit amet, consectetur adipiscing. Nulla eu lorem. Mauris
                     sapien ipsum, condimentum atlacerat leo. Vivamus sit amet meros .
                 </div>
                 <div class="icon-holder">
                     <i class="fas fa-graduation-cap"></i>
                 </div>
-            </section>
-            <section class="instructor-header panel-header">
+            </div>
+            <div class="instructor-header panel-header">
                 <div class="speech-bubble">ing elit.m. Mauris sapien ipsum, condimentum at mi vitae, bibendum leo.
                     Vivamus sit amet molestie neque. Suspendisse sed eros sagittis.
                 </div>
                 <div class="icon-holder">
                     <i class="fas fa-chalkboard-teacher"></i>
                 </div>
-            </section>
+            </div>
 
-            <section class="text-abs-header text-uppercase">
+            <div class="text-abs-header text-uppercase">
                 @guest
                     <a href="{{ route('register') }}" class="text-abs-holder">
                         JOIN US
@@ -39,7 +39,7 @@
                         JOIN US
                     </a>
                 @endauth
-            </section>
+            </div>
 
             <span class="vertical-line-header"></span>
 
@@ -49,7 +49,7 @@
 
     <article>
         <section id="stat-info" class="stat-info">
-            <h2 class="h2-responsive font-weight-bold text-center my-5">Just bragging</h2>
+            <h2 class="h2-responsive text-center my-5">Just bragging</h2>
 
             <div class="card-group" id="counter">
 
@@ -96,7 +96,7 @@
         </section>
 
         <section class="offer-section d-flex flex-column">
-            <h1 class="h1-responsive font-weight-bold text-center my-5">Lessons</h1>
+            <h2 class="h2-responsive text-center my-5">Lessons</h2>
 
             <div class="card-deck offer-card-deck justify-content-center align-content-around">
 
@@ -150,7 +150,6 @@
 
         <section class="my-5 pt-3 pb-5">
 
-            <!-- Section heading -->
             <h2 class="h1-responsive font-weight-bold text-center my-5">Why is it so great?</h2>
             <!-- Section description -->
             <p class="lead grey-text text-center w-responsive mx-auto mb-5">Lorem ipsum dolor sit amet, consectetur

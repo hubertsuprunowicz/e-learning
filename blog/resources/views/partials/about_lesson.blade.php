@@ -6,7 +6,7 @@
         <div class="jumbotron text-center mt-5 d-flex flex-row flex-wrap justify-content-around lesson-holder">
             <div class="author-holder w-50">
 
-                <div class= mb-4">
+                <div class="mb-4">
                     <div class="view overlay">
                         <h3>Author</h3>
                         <img class="card-img-top" src="{{ $lesson->user->image }}" alt="{{ $lesson->user->name }} img">
@@ -22,7 +22,7 @@
                             <p class="card-text">{{ $lesson->user->email }}</p>
                         </div>
                     </div>
-                    <a href="{{ route("user.profile", $lesson->user->name) }}" class="btn adv-button text-white btn-md ">Read more</a>
+                    <a href="{{ route("user.profile", $lesson->user->id) }}" class="btn adv-button text-white btn-md ">Read more</a>
                     <hr>
                 </div>
 

@@ -28,11 +28,13 @@
         </nav>
 
         <section id="toggle-content" class="offer-section w-100">
-
             <button type="button" id="sidebarCollapse" class="btn adv-button text-white">
                 <i class="fas fa-align-left"></i>
                 <span>Menu</span>
             </button>
+
+            <div class="mt-5 text-center"><h2>Lessons</h2></div>
+
 
             <section id="content-ajax" class="w-100">
 

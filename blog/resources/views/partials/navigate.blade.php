@@ -20,7 +20,6 @@
                 <li class="nav-item ">
                     <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                 </li>
-                <span class="separator-auth">|</span>
                 @if (Route::has('register'))
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
@@ -33,7 +32,7 @@
                     </li>
 
                     <li class="nav-item dropdown">
-                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             {{ Auth::user()->name }} <span class="caret"></span>
                         </a>
 
@@ -42,7 +41,7 @@
                                 <a class="dropdown-item" href="{{ route('adminPanel') }}">admin panel</a>
                             @endif
 
-                            <a class="dropdown-item" href="{{ route("user.profile", Auth::user()->name) }}">profile</a>
+                            <a class="dropdown-item" href="{{ route("user.profile", Auth::user()->id) }}">profile</a>
                             <a class="dropdown-item" href="{{ route('messages') }}">messages</a>
                             <a class="dropdown-item btn-danger" href="{{ route('logout') }}"
                                onclick="event.preventDefault();

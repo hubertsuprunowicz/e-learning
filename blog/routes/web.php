@@ -66,11 +66,6 @@ Route::middleware(['auth'])->group(function () {
         'as' => 'listOfLessons.get'
     ]);
 
-    Route::get('/user/edit/{id}', [
-        'uses'  =>  'SitesController@editUser',
-        'as' => 'user.edit.view'
-    ]);
-
     Route::get('/lesson/edit/{id}', [
         'uses'  =>  'SitesController@editLesson',
         'as' => 'lesson.edit.view'
@@ -86,6 +81,7 @@ Route::middleware(['auth'])->group(function () {
     ]);
 
     // User Profile...
+
     Route::get('/user/{id}', [
         'uses' => 'UserController@show',
         'as' => 'user.profile'
@@ -95,6 +91,11 @@ Route::middleware(['auth'])->group(function () {
         'uses' => 'UserController@edit',
         'as' => 'user.edit'
     ]);
+
+	Route::get('/user/edit/{id}', [
+		'uses'  =>  'SitesController@editUser',
+		'as' => 'user.edit.view'
+	]);
 
     // Reports...
     Route::post('/report', [

@@ -4,6 +4,7 @@
 
     <header class="user-header">
         <section class="profile-holder container-fluid">
+            <div class="w-100 text-center mb-5"><h2>User Profile</h2></div>
             <div class="card card-profile">
                 @if($user->id === Auth::user()->id)
                     <img class="card-img-top" src="{{ $user->image }}"
@@ -11,29 +12,30 @@
                     <div class="card-body">
                         <div class="personal-details">
                             <div
-                                class="user-info card-title title-one input-edit-profile"
-                                value="">{{ $user->first_name }}</div>
+                                    class="user-info card-title title-one input-edit-profile"
+                            >{{ $user->first_name }}</div>
                             <div
-                                class="user-info card-title title-one input-edit-profile"
+                                    class="user-info card-title title-one input-edit-profile"
                             >{{ $user->last_name }}</div>
                         </div>
                         <div class="user-info mb-3 input-edit-profile"
-                             >{{ empty($user->occupation) ? "" : $user->occupation }}</div>
+                        >{{ empty($user->occupation) ? "" : $user->occupation }}</div>
                         <p class="card-meta">Joined in {{ $user->created_at->diffForHumans() }}</p>
                         <hr>
                         <div class="container">
                             <div class="starrating risingstar d-flex justify-content-center flex-row-reverse">
                                     <span
-                                        class="rating-avg">{{ empty($user->opinions->avg('rating')) ? 0 : $user->opinions->avg('rating') }}</span>
+                                            class="rating-avg">{{ empty($user->opinions->avg('rating')) ? 0 : $user->opinions->avg('rating') }}</span>
                                 <span class="rating-avg">Rating: </span>
                             </div>
                             <div class="opinion-holder mt-3"><a href="#opinions" class="text-mint ">Opinions<span
-                                        class="badge badge-success ml-2">{{ $user->opinions->count() }}</span></a>
+                                            class="badge badge-success ml-2">{{ $user->opinions->count() }}</span></a>
                             </div>
                         </div>
                     </div>
                     <div class="edit-profile-wrapper">
-                        <a href="{{ route('user.edit.view', $user->id )}}" id="user-edit-btn" class="btn btn-primary btn-sm">
+                        <a href="{{ route('user.edit.view', $user->id )}}" id="user-edit-btn"
+                           class="btn btn-primary btn-sm">
                             Edit
                         </a>
                     </div>
@@ -52,11 +54,11 @@
                         <div class="container">
                             <div class="starrating risingstar d-flex justify-content-center flex-row-reverse">
                                     <span
-                                        class="rating-avg">{{ empty($user->opinions->avg('rating')) ? 0 : $user->opinions->avg('rating') }}</span>
+                                            class="rating-avg">{{ empty($user->opinions->avg('rating')) ? 0 : $user->opinions->avg('rating') }}</span>
                                 <span class="rating-avg">Rating: </span>
                             </div>
                             <div class="opinion-holder mt-3"><a href="#opinions" class="text-mint ">Opinions<span
-                                        class="badge badge-success ml-2">{{ $user->opinions->count() }}</span></a>
+                                            class="badge badge-success ml-2">{{ $user->opinions->count() }}</span></a>
                             </div>
                         </div>
                     </div>
@@ -68,19 +70,19 @@
                 <div class="card-body">
                     <form method="POST" action="{{ route('message.create') }}">
                         @csrf
-
                         <p class="h4 text-center py-4">Text me!</p>
-                        <input type="text" id="usernameForm" class="form-control" value="{{ $user->name}}" name="sent_to" hidden>
+                        <input type="text" id="usernameForm" class="form-control" value="{{ $user->name}}"
+                               name="sent_to" hidden>
                         @if($errors->any())
                             <strong class="text-danger">{{ $errors->first() }}</strong>
                         @endif
 
                         <label for="defaultFormCardNameEx" class="grey-text font-weight-light">Title</label>
-                        <input type="text"  name="title" id="defaultFormCardNameEx" class="form-control" required>
+                        <input type="text" name="title" id="defaultFormCardNameEx" class="form-control" required>
                         <br>
 
                         <label for="defaultFormCardEmailEx" class="grey-text font-weight-light">Your message</label>
-                        <textarea id="defaultFormCardEmailEx" name="body" class="form-control" rows="14" minlength=""
+                        <textarea id="defaultFormCardEmailEx" name="body" class="form-control" rows="14"
                                   required></textarea>
 
                         <div class="text-center py-4 mt-3">
@@ -105,28 +107,31 @@
     </header>
 
     @if(isset($user->about))
-        <article class="mt-5">
-            <section class="container-fluid">
-                <div class=" text-center p-4 d-flex flex-wrap-reverse">
-                    <div class="col-md-7 text-md-left ml-3 mt-3">
-                        <span class="green-text ">
-                            <h4 class="h4 pb-1 mt-2"><i class="fas fa-user pr-1"></i> About Me</h4>
-                        </span>
-                        @if($user->id === Auth::user()->id)
-                            <textarea type="text" name="about"
-                                      class="user-info font-weight-normal input-edit-about input-edit-profile"
-                                      minlength="20" rows="5" readonly>{{ $user->about }}</textarea>
-                        @else
-                            <p class="font-weight-normal">{{ $user->about }}</p>
-                        @endif
-                    </div>
+        <article class="mt-5 container-fluid">
+            <h3 class="ml-5 green-text h4 pb-1 mt-2"><i class="fas fa-user pr-1"></i> About Me</h3>
+            <div class="text-center p-4 d-flex flex-wrap-reverse">
+                <div class="col-md-7 text-md-left ml-3 mt-3">
+
+                    @if($user->id === Auth::user()->id)
+                        <textarea type="text" name="about"
+                                  class="user-info font-weight-normal input-edit-about input-edit-profile"
+                                  minlength="20" rows="5" readonly>{{ $user->about }}</textarea>
+                    @else
+                        <p class="font-weight-normal">{{ $user->about }}</p>
+                    @endif
                 </div>
-            </section>
+            </div>
+
         </article>
     @endif
     @if(isset($user->opinions ))
         <aside class="mt-5 mb-5">
             <section id="opinions" class="container-fluid ">
+                <div class="w-100 text-center"><h3>Opinions</h3></div>
+                @if(!isset($opinions) || count($opinions) === 0)
+                    <div class="w-100 text-center mt-5"><span>This user has no opinions</span></div>
+
+                @endif
                 <div class="card-columns">
                     @foreach($user->opinions as $opinion)
                         @break($opinion->details == "")

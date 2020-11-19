@@ -12,7 +12,7 @@
                             <div id="chartContainer" style="height: 370px; width: 100%;"></div>
                         </div>
                         <script>
-                            window.onload = function() {
+                            window.onload = function () {
                                 new CanvasJS.Chart("chartContainer", {
                                     theme: "light1",
                                     animationEnabled: false,
@@ -23,11 +23,26 @@
                                         {
                                             type: "column",
                                             dataPoints: [
-                                                { label: "{{ str_replace('\'', ' ', $userStats[4]->user->name) }}", y: parseInt({{ $userStats[4]->total }}) },
-                                                { label: "{{ str_replace('\'', ' ', $userStats[3]->user->name) }}", y: parseInt({{ $userStats[3]->total }}) },
-                                                { label: "{{ str_replace('\'', ' ', $userStats[0]->user->name) }}", y: parseInt({{ $userStats[0]->total }}) },
-                                                { label: "{{ str_replace('\'', ' ', $userStats[1]->user->name) }}", y: parseInt({{ $userStats[1]->total }}) },
-                                                { label: "{{ str_replace('\'', ' ', $userStats[2]->user->name) }}", y: parseInt({{ $userStats[2]->total }}) }
+                                                {
+                                                    label: "{{ str_replace('\'', ' ', $userStats[4]->user->name) }}",
+                                                    y: parseInt({{ $userStats[4]->total }})
+                                                },
+                                                {
+                                                    label: "{{ str_replace('\'', ' ', $userStats[3]->user->name) }}",
+                                                    y: parseInt({{ $userStats[3]->total }})
+                                                },
+                                                {
+                                                    label: "{{ str_replace('\'', ' ', $userStats[0]->user->name) }}",
+                                                    y: parseInt({{ $userStats[0]->total }})
+                                                },
+                                                {
+                                                    label: "{{ str_replace('\'', ' ', $userStats[1]->user->name) }}",
+                                                    y: parseInt({{ $userStats[1]->total }})
+                                                },
+                                                {
+                                                    label: "{{ str_replace('\'', ' ', $userStats[2]->user->name) }}",
+                                                    y: parseInt({{ $userStats[2]->total }})
+                                                }
                                             ]
                                         }
                                     ]
@@ -86,24 +101,24 @@
                             <table class="table table-hover">
                                 <!-- Table head -->
                                 <thead class="blue-grey lighten-4">
-                                    <tr>
-                                        <th>#</th>
-                                        <th>Total reports</th>
-                                        <th>User name</th>
-                                        <th>User ping</th>
-                                    </tr>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Total reports</th>
+                                    <th>User name</th>
+                                    <th>User ping</th>
+                                </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach($statistics['usersReports'] as $userReport)
-                                        <a href="{{ route('user.profile', $userReport->user_id) }}">
-                                        <tr>
-                                            <th scope="row">{{ $loop->index + 1 }}</th>
-                                            <td>{{ $userReport->total }}</td>
-                                            <td>{{ $userReport->user->name }}</td>
-                                            <td>{{ $userReport->user->ip }}</td>
-                                        </tr>
-                                        </a>
-                                    @endforeach
+                                @foreach($statistics['usersReports'] as $userReport)
+                                    <tr>
+                                        <th scope="row">{{ $loop->index + 1 }}</th>
+                                        <td>{{ $userReport->total }}</td>
+                                        <td>
+                                            <a href="{{ route('user.profile', $userReport->user_id) }}">{{ $userReport->user->name }}</a>
+                                        </td>
+                                        <td>{{ $userReport->user->ip }}</td>
+                                    </tr>
+                                @endforeach
                                 </tbody>
                             </table>
 
@@ -131,14 +146,14 @@
                                 </thead>
                                 <tbody>
                                 @foreach($statistics['lessonsReports'] as $lessonReport)
-                                    <a href="{{ route('lesson.get', $lessonReport->lesson_id) }}">
-                                        <tr>
-                                            <th scope="row">{{ $loop->index + 1 }}</th>
-                                            <td>{{ $lessonReport->total }}</td>
-                                            <td>{{ $lessonReport->lesson->subject }}</td>
-                                            <td>{{ $lessonReport->lesson->date }}</td>
-                                        </tr>
-                                    </a>
+                                    <tr>
+                                        <th scope="row">{{ $loop->index + 1 }}</th>
+                                        <td>{{ $lessonReport->total }}</td>
+                                        <td>
+                                            <a href="{{ route('lesson.get', $lessonReport->lesson_id) }}">{{ $lessonReport->lesson->subject }}</a>
+                                        </td>
+                                        <td>{{ $lessonReport->lesson->date }}</td>
+                                    </tr>
                                 @endforeach
                                 </tbody>
                             </table>
@@ -146,8 +161,6 @@
 
                     </div>
                 </div>
-            </div>
-
             </div>
 
         </div>

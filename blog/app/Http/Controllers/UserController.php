@@ -26,17 +26,16 @@ class UserController extends Controller
         $user->about = $request->about;
         $user->save();
 
-//        dump(first_ame);
-//        print_r("aaaaa");
 
         return redirect()->route('user.profile', Auth::user()->name);
     }
 
-    public function show($username): View
+    public function show($id): View
     {
         $user = User::with('opinions.user')
-            ->where('name', $username)
+            ->where('id', $id)
             ->firstOrFail();
+
         return view('main.profile', compact('user'));
     }
 }
