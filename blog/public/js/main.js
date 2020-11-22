@@ -1,7 +1,3 @@
-/**
- * Created by Dakruzz on 22.03.2019.
- */
-
 /* load content  */
 $(document).on("click", "#classifieds-ajax", function(e) {
     e.preventDefault();

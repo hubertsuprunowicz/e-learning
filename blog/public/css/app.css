@@ -10912,7 +10912,6 @@ a.text-dark:focus {
 }
 
 .user-header {
-  background: url("/img/school_light.png");
   padding-bottom: 50px;
   padding-top: 50px;
 }
@@ -11673,10 +11672,6 @@ html {
   height: 100%;
   margin: 0;
   padding: 0;
-}
-
-body {
-  background: url("/../school_light.png");
 }
 
 img {
