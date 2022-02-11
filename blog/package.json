@@ -24,7 +24,7 @@
         "vue-template-compiler": "^2.6.9"
     },
     "dependencies": {
-        "ajv": "^6.10.0",
+        "ajv": "^6.12.3",
         "gulp": "^4.0.0",
         "mdbootstrap": "^4.7.5"
     }
